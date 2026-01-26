@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "name": "enjinn",
+  "version-string": "0.1.0",
+  "description": "EnJinn - A Modular 2D/3D Game Engine",
+  "dependencies": [
+    "glfw3",
+    "glm",
+    {
+      "name": "imgui",
+      "features": ["docking-experimental", "glfw-binding", "opengl3-binding"]
+    },
+    "box2d",
+    "stb",
+    "catch2"
+  ]
+}

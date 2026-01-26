@@ -1,0 +1,125 @@
+#pragma once
+
+#include <gl2d/gl2d.h>
+#include <gl3d.h>
+#include <imgui.h>
+#include <baseContainer.h>
+#include <shortcutApi/shortcutApi.h>
+#include <enjinnSizes.h>
+#include <imgui_spinner.h>
+#include <imfilebrowser.h>
+#include <engineLibraresSupport/engineGL3DSupport.h>
+
+struct ThreeDEditor: public Container
+{
+
+
+	//todo user can request imgui ids; shortcut manager context; allocators
+	static ContainerStaticInfo containerInfo()
+	{
+		ContainerStaticInfo info = {};
+		info.defaultHeapMemorySize = enjinn::MB(1000); //todo option to use global allocator
+
+		info.extensionsSuported = {".gl3d"};
+
+		info.requestImguiFbo = true;
+		info.requestImguiIds = 1;
+
+		return info;
+	}
+
+
+	gl3d::Renderer3D renderer;
+	gl3d::Model model;
+	gl3d::Entity entity;
+	bool first = 1;
+
+	enjinn::gl3d::General3DEditor editor;
+
+	bool create(RequestedContainerInfo &requestedInfo, enjinn::StaticString<256> commandLineArgument)
+	{
+
+		renderer.setErrorCallback(&errorCallbackCustom, &requestedInfo);
+		renderer.fileOpener.userData = &requestedInfo;
+		renderer.fileOpener.readEntireFileBinaryCallback = readEntireFileBinaryCustom;
+		renderer.fileOpener.readEntireFileCallback = readEntireFileCustom;
+		renderer.fileOpener.fileExistsCallback = defaultFileExistsCustom;
+		
+		renderer.init(1, 1, ENJINN_RESOURCES_PATH "BRDFintegrationMap.png", requestedInfo.requestedFBO.fbo);
+		
+
+		const char *names[6] =
+		{ENJINN_RESOURCES_PATH "/skyBoxes/ocean/right.jpg",
+			ENJINN_RESOURCES_PATH "/skyBoxes/ocean/left.jpg",
+			ENJINN_RESOURCES_PATH "/skyBoxes/ocean/top.jpg",
+			ENJINN_RESOURCES_PATH "/skyBoxes/ocean/bottom.jpg",
+			ENJINN_RESOURCES_PATH "/skyBoxes/ocean/front.jpg",
+			ENJINN_RESOURCES_PATH "/skyBoxes/ocean/back.jpg"};
+		
+		//renderer.skyBox = renderer.loadSkyBox(names);
+		//renderer.skyBox.color = {0.2,0.3,0.8};
+		renderer.skyBox = renderer.atmosfericScattering({0,1,0}, {0.2,0.2,0.5}, {0.6,0.2,0.1}, {},
+			false, 10);
+
+		//helmetModel = renderer.loadModel(ENJINN_RESOURCES_PATH "helmet/helmet.obj");
+		model = renderer.loadModel(ENJINN_RESOURCES_PATH "rave.glb", gl3d::TextureLoadQuality::maxQuality, 1);
+		
+		gl3d::Transform t;
+		t.position = {0, -1, -4};
+		//t.rotation = {1.5, 0 , 0};
+		
+		entity = renderer.createEntity(model, t);
+
+		if (commandLineArgument.size() > 0)
+		{
+			editor.loadFromFile(renderer, commandLineArgument.to_string(), requestedInfo);
+		}
+
+
+		return true;
+	}
+
+	bool update(enjinn::Input input, enjinn::WindowState windowState,
+		RequestedContainerInfo &requestedInfo)
+	{
+	#pragma region init stuff
+		renderer.setErrorCallback(&errorCallbackCustom, &requestedInfo);
+		renderer.fileOpener.userData = &requestedInfo;
+		renderer.fileOpener.readEntireFileBinaryCallback = readEntireFileBinaryCustom;
+		renderer.fileOpener.readEntireFileCallback = readEntireFileCustom;
+		renderer.fileOpener.fileExistsCallback = defaultFileExistsCustom;
+
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		glEnable(GL_DEPTH_TEST);
+
+		renderer.updateWindowMetrics(windowState.windowW, windowState.windowH);
+		renderer.camera.aspectRatio = (float)windowState.windowW / windowState.windowH; //todo do this in update
+	#pragma endregion
+		
+		if (input.buttons[enjinn::Button::Escape].released())
+		{
+			::enjinn::enjinnImgui::removeFocusToCurrentWindow();
+		}
+
+			
+		editor.update(requestedInfo.requestedImguiIds, renderer, input, 4, requestedInfo, {windowState.windowW,windowState.windowH});
+
+		renderer.setEntityAnimate(entity, true);
+
+		renderer.render(input.deltaTime);
+		glDisable(GL_DEPTH_TEST);
+
+
+		return true;
+	}
+
+	void destruct(RequestedContainerInfo &requestedInfo) override
+	{
+		renderer.clearAllRendererResources();
+	}
+
+};
+
+//todo flag to clear screen from engine
+//todo error popup
+//todo error popup disable in release

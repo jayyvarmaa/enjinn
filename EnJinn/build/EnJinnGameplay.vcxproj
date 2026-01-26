@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7420FAEE-CAA1-3389-98FB-C203450E27D5}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>EnJinnGameplay</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Projects\EnJinn\EnJinn\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">EnJinnGameplay.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">EnJinnGameplay</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Projects\EnJinn\EnJinn\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">EnJinnGameplay.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">EnJinnGameplay</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Projects\EnJinn\EnJinn\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">EnJinnGameplay.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">EnJinnGameplay</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'"></LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Projects\EnJinn\EnJinn\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">EnJinnGameplay.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">EnJinnGameplay</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'"></LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Projects\EnJinn\EnJinn\core\enjinnSTD;D:\Projects\EnJinn\EnJinn\core\coreConfig;D:\Projects\EnJinn\EnJinn\gameplay;D:\Projects\EnJinn\EnJinn\core\sharedRuntime;D:\Projects\EnJinn\EnJinn\pluggins;D:\Projects\EnJinn\EnJinn\include;D:\Projects\EnJinn\EnJinn\thirdparty\glad\include;D:\Projects\EnJinn\EnJinn\thirdparty\glfw-3.3.2\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl2d\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm;D:\Projects\EnJinn\EnJinn\thirdparty\stb_image\include;D:\Projects\EnJinn\EnJinn\thirdparty\stb_truetype\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl3d;D:\Projects\EnJinn\EnJinn\thirdparty\glui\include;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui\misc\cpp;D:\Projects\EnJinn\EnJinn\thirdparty\safeSafe\include;D:\Projects\EnJinn\EnJinn\thirdparty\profilerLib\include;D:\Projects\EnJinn\EnJinn\thirdparty\box2d-2.4.1\src\..\include;D:\Projects\EnJinn\EnJinn\thirdparty\sushi\include;D:\Projects\EnJinn\EnJinn\thirdparty\ph2d\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;ENJINN_DEVELOPMENT;ENJINN_RESOURCES_PATH="D:/Projects/EnJinn/EnJinn/resources/";ENJINN_ENGINE_RESOURCES_PATH="D:/Projects/EnJinn/EnJinn/engineResources/";_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Debug";EnJinnGameplay_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;ENJINN_DEVELOPMENT;ENJINN_RESOURCES_PATH=\"D:/Projects/EnJinn/EnJinn/resources/\";ENJINN_ENGINE_RESOURCES_PATH=\"D:/Projects/EnJinn/EnJinn/engineResources/\";_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\";EnJinnGameplay_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Projects\EnJinn\EnJinn\core\enjinnSTD;D:\Projects\EnJinn\EnJinn\core\coreConfig;D:\Projects\EnJinn\EnJinn\gameplay;D:\Projects\EnJinn\EnJinn\core\sharedRuntime;D:\Projects\EnJinn\EnJinn\pluggins;D:\Projects\EnJinn\EnJinn\include;D:\Projects\EnJinn\EnJinn\thirdparty\glad\include;D:\Projects\EnJinn\EnJinn\thirdparty\glfw-3.3.2\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl2d\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm;D:\Projects\EnJinn\EnJinn\thirdparty\stb_image\include;D:\Projects\EnJinn\EnJinn\thirdparty\stb_truetype\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl3d;D:\Projects\EnJinn\EnJinn\thirdparty\glui\include;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui\misc\cpp;D:\Projects\EnJinn\EnJinn\thirdparty\safeSafe\include;D:\Projects\EnJinn\EnJinn\thirdparty\profilerLib\include;D:\Projects\EnJinn\EnJinn\thirdparty\box2d-2.4.1\src\..\include;D:\Projects\EnJinn\EnJinn\thirdparty\sushi\include;D:\Projects\EnJinn\EnJinn\thirdparty\ph2d\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Projects\EnJinn\EnJinn\core\enjinnSTD;D:\Projects\EnJinn\EnJinn\core\coreConfig;D:\Projects\EnJinn\EnJinn\gameplay;D:\Projects\EnJinn\EnJinn\core\sharedRuntime;D:\Projects\EnJinn\EnJinn\pluggins;D:\Projects\EnJinn\EnJinn\include;D:\Projects\EnJinn\EnJinn\thirdparty\glad\include;D:\Projects\EnJinn\EnJinn\thirdparty\glfw-3.3.2\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl2d\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm;D:\Projects\EnJinn\EnJinn\thirdparty\stb_image\include;D:\Projects\EnJinn\EnJinn\thirdparty\stb_truetype\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl3d;D:\Projects\EnJinn\EnJinn\thirdparty\glui\include;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui\misc\cpp;D:\Projects\EnJinn\EnJinn\thirdparty\safeSafe\include;D:\Projects\EnJinn\EnJinn\thirdparty\profilerLib\include;D:\Projects\EnJinn\EnJinn\thirdparty\box2d-2.4.1\src\..\include;D:\Projects\EnJinn\EnJinn\thirdparty\sushi\include;D:\Projects\EnJinn\EnJinn\thirdparty\ph2d\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>thirdparty\glad\Debug\glad.lib;thirdparty\glfw-3.3.2\src\Debug\glfw3.lib;thirdparty\gl2d\Debug\gl2d.lib;thirdparty\gl3d\Debug\gl3d.lib;thirdparty\glui\Debug\glui.lib;thirdparty\stb_image\Debug\stb_image.lib;thirdparty\stb_truetype\Debug\stb_truetype.lib;thirdparty\imgui-docking\Debug\imgui.lib;thirdparty\safeSafe\Debug\safeSave.lib;thirdparty\box2d-2.4.1\bin\Debug\box2d.lib;thirdparty\sushi\Debug\sushi.lib;thirdparty\ph2d\Debug\ph2d.lib;dwmapi.lib;thirdparty\glfw-3.3.2\src\Debug\glfw3.lib;thirdparty\gl2d\Debug\gl2d.lib;thirdparty\glad\Debug\glad.lib;thirdparty\stb_image\Debug\stb_image.lib;thirdparty\stb_truetype\Debug\stb_truetype.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/Projects/EnJinn/EnJinn/build/Debug/EnJinnGameplay.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>D:/Projects/EnJinn/EnJinn/build/Debug/EnJinnGameplay.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem></SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Projects\EnJinn\EnJinn\core\enjinnSTD;D:\Projects\EnJinn\EnJinn\core\coreConfig;D:\Projects\EnJinn\EnJinn\gameplay;D:\Projects\EnJinn\EnJinn\core\sharedRuntime;D:\Projects\EnJinn\EnJinn\pluggins;D:\Projects\EnJinn\EnJinn\include;D:\Projects\EnJinn\EnJinn\thirdparty\glad\include;D:\Projects\EnJinn\EnJinn\thirdparty\glfw-3.3.2\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl2d\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm;D:\Projects\EnJinn\EnJinn\thirdparty\stb_image\include;D:\Projects\EnJinn\EnJinn\thirdparty\stb_truetype\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl3d;D:\Projects\EnJinn\EnJinn\thirdparty\glui\include;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui\misc\cpp;D:\Projects\EnJinn\EnJinn\thirdparty\safeSafe\include;D:\Projects\EnJinn\EnJinn\thirdparty\profilerLib\include;D:\Projects\EnJinn\EnJinn\thirdparty\box2d-2.4.1\src\..\include;D:\Projects\EnJinn\EnJinn\thirdparty\sushi\include;D:\Projects\EnJinn\EnJinn\thirdparty\ph2d\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;ENJINN_DEVELOPMENT;ENJINN_RESOURCES_PATH="D:/Projects/EnJinn/EnJinn/resources/";ENJINN_ENGINE_RESOURCES_PATH="D:/Projects/EnJinn/EnJinn/engineResources/";_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Release";EnJinnGameplay_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;ENJINN_DEVELOPMENT;ENJINN_RESOURCES_PATH=\"D:/Projects/EnJinn/EnJinn/resources/\";ENJINN_ENGINE_RESOURCES_PATH=\"D:/Projects/EnJinn/EnJinn/engineResources/\";_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Release\";EnJinnGameplay_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Projects\EnJinn\EnJinn\core\enjinnSTD;D:\Projects\EnJinn\EnJinn\core\coreConfig;D:\Projects\EnJinn\EnJinn\gameplay;D:\Projects\EnJinn\EnJinn\core\sharedRuntime;D:\Projects\EnJinn\EnJinn\pluggins;D:\Projects\EnJinn\EnJinn\include;D:\Projects\EnJinn\EnJinn\thirdparty\glad\include;D:\Projects\EnJinn\EnJinn\thirdparty\glfw-3.3.2\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl2d\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm;D:\Projects\EnJinn\EnJinn\thirdparty\stb_image\include;D:\Projects\EnJinn\EnJinn\thirdparty\stb_truetype\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl3d;D:\Projects\EnJinn\EnJinn\thirdparty\glui\include;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui\misc\cpp;D:\Projects\EnJinn\EnJinn\thirdparty\safeSafe\include;D:\Projects\EnJinn\EnJinn\thirdparty\profilerLib\include;D:\Projects\EnJinn\EnJinn\thirdparty\box2d-2.4.1\src\..\include;D:\Projects\EnJinn\EnJinn\thirdparty\sushi\include;D:\Projects\EnJinn\EnJinn\thirdparty\ph2d\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Projects\EnJinn\EnJinn\core\enjinnSTD;D:\Projects\EnJinn\EnJinn\core\coreConfig;D:\Projects\EnJinn\EnJinn\gameplay;D:\Projects\EnJinn\EnJinn\core\sharedRuntime;D:\Projects\EnJinn\EnJinn\pluggins;D:\Projects\EnJinn\EnJinn\include;D:\Projects\EnJinn\EnJinn\thirdparty\glad\include;D:\Projects\EnJinn\EnJinn\thirdparty\glfw-3.3.2\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl2d\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm;D:\Projects\EnJinn\EnJinn\thirdparty\stb_image\include;D:\Projects\EnJinn\EnJinn\thirdparty\stb_truetype\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl3d;D:\Projects\EnJinn\EnJinn\thirdparty\glui\include;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui\misc\cpp;D:\Projects\EnJinn\EnJinn\thirdparty\safeSafe\include;D:\Projects\EnJinn\EnJinn\thirdparty\profilerLib\include;D:\Projects\EnJinn\EnJinn\thirdparty\box2d-2.4.1\src\..\include;D:\Projects\EnJinn\EnJinn\thirdparty\sushi\include;D:\Projects\EnJinn\EnJinn\thirdparty\ph2d\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>thirdparty\glad\Release\glad.lib;thirdparty\glfw-3.3.2\src\Release\glfw3.lib;thirdparty\gl2d\Release\gl2d.lib;thirdparty\gl3d\Release\gl3d.lib;thirdparty\glui\Release\glui.lib;thirdparty\stb_image\Release\stb_image.lib;thirdparty\stb_truetype\Release\stb_truetype.lib;thirdparty\imgui-docking\Release\imgui.lib;thirdparty\safeSafe\Release\safeSave.lib;thirdparty\box2d-2.4.1\bin\Release\box2d.lib;thirdparty\sushi\Release\sushi.lib;thirdparty\ph2d\Release\ph2d.lib;dwmapi.lib;thirdparty\glfw-3.3.2\src\Release\glfw3.lib;thirdparty\gl2d\Release\gl2d.lib;thirdparty\glad\Release\glad.lib;thirdparty\stb_image\Release\stb_image.lib;thirdparty\stb_truetype\Release\stb_truetype.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/Projects/EnJinn/EnJinn/build/Release/EnJinnGameplay.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>D:/Projects/EnJinn/EnJinn/build/Release/EnJinnGameplay.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem></SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Projects\EnJinn\EnJinn\core\enjinnSTD;D:\Projects\EnJinn\EnJinn\core\coreConfig;D:\Projects\EnJinn\EnJinn\gameplay;D:\Projects\EnJinn\EnJinn\core\sharedRuntime;D:\Projects\EnJinn\EnJinn\pluggins;D:\Projects\EnJinn\EnJinn\include;D:\Projects\EnJinn\EnJinn\thirdparty\glad\include;D:\Projects\EnJinn\EnJinn\thirdparty\glfw-3.3.2\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl2d\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm;D:\Projects\EnJinn\EnJinn\thirdparty\stb_image\include;D:\Projects\EnJinn\EnJinn\thirdparty\stb_truetype\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl3d;D:\Projects\EnJinn\EnJinn\thirdparty\glui\include;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui\misc\cpp;D:\Projects\EnJinn\EnJinn\thirdparty\safeSafe\include;D:\Projects\EnJinn\EnJinn\thirdparty\profilerLib\include;D:\Projects\EnJinn\EnJinn\thirdparty\box2d-2.4.1\src\..\include;D:\Projects\EnJinn\EnJinn\thirdparty\sushi\include;D:\Projects\EnJinn\EnJinn\thirdparty\ph2d\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;ENJINN_DEVELOPMENT;ENJINN_RESOURCES_PATH="D:/Projects/EnJinn/EnJinn/resources/";ENJINN_ENGINE_RESOURCES_PATH="D:/Projects/EnJinn/EnJinn/engineResources/";_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="MinSizeRel";EnJinnGameplay_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;ENJINN_DEVELOPMENT;ENJINN_RESOURCES_PATH=\"D:/Projects/EnJinn/EnJinn/resources/\";ENJINN_ENGINE_RESOURCES_PATH=\"D:/Projects/EnJinn/EnJinn/engineResources/\";_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"MinSizeRel\";EnJinnGameplay_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Projects\EnJinn\EnJinn\core\enjinnSTD;D:\Projects\EnJinn\EnJinn\core\coreConfig;D:\Projects\EnJinn\EnJinn\gameplay;D:\Projects\EnJinn\EnJinn\core\sharedRuntime;D:\Projects\EnJinn\EnJinn\pluggins;D:\Projects\EnJinn\EnJinn\include;D:\Projects\EnJinn\EnJinn\thirdparty\glad\include;D:\Projects\EnJinn\EnJinn\thirdparty\glfw-3.3.2\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl2d\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm;D:\Projects\EnJinn\EnJinn\thirdparty\stb_image\include;D:\Projects\EnJinn\EnJinn\thirdparty\stb_truetype\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl3d;D:\Projects\EnJinn\EnJinn\thirdparty\glui\include;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui\misc\cpp;D:\Projects\EnJinn\EnJinn\thirdparty\safeSafe\include;D:\Projects\EnJinn\EnJinn\thirdparty\profilerLib\include;D:\Projects\EnJinn\EnJinn\thirdparty\box2d-2.4.1\src\..\include;D:\Projects\EnJinn\EnJinn\thirdparty\sushi\include;D:\Projects\EnJinn\EnJinn\thirdparty\ph2d\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Projects\EnJinn\EnJinn\core\enjinnSTD;D:\Projects\EnJinn\EnJinn\core\coreConfig;D:\Projects\EnJinn\EnJinn\gameplay;D:\Projects\EnJinn\EnJinn\core\sharedRuntime;D:\Projects\EnJinn\EnJinn\pluggins;D:\Projects\EnJinn\EnJinn\include;D:\Projects\EnJinn\EnJinn\thirdparty\glad\include;D:\Projects\EnJinn\EnJinn\thirdparty\glfw-3.3.2\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl2d\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm;D:\Projects\EnJinn\EnJinn\thirdparty\stb_image\include;D:\Projects\EnJinn\EnJinn\thirdparty\stb_truetype\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl3d;D:\Projects\EnJinn\EnJinn\thirdparty\glui\include;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui\misc\cpp;D:\Projects\EnJinn\EnJinn\thirdparty\safeSafe\include;D:\Projects\EnJinn\EnJinn\thirdparty\profilerLib\include;D:\Projects\EnJinn\EnJinn\thirdparty\box2d-2.4.1\src\..\include;D:\Projects\EnJinn\EnJinn\thirdparty\sushi\include;D:\Projects\EnJinn\EnJinn\thirdparty\ph2d\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>thirdparty\glad\MinSizeRel\glad.lib;thirdparty\glfw-3.3.2\src\MinSizeRel\glfw3.lib;thirdparty\gl2d\MinSizeRel\gl2d.lib;thirdparty\gl3d\MinSizeRel\gl3d.lib;thirdparty\glui\MinSizeRel\glui.lib;thirdparty\stb_image\MinSizeRel\stb_image.lib;thirdparty\stb_truetype\MinSizeRel\stb_truetype.lib;thirdparty\imgui-docking\MinSizeRel\imgui.lib;thirdparty\safeSafe\MinSizeRel\safeSave.lib;thirdparty\box2d-2.4.1\bin\MinSizeRel\box2d.lib;thirdparty\sushi\MinSizeRel\sushi.lib;thirdparty\ph2d\MinSizeRel\ph2d.lib;dwmapi.lib;thirdparty\glfw-3.3.2\src\MinSizeRel\glfw3.lib;thirdparty\gl2d\MinSizeRel\gl2d.lib;thirdparty\glad\MinSizeRel\glad.lib;thirdparty\stb_image\MinSizeRel\stb_image.lib;thirdparty\stb_truetype\MinSizeRel\stb_truetype.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/Projects/EnJinn/EnJinn/build/MinSizeRel/EnJinnGameplay.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>D:/Projects/EnJinn/EnJinn/build/MinSizeRel/EnJinnGameplay.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem></SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Projects\EnJinn\EnJinn\core\enjinnSTD;D:\Projects\EnJinn\EnJinn\core\coreConfig;D:\Projects\EnJinn\EnJinn\gameplay;D:\Projects\EnJinn\EnJinn\core\sharedRuntime;D:\Projects\EnJinn\EnJinn\pluggins;D:\Projects\EnJinn\EnJinn\include;D:\Projects\EnJinn\EnJinn\thirdparty\glad\include;D:\Projects\EnJinn\EnJinn\thirdparty\glfw-3.3.2\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl2d\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm;D:\Projects\EnJinn\EnJinn\thirdparty\stb_image\include;D:\Projects\EnJinn\EnJinn\thirdparty\stb_truetype\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl3d;D:\Projects\EnJinn\EnJinn\thirdparty\glui\include;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui\misc\cpp;D:\Projects\EnJinn\EnJinn\thirdparty\safeSafe\include;D:\Projects\EnJinn\EnJinn\thirdparty\profilerLib\include;D:\Projects\EnJinn\EnJinn\thirdparty\box2d-2.4.1\src\..\include;D:\Projects\EnJinn\EnJinn\thirdparty\sushi\include;D:\Projects\EnJinn\EnJinn\thirdparty\ph2d\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;ENJINN_DEVELOPMENT;ENJINN_RESOURCES_PATH="D:/Projects/EnJinn/EnJinn/resources/";ENJINN_ENGINE_RESOURCES_PATH="D:/Projects/EnJinn/EnJinn/engineResources/";_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="RelWithDebInfo";EnJinnGameplay_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;ENJINN_DEVELOPMENT;ENJINN_RESOURCES_PATH=\"D:/Projects/EnJinn/EnJinn/resources/\";ENJINN_ENGINE_RESOURCES_PATH=\"D:/Projects/EnJinn/EnJinn/engineResources/\";_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"RelWithDebInfo\";EnJinnGameplay_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Projects\EnJinn\EnJinn\core\enjinnSTD;D:\Projects\EnJinn\EnJinn\core\coreConfig;D:\Projects\EnJinn\EnJinn\gameplay;D:\Projects\EnJinn\EnJinn\core\sharedRuntime;D:\Projects\EnJinn\EnJinn\pluggins;D:\Projects\EnJinn\EnJinn\include;D:\Projects\EnJinn\EnJinn\thirdparty\glad\include;D:\Projects\EnJinn\EnJinn\thirdparty\glfw-3.3.2\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl2d\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm;D:\Projects\EnJinn\EnJinn\thirdparty\stb_image\include;D:\Projects\EnJinn\EnJinn\thirdparty\stb_truetype\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl3d;D:\Projects\EnJinn\EnJinn\thirdparty\glui\include;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui\misc\cpp;D:\Projects\EnJinn\EnJinn\thirdparty\safeSafe\include;D:\Projects\EnJinn\EnJinn\thirdparty\profilerLib\include;D:\Projects\EnJinn\EnJinn\thirdparty\box2d-2.4.1\src\..\include;D:\Projects\EnJinn\EnJinn\thirdparty\sushi\include;D:\Projects\EnJinn\EnJinn\thirdparty\ph2d\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Projects\EnJinn\EnJinn\core\enjinnSTD;D:\Projects\EnJinn\EnJinn\core\coreConfig;D:\Projects\EnJinn\EnJinn\gameplay;D:\Projects\EnJinn\EnJinn\core\sharedRuntime;D:\Projects\EnJinn\EnJinn\pluggins;D:\Projects\EnJinn\EnJinn\include;D:\Projects\EnJinn\EnJinn\thirdparty\glad\include;D:\Projects\EnJinn\EnJinn\thirdparty\glfw-3.3.2\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl2d\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm\include;D:\Projects\EnJinn\EnJinn\thirdparty\glm;D:\Projects\EnJinn\EnJinn\thirdparty\stb_image\include;D:\Projects\EnJinn\EnJinn\thirdparty\stb_truetype\include;D:\Projects\EnJinn\EnJinn\thirdparty\gl3d;D:\Projects\EnJinn\EnJinn\thirdparty\glui\include;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui;D:\Projects\EnJinn\EnJinn\thirdparty\imgui-docking\imgui\misc\cpp;D:\Projects\EnJinn\EnJinn\thirdparty\safeSafe\include;D:\Projects\EnJinn\EnJinn\thirdparty\profilerLib\include;D:\Projects\EnJinn\EnJinn\thirdparty\box2d-2.4.1\src\..\include;D:\Projects\EnJinn\EnJinn\thirdparty\sushi\include;D:\Projects\EnJinn\EnJinn\thirdparty\ph2d\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>thirdparty\glad\RelWithDebInfo\glad.lib;thirdparty\glfw-3.3.2\src\RelWithDebInfo\glfw3.lib;thirdparty\gl2d\RelWithDebInfo\gl2d.lib;thirdparty\gl3d\RelWithDebInfo\gl3d.lib;thirdparty\glui\RelWithDebInfo\glui.lib;thirdparty\stb_image\RelWithDebInfo\stb_image.lib;thirdparty\stb_truetype\RelWithDebInfo\stb_truetype.lib;thirdparty\imgui-docking\RelWithDebInfo\imgui.lib;thirdparty\safeSafe\RelWithDebInfo\safeSave.lib;thirdparty\box2d-2.4.1\bin\RelWithDebInfo\box2d.lib;thirdparty\sushi\RelWithDebInfo\sushi.lib;thirdparty\ph2d\RelWithDebInfo\ph2d.lib;dwmapi.lib;thirdparty\glfw-3.3.2\src\RelWithDebInfo\glfw3.lib;thirdparty\gl2d\RelWithDebInfo\gl2d.lib;thirdparty\glad\RelWithDebInfo\glad.lib;thirdparty\stb_image\RelWithDebInfo\stb_image.lib;thirdparty\stb_truetype\RelWithDebInfo\stb_truetype.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/Projects/EnJinn/EnJinn/build/RelWithDebInfo/EnJinnGameplay.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>D:/Projects/EnJinn/EnJinn/build/RelWithDebInfo/EnJinnGameplay.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem></SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Projects\EnJinn\EnJinn\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Projects/EnJinn/EnJinn/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Projects/EnJinn/EnJinn -BD:/Projects/EnJinn/EnJinn/build --check-stamp-file D:/Projects/EnJinn/EnJinn/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\WindowsPaths.cmake;D:\Projects\EnJinn\EnJinn\build\CMakeFiles\4.2.1\CMakeCCompiler.cmake;D:\Projects\EnJinn\EnJinn\build\CMakeFiles\4.2.1\CMakeCXXCompiler.cmake;D:\Projects\EnJinn\EnJinn\build\CMakeFiles\4.2.1\CMakeRCCompiler.cmake;D:\Projects\EnJinn\EnJinn\build\CMakeFiles\4.2.1\CMakeSystem.cmake;D:\Projects\EnJinn\EnJinn\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Projects\EnJinn\EnJinn\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Projects/EnJinn/EnJinn/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Projects/EnJinn/EnJinn -BD:/Projects/EnJinn/EnJinn/build --check-stamp-file D:/Projects/EnJinn/EnJinn/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\WindowsPaths.cmake;D:\Projects\EnJinn\EnJinn\build\CMakeFiles\4.2.1\CMakeCCompiler.cmake;D:\Projects\EnJinn\EnJinn\build\CMakeFiles\4.2.1\CMakeCXXCompiler.cmake;D:\Projects\EnJinn\EnJinn\build\CMakeFiles\4.2.1\CMakeRCCompiler.cmake;D:\Projects\EnJinn\EnJinn\build\CMakeFiles\4.2.1\CMakeSystem.cmake;D:\Projects\EnJinn\EnJinn\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Projects\EnJinn\EnJinn\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Projects/EnJinn/EnJinn/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Projects/EnJinn/EnJinn -BD:/Projects/EnJinn/EnJinn/build --check-stamp-file D:/Projects/EnJinn/EnJinn/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\WindowsPaths.cmake;D:\Projects\EnJinn\EnJinn\build\CMakeFiles\4.2.1\CMakeCCompiler.cmake;D:\Projects\EnJinn\EnJinn\build\CMakeFiles\4.2.1\CMakeCXXCompiler.cmake;D:\Projects\EnJinn\EnJinn\build\CMakeFiles\4.2.1\CMakeRCCompiler.cmake;D:\Projects\EnJinn\EnJinn\build\CMakeFiles\4.2.1\CMakeSystem.cmake;D:\Projects\EnJinn\EnJinn\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Projects\EnJinn\EnJinn\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Projects/EnJinn/EnJinn/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Projects/EnJinn/EnJinn -BD:/Projects/EnJinn/EnJinn/build --check-stamp-file D:/Projects/EnJinn/EnJinn/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.2\Modules\Platform\WindowsPaths.cmake;D:\Projects\EnJinn\EnJinn\build\CMakeFiles\4.2.1\CMakeCCompiler.cmake;D:\Projects\EnJinn\EnJinn\build\CMakeFiles\4.2.1\CMakeCXXCompiler.cmake;D:\Projects\EnJinn\EnJinn\build\CMakeFiles\4.2.1\CMakeRCCompiler.cmake;D:\Projects\EnJinn\EnJinn\build\CMakeFiles\4.2.1\CMakeSystem.cmake;D:\Projects\EnJinn\EnJinn\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Projects\EnJinn\EnJinn\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\pluggins\pluggins\sushiViewer\sushiViewer.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\enjinnSTD\engineLibraresSupport\engineGL2DSupport.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\enjinnSTD\engineLibraresSupport\engineGL3DSupport.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\enjinnSTD\engineLibraresSupport\engineSafeSaveSupport.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\enjinnSTD\engineLibraresSupport\ph2d\engineph2dSupport.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\enjinnSTD\engineLibraresSupport\sushi\engineSushiSupport.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\enjinnSTD\enjinnAllocator\freeListAllocator.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\enjinnSTD\enjinnGL\frameBuffer.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\enjinnSTD\fileChanged.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\enjinnSTD\fileManipulation\fileManipulation.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\enjinnSTD\logs\assert.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\enjinnSTD\logs\log.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\enjinnSTD\stringManipulation\stringManipulation.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\enjinnSTD\validatePath.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\gameplay\containers.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\gameplay\containers\hollowknight\hollowknight.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\gameplay\containers\isometricGame\isometricGame.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\gameplay\containers\isometricGame\isometricGameEditor.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\gameplay\containers\mario\mario.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\gameplay\containers\mario\marioCommon.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\gameplay\containers\milk\milk.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\gameplay\containers\milk\physics.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\gameplay\containers\minecraftDungeons\blocks.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\gameplay\containers\minecraftDungeons\mcDungeons.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\gameplay\containers\silksong\silkSong.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\gameplay\dll\dllMain.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\sharedRuntime\assetManager.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\sharedRuntime\enjinnConsoleManager\enjinnConsoleWindow.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\sharedRuntime\enjinnImgui\enjinnImgui.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\sharedRuntime\globalAllocator\globalAllocator.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\sharedRuntime\memoryArena\memoryArena.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\sharedRuntime\pushNotification\pushNotification.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\sharedRuntime\sceneGraph\node.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\sharedRuntime\sceneGraph\scene.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\sharedRuntime\shortcutApi\shortcutApi.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\sharedRuntime\windowSystemm\callbacks.cpp" />
+    <ClCompile Include="D:\Projects\EnJinn\EnJinn\core\sharedRuntime\windowSystemm\window.cpp" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="D:\Projects\EnJinn\EnJinn\build\ZERO_CHECK.vcxproj">
+      <Project>{13FED478-5964-31F9-8825-2087599B6401}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\EnJinn\EnJinn\build\thirdparty\box2d-2.4.1\src\box2d.vcxproj">
+      <Project>{5F6D7087-B8DF-36D3-BE26-3C20953BE480}</Project>
+      <Name>box2d</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\EnJinn\EnJinn\build\thirdparty\gl2d\gl2d.vcxproj">
+      <Project>{3773FAAA-717A-3F7F-8982-F6BC223E4283}</Project>
+      <Name>gl2d</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\EnJinn\EnJinn\build\thirdparty\gl3d\gl3d.vcxproj">
+      <Project>{BF234E09-71B9-3679-B11C-CC6EB200DAE6}</Project>
+      <Name>gl3d</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\EnJinn\EnJinn\build\thirdparty\glad\glad.vcxproj">
+      <Project>{739FD30F-1CCE-340A-928B-BB72C48D99F2}</Project>
+      <Name>glad</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\EnJinn\EnJinn\build\thirdparty\glfw-3.3.2\src\glfw.vcxproj">
+      <Project>{B48A0306-F15C-35DD-B12A-9B61D470DBAF}</Project>
+      <Name>glfw</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\EnJinn\EnJinn\build\thirdparty\glui\glui.vcxproj">
+      <Project>{5524B3BB-556A-3E2D-99BA-4FC9F600B9FF}</Project>
+      <Name>glui</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\EnJinn\EnJinn\build\thirdparty\imgui-docking\imgui.vcxproj">
+      <Project>{C82E404A-D11A-36D2-B425-4AC5AC72D0C6}</Project>
+      <Name>imgui</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\EnJinn\EnJinn\build\thirdparty\ph2d\ph2d.vcxproj">
+      <Project>{EBADB39B-0472-355D-8B50-617394D3FA58}</Project>
+      <Name>ph2d</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\EnJinn\EnJinn\build\thirdparty\safeSafe\safeSave.vcxproj">
+      <Project>{3A2C6F5D-84BA-3D9B-B00C-63EFE90158D2}</Project>
+      <Name>safeSave</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\EnJinn\EnJinn\build\thirdparty\stb_image\stb_image.vcxproj">
+      <Project>{E0DE02EE-1D6A-345A-ADF5-9C18CE738C11}</Project>
+      <Name>stb_image</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\EnJinn\EnJinn\build\thirdparty\stb_truetype\stb_truetype.vcxproj">
+      <Project>{2AC626D6-89E7-3298-ADF0-8C557D21E08B}</Project>
+      <Name>stb_truetype</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Projects\EnJinn\EnJinn\build\thirdparty\sushi\sushi.vcxproj">
+      <Project>{80CF535E-C009-3DBF-AC1D-2E9BA5067250}</Project>
+      <Name>sushi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,23 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/Projects/EnJinn/EnJinn/test-build/cmake_install.cmake",
+		"D:/Projects/EnJinn/EnJinn/test-build/thirdparty/glfw-3.3.2/cmake_install.cmake",
+		"D:/Projects/EnJinn/EnJinn/test-build/thirdparty/glfw-3.3.2/src/cmake_install.cmake",
+		"D:/Projects/EnJinn/EnJinn/test-build/thirdparty/glm/cmake_install.cmake",
+		"D:/Projects/EnJinn/EnJinn/test-build/thirdparty/imgui-docking/cmake_install.cmake",
+		"D:/Projects/EnJinn/EnJinn/test-build/thirdparty/box2d-2.4.1/cmake_install.cmake",
+		"D:/Projects/EnJinn/EnJinn/test-build/thirdparty/box2d-2.4.1/src/cmake_install.cmake",
+		"D:/Projects/EnJinn/EnJinn/test-build/thirdparty/stb_image/cmake_install.cmake",
+		"D:/Projects/EnJinn/EnJinn/test-build/thirdparty/stb_truetype/cmake_install.cmake",
+		"D:/Projects/EnJinn/EnJinn/test-build/thirdparty/glad/cmake_install.cmake",
+		"D:/Projects/EnJinn/EnJinn/test-build/thirdparty/gl2d/cmake_install.cmake",
+		"D:/Projects/EnJinn/EnJinn/test-build/thirdparty/gl3d/cmake_install.cmake",
+		"D:/Projects/EnJinn/EnJinn/test-build/thirdparty/glui/cmake_install.cmake",
+		"D:/Projects/EnJinn/EnJinn/test-build/thirdparty/safeSafe/cmake_install.cmake",
+		"D:/Projects/EnJinn/EnJinn/test-build/thirdparty/profilerLib/cmake_install.cmake",
+		"D:/Projects/EnJinn/EnJinn/test-build/thirdparty/sushi/cmake_install.cmake",
+		"D:/Projects/EnJinn/EnJinn/test-build/thirdparty/ph2d/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

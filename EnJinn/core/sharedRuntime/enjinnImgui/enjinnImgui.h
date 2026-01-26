@@ -1,0 +1,149 @@
+
+
+#pragma once
+#include <enjinnConfig.h>
+
+
+
+#include "imgui.h"
+#include "imfilebrowser.h"
+
+
+#include "backends/imgui_impl_glfw.h"
+#include "backends/imgui_impl_opengl3.h"
+#include "imguiThemes.h"
+
+
+#include <IconsFontAwesome6.h>
+#include <enjinnAllocator/freeListAllocator.h>
+
+
+#include <enjinnContext.h>
+#include <glm/vec4.hpp>
+
+
+#include <vector>
+#include <string>
+
+
+#ifdef ENJINN_WINDOWS
+#define IM_PRId64   "I64d"
+#define IM_PRIu64   "I64u"
+#define IM_PRIx64   "I64X"
+#else
+#define IM_PRId64   "lld"
+#define IM_PRIu64   "llu"
+#define IM_PRIx64   "llX"
+#endif
+
+
+namespace enjinn
+{
+    namespace enjinnImgui
+    {
+
+
+        void *imguiCustomAlloc(size_t sz, void *user_data);
+        void imguiCustomFree(void *ptr, void *user_data);
+
+
+        void setImguiAllocator(enjinn::memory::FreeListAllocator &allocator);
+
+
+        void initImgui(EnJinnContext &enjinnContext);
+        void setImguiContext(EnJinnContext enjinnContext);
+        void imguiStartFrame(EnJinnContext enjinnContext);
+        void imguiEndFrame(EnJinnContext enjinnContext);
+
+
+        namespace EditorImguiIds
+        {
+            enum
+            {
+
+
+                idsCount = 4000
+            };
+        }
+
+
+        struct ImGuiIdsManager
+        {
+            int counter = EditorImguiIds::idsCount + 1;
+
+
+            //returns the first id. (count) ids will be reserved.
+            //if you want 5 ids and the function returns 10, then ids 10 11 12 13 14 will be reserved.
+            int getImguiIds(unsigned int count = 1)
+            {
+                if (count == 0) { return 0; }
+                auto c = counter;
+                counter += count;
+                return c;
+            }
+        };
+
+
+
+        bool redButton(const char *label, const ImVec2 &size_arg = {});
+        bool greenButton(const char *label, const ImVec2 &size_arg = {});
+        bool blueButton(const char *label, const ImVec2 &size_arg = {});
+        bool colouredButton(const char *label, glm::vec4 color, const ImVec2 &size_arg = {});
+
+
+        bool ColorEdit4Swatches(const char *label, float col[4], ImGuiColorEditFlags flags = 0);
+
+
+        bool BeginChildFrameColoured(ImGuiID id,
+            glm::vec4 color,
+            const ImVec2 &size = {},
+            ImGuiWindowFlags extra_flags = 0);
+
+
+        void addErrorSymbol();
+        void addWarningSymbol();
+
+
+        void helpMarker(const char *desc);
+        //todo another namespace for enjinn imgui addons
+
+
+        void alignForWidth(float width, float alignment = 0.5f);
+        
+        void displayMemorySizeValue(size_t value);
+
+
+        //todo move to internal
+        void displayMemorySizeToggle();
+
+
+        struct FileSelector
+        {
+
+
+            FileSelector() {};
+
+
+            FileSelector(std::string title, std::string pwd, std::vector<std::string> typeFilters)
+            {
+                setInfo(std::move(title), std::move(pwd), std::move(typeFilters));
+            }
+
+
+            void setInfo(std::string title, std::string pwd, std::vector<std::string> typeFilters);
+            
+            char file[260] = {};
+            ImGui::FileBrowser fileBrowser;
+
+
+            //returns true on new file selected
+            bool run(int id);
+        };
+
+
+        void removeFocusToCurrentWindow();
+
+
+    };
+};
+

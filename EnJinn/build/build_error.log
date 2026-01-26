@@ -1,0 +1,41 @@
+MSBuild version 17.14.23+b0019275e for .NET Framework
+
+  Checking File Globs
+  box2d.vcxproj -> D:\Projects\EnJinn\EnJinn\build\thirdparty\box2d-2.4.1\bin\Debug\box2d.lib
+  glad.vcxproj -> D:\Projects\EnJinn\EnJinn\build\thirdparty\glad\Debug\glad.lib
+  stb_image.vcxproj -> D:\Projects\EnJinn\EnJinn\build\thirdparty\stb_image\Debug\stb_image.lib
+  stb_truetype.vcxproj -> D:\Projects\EnJinn\EnJinn\build\thirdparty\stb_truetype\Debug\stb_truetype.lib
+  gl2d.vcxproj -> D:\Projects\EnJinn\EnJinn\build\thirdparty\gl2d\Debug\gl2d.lib
+  gl3d.vcxproj -> D:\Projects\EnJinn\EnJinn\build\thirdparty\gl3d\Debug\gl3d.lib
+  glfw.vcxproj -> D:\Projects\EnJinn\EnJinn\build\thirdparty\glfw-3.3.2\src\Debug\glfw3.lib
+  glui.vcxproj -> D:\Projects\EnJinn\EnJinn\build\thirdparty\glui\Debug\glui.lib
+  imgui.vcxproj -> D:\Projects\EnJinn\EnJinn\build\thirdparty\imgui-docking\Debug\imgui.lib
+  ph2d.vcxproj -> D:\Projects\EnJinn\EnJinn\build\thirdparty\ph2d\Debug\ph2d.lib
+  safeSave.vcxproj -> D:\Projects\EnJinn\EnJinn\build\thirdparty\safeSafe\Debug\safeSave.lib
+  sushi.vcxproj -> D:\Projects\EnJinn\EnJinn\build\thirdparty\sushi\Debug\sushi.lib
+  assetManagerWindow.cpp
+D:\Projects\EnJinn\EnJinn\core\enjinnEditor\assetManagerWindow\assetManagerWindow.cpp(302,46): error C2665: 'enjinn::ContainerManager::createContainer': no overloaded function could convert all the argument types [D:\Projects\EnJinn\EnJinn\build\EnJinnCore.vcxproj]
+      D:\Projects\EnJinn\EnJinn\core\enjinnRuntime\containerManager\containerManager.h(30,17):
+      could be 'enjinn::containerId_t enjinn::ContainerManager::createContainer(std::string,enjinn::LoadedDll &,enjinn::LogManager &,enjinn::enjinnImgui::ImGuiIdsManager &,enjinn::ConsoleWindow *,std::string &,size_t)'
+          D:\Projects\EnJinn\EnJinn\core\enjinnEditor\assetManagerWindow\assetManagerWindow.cpp(302,46):
+          'enjinn::containerId_t enjinn::ContainerManager::createContainer(std::string,enjinn::LoadedDll &,enjinn::LogManager &,enjinn::enjinnImgui::ImGuiIdsManager &,enjinn::ConsoleWindow *,std::string &,size_t)': cannot convert argument 6 from 'const std::string' to 'std::string &'
+              D:\Projects\EnJinn\EnJinn\core\enjinnEditor\assetManagerWindow\assetManagerWindow.cpp(302,137):
+              Conversion loses qualifiers
+      D:\Projects\EnJinn\EnJinn\core\enjinnRuntime\containerManager\containerManager.h(25,17):
+      or       'enjinn::containerId_t enjinn::ContainerManager::createContainer(enjinn::ContainerInformation,enjinn::LoadedDll &,enjinn::LogManager &,enjinn::enjinnImgui::ImGuiIdsManager &,enjinn::ConsoleWindow *,std::string &,size_t)'
+          D:\Projects\EnJinn\EnJinn\core\enjinnEditor\assetManagerWindow\assetManagerWindow.cpp(302,46):
+          'enjinn::containerId_t enjinn::ContainerManager::createContainer(enjinn::ContainerInformation,enjinn::LoadedDll &,enjinn::LogManager &,enjinn::enjinnImgui::ImGuiIdsManager &,enjinn::ConsoleWindow *,std::string &,size_t)': cannot convert argument 1 from '_Ty' to 'enjinn::ContainerInformation'
+          with
+          [
+              _Ty=std::string
+          ]
+              D:\Projects\EnJinn\EnJinn\core\enjinnEditor\assetManagerWindow\assetManagerWindow.cpp(302,74):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      D:\Projects\EnJinn\EnJinn\core\enjinnEditor\assetManagerWindow\assetManagerWindow.cpp(302,46):
+      while trying to match the argument list '(_Ty, enjinn::LoadedDll, enjinn::LogManager, enjinn::enjinnImgui::ImGuiIdsManager, enjinn::ConsoleWindow *, const std::string)'
+          with
+          [
+              _Ty=std::string
+          ]
+  
+D:\Projects\EnJinn\EnJinn\core\enjinnEditor\assetManagerWindow\assetManagerWindow.cpp(337,32): error C2065: 'padding': undeclared identifier [D:\Projects\EnJinn\EnJinn\build\EnJinnCore.vcxproj]

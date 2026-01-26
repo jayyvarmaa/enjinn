@@ -11,6 +11,7 @@
       "features": ["docking-experimental", "glfw-binding", "opengl3-binding"]
     },
     "box2d",
-    "stb"
+    "stb",
+    "catch2"
   ]
 }

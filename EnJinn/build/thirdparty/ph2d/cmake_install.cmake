@@ -1,4 +1,4 @@
-# Install script for directory: D:/Projects/EnJinn/EnJinn/thirdparty/ph2d
+# Install script for directory: D:/Projects/EnJinn/Enjinn/thirdparty/ph2d
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

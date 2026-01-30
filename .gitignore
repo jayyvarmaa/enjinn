@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -138,7 +137,7 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
-=======
+
 # Build directories
 build/
 cmake-build-*/
@@ -207,6 +206,23 @@ $RECYCLE.BIN/
 # Unity project (moved/deleted)
 EnJinn/docs/cube/
 
+# Documentation files (working/temporary)
+Enjinn-Unity-Level-Architecture.md
+BUILD_FIX_STEPS.md
+BUILD.md
+FONTAWESOME6_SETUP.md
+MANUAL_FIX_GUIDE.md
+MIGRATION.md
+NEXT_STEPS.md
+OPTIMIZATION_COMPLETE.md
+PROPERTY_DRAWER_USAGE.md
+SECRET_PHASE_IMPLEMENTATION.md
+SETUP.md
+UI_SYSTEM_DOCUMENTATION.md
+
+# Generated images
+generated-image*.png
+
 # Runtime generated directories (engine settings, window state)
 enjinn/
 EnJinn/enjinn/
@@ -230,4 +246,3 @@ EnJinn/test-build/
 # Executables
 *.out
 *.app
->>>>>>> 7af995e (first commit)

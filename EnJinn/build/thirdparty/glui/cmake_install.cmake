@@ -1,4 +1,4 @@
-# Install script for directory: D:/Projects/EnJinn/EnJinn/thirdparty/glui
+# Install script for directory: D:/Projects/EnJinn/Enjinn/thirdparty/glui
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

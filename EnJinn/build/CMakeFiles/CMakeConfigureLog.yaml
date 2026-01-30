@@ -104,7 +104,7 @@ events:
       The output was:
       0
       MSBuild version 17.14.23+b0019275e for .NET Framework
-      Build started 26-01-2026 14:55:39.
+      Build started 31-01-2026 01:29:28.
       
       Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\4.2.1\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -133,7 +133,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:00.65
+      Time Elapsed 00:00:00.52
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -173,7 +173,7 @@ events:
       - "C:/oraclexe/app/oracle/product/11.2.0/server/bin/"
       - "C:/Python313/Scripts/"
       - "C:/Python313/"
-      - "D:/Projects/EnJinn/EnJinn/build/%OLD_PATH%/"
+      - "D:/Projects/EnJinn/Enjinn/build/%OLD_PATH%/"
       - "C:/Program Files/Java/jdk-17/bin/"
       - "C:/Android/platform-tools/"
       - "C:/Program Files/dotnet/"
@@ -298,7 +298,7 @@ events:
       - "C:/oraclexe/app/oracle/product/11.2.0/server/bin/"
       - "C:/Python313/Scripts/"
       - "C:/Python313/"
-      - "D:/Projects/EnJinn/EnJinn/build/%OLD_PATH%/"
+      - "D:/Projects/EnJinn/Enjinn/build/%OLD_PATH%/"
       - "C:/Program Files/Java/jdk-17/bin/"
       - "C:/Android/platform-tools/"
       - "C:/Program Files/dotnet/"
@@ -360,9 +360,9 @@ events:
       - "C:/Python313/lld-link.com"
       - "C:/Python313/lld-link.exe"
       - "C:/Python313/lld-link"
-      - "D:/Projects/EnJinn/EnJinn/build/%OLD_PATH%/lld-link.com"
-      - "D:/Projects/EnJinn/EnJinn/build/%OLD_PATH%/lld-link.exe"
-      - "D:/Projects/EnJinn/EnJinn/build/%OLD_PATH%/lld-link"
+      - "D:/Projects/EnJinn/Enjinn/build/%OLD_PATH%/lld-link.com"
+      - "D:/Projects/EnJinn/Enjinn/build/%OLD_PATH%/lld-link.exe"
+      - "D:/Projects/EnJinn/Enjinn/build/%OLD_PATH%/lld-link"
       - "C:/Program Files/Java/jdk-17/bin/lld-link.com"
       - "C:/Program Files/Java/jdk-17/bin/lld-link.exe"
       - "C:/Program Files/Java/jdk-17/bin/lld-link"
@@ -555,7 +555,7 @@ events:
       - "C:/oraclexe/app/oracle/product/11.2.0/server/bin/"
       - "C:/Python313/Scripts/"
       - "C:/Python313/"
-      - "D:/Projects/EnJinn/EnJinn/build/%OLD_PATH%/"
+      - "D:/Projects/EnJinn/Enjinn/build/%OLD_PATH%/"
       - "C:/Program Files/Java/jdk-17/bin/"
       - "C:/Android/platform-tools/"
       - "C:/Program Files/dotnet/"
@@ -678,7 +678,7 @@ events:
       - "C:/oraclexe/app/oracle/product/11.2.0/server/bin/"
       - "C:/Python313/Scripts/"
       - "C:/Python313/"
-      - "D:/Projects/EnJinn/EnJinn/build/%OLD_PATH%/"
+      - "D:/Projects/EnJinn/Enjinn/build/%OLD_PATH%/"
       - "C:/Program Files/Java/jdk-17/bin/"
       - "C:/Android/platform-tools/"
       - "C:/Program Files/dotnet/"
@@ -740,9 +740,9 @@ events:
       - "C:/Python313/mt.com"
       - "C:/Python313/mt.exe"
       - "C:/Python313/mt"
-      - "D:/Projects/EnJinn/EnJinn/build/%OLD_PATH%/mt.com"
-      - "D:/Projects/EnJinn/EnJinn/build/%OLD_PATH%/mt.exe"
-      - "D:/Projects/EnJinn/EnJinn/build/%OLD_PATH%/mt"
+      - "D:/Projects/EnJinn/Enjinn/build/%OLD_PATH%/mt.com"
+      - "D:/Projects/EnJinn/Enjinn/build/%OLD_PATH%/mt.exe"
+      - "D:/Projects/EnJinn/Enjinn/build/%OLD_PATH%/mt"
       - "C:/Program Files/Java/jdk-17/bin/mt.com"
       - "C:/Program Files/Java/jdk-17/bin/mt.exe"
       - "C:/Program Files/Java/jdk-17/bin/mt"
@@ -935,7 +935,7 @@ events:
       - "C:/oraclexe/app/oracle/product/11.2.0/server/bin/"
       - "C:/Python313/Scripts/"
       - "C:/Python313/"
-      - "D:/Projects/EnJinn/EnJinn/build/%OLD_PATH%/"
+      - "D:/Projects/EnJinn/Enjinn/build/%OLD_PATH%/"
       - "C:/Program Files/Java/jdk-17/bin/"
       - "C:/Android/platform-tools/"
       - "C:/Program Files/dotnet/"
@@ -1126,7 +1126,7 @@ events:
       The output was:
       0
       MSBuild version 17.14.23+b0019275e for .NET Framework
-      Build started 26-01-2026 14:55:40.
+      Build started 31-01-2026 01:29:28.
       
       Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\4.2.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -1155,7 +1155,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:00.63
+      Time Elapsed 00:00:00.51
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -1195,7 +1195,7 @@ events:
       - "C:/oraclexe/app/oracle/product/11.2.0/server/bin/"
       - "C:/Python313/Scripts/"
       - "C:/Python313/"
-      - "D:/Projects/EnJinn/EnJinn/build/%OLD_PATH%/"
+      - "D:/Projects/EnJinn/Enjinn/build/%OLD_PATH%/"
       - "C:/Program Files/Java/jdk-17/bin/"
       - "C:/Android/platform-tools/"
       - "C:/Program Files/dotnet/"
@@ -1257,9 +1257,9 @@ events:
       - "C:/Python313/lld-link.com"
       - "C:/Python313/lld-link.exe"
       - "C:/Python313/lld-link"
-      - "D:/Projects/EnJinn/EnJinn/build/%OLD_PATH%/lld-link.com"
-      - "D:/Projects/EnJinn/EnJinn/build/%OLD_PATH%/lld-link.exe"
-      - "D:/Projects/EnJinn/EnJinn/build/%OLD_PATH%/lld-link"
+      - "D:/Projects/EnJinn/Enjinn/build/%OLD_PATH%/lld-link.com"
+      - "D:/Projects/EnJinn/Enjinn/build/%OLD_PATH%/lld-link.exe"
+      - "D:/Projects/EnJinn/Enjinn/build/%OLD_PATH%/lld-link"
       - "C:/Program Files/Java/jdk-17/bin/lld-link.com"
       - "C:/Program Files/Java/jdk-17/bin/lld-link.exe"
       - "C:/Program Files/Java/jdk-17/bin/lld-link"
@@ -1454,7 +1454,7 @@ events:
       - "C:/oraclexe/app/oracle/product/11.2.0/server/bin/"
       - "C:/Python313/Scripts/"
       - "C:/Python313/"
-      - "D:/Projects/EnJinn/EnJinn/build/%OLD_PATH%/"
+      - "D:/Projects/EnJinn/Enjinn/build/%OLD_PATH%/"
       - "C:/Program Files/Java/jdk-17/bin/"
       - "C:/Android/platform-tools/"
       - "C:/Program Files/dotnet/"
@@ -1525,9 +1525,9 @@ events:
       - "C:/Python313/rc.com"
       - "C:/Python313/rc.exe"
       - "C:/Python313/rc"
-      - "D:/Projects/EnJinn/EnJinn/build/%OLD_PATH%/rc.com"
-      - "D:/Projects/EnJinn/EnJinn/build/%OLD_PATH%/rc.exe"
-      - "D:/Projects/EnJinn/EnJinn/build/%OLD_PATH%/rc"
+      - "D:/Projects/EnJinn/Enjinn/build/%OLD_PATH%/rc.com"
+      - "D:/Projects/EnJinn/Enjinn/build/%OLD_PATH%/rc.exe"
+      - "D:/Projects/EnJinn/Enjinn/build/%OLD_PATH%/rc"
       - "C:/Program Files/Java/jdk-17/bin/rc.com"
       - "C:/Program Files/Java/jdk-17/bin/rc.exe"
       - "C:/Program Files/Java/jdk-17/bin/rc"
@@ -1743,8 +1743,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-83w0hs"
-      binary: "D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-83w0hs"
+      source: "D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-tpuj3l"
+      binary: "D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-tpuj3l"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -1753,39 +1753,39 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-83w0hs'
+        Change Dir: 'D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-tpuj3l'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_49e3e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_5ccb6.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.23+b0019275e for .NET Framework
-        Build started 26-01-2026 14:55:41.
+        Build started 31-01-2026 01:29:29.
         
-        Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-83w0hs\\cmTC_49e3e.vcxproj" on node 1 (default targets).
+        Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tpuj3l\\cmTC_5ccb6.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-83w0hs\\Debug\\".
-          Creating directory "cmTC_49e3e.dir\\Debug\\cmTC_49e3e.tlog\\".
+          Creating directory "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tpuj3l\\Debug\\".
+          Creating directory "cmTC_5ccb6.dir\\Debug\\cmTC_5ccb6.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_49e3e.dir\\Debug\\cmTC_49e3e.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_49e3e.dir\\Debug\\cmTC_49e3e.tlog\\unsuccessfulbuild".
+          Creating "cmTC_5ccb6.dir\\Debug\\cmTC_5ccb6.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_5ccb6.dir\\Debug\\cmTC_5ccb6.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_49e3e.dir\\Debug\\\\" /Fd"cmTC_49e3e.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_5ccb6.dir\\Debug\\\\" /Fd"cmTC_5ccb6.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35217 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_49e3e.dir\\Debug\\\\" /Fd"cmTC_49e3e.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_5ccb6.dir\\Debug\\\\" /Fd"cmTC_5ccb6.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-83w0hs\\Debug\\cmTC_49e3e.exe" /INCREMENTAL /ILK:"cmTC_49e3e.dir\\Debug\\cmTC_49e3e.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-83w0hs/Debug/cmTC_49e3e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-83w0hs/Debug/cmTC_49e3e.lib" /MACHINE:X64  /machine:x64 cmTC_49e3e.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_49e3e.vcxproj -> D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-83w0hs\\Debug\\cmTC_49e3e.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tpuj3l\\Debug\\cmTC_5ccb6.exe" /INCREMENTAL /ILK:"cmTC_5ccb6.dir\\Debug\\cmTC_5ccb6.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-tpuj3l/Debug/cmTC_5ccb6.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-tpuj3l/Debug/cmTC_5ccb6.lib" /MACHINE:X64  /machine:x64 cmTC_5ccb6.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_5ccb6.vcxproj -> D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tpuj3l\\Debug\\cmTC_5ccb6.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_49e3e.dir\\Debug\\cmTC_49e3e.tlog\\unsuccessfulbuild".
-          Touching "cmTC_49e3e.dir\\Debug\\cmTC_49e3e.tlog\\cmTC_49e3e.lastbuildstate".
-        Done Building Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-83w0hs\\cmTC_49e3e.vcxproj" (default targets).
+          Deleting file "cmTC_5ccb6.dir\\Debug\\cmTC_5ccb6.tlog\\unsuccessfulbuild".
+          Touching "cmTC_5ccb6.dir\\Debug\\cmTC_5ccb6.tlog\\cmTC_5ccb6.lastbuildstate".
+        Done Building Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tpuj3l\\cmTC_5ccb6.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.56
+        Time Elapsed 00:00:00.51
         
       exitCode: 0
   -
@@ -1825,8 +1825,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-fc2rdu"
-      binary: "D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-fc2rdu"
+      source: "D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-0mul87"
+      binary: "D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-0mul87"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -1836,39 +1836,39 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-fc2rdu'
+        Change Dir: 'D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-0mul87'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_35607.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_68b9b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.23+b0019275e for .NET Framework
-        Build started 26-01-2026 14:55:42.
+        Build started 31-01-2026 01:29:30.
         
-        Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fc2rdu\\cmTC_35607.vcxproj" on node 1 (default targets).
+        Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0mul87\\cmTC_68b9b.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fc2rdu\\Debug\\".
-          Creating directory "cmTC_35607.dir\\Debug\\cmTC_35607.tlog\\".
+          Creating directory "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0mul87\\Debug\\".
+          Creating directory "cmTC_68b9b.dir\\Debug\\cmTC_68b9b.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_35607.dir\\Debug\\cmTC_35607.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_35607.dir\\Debug\\cmTC_35607.tlog\\unsuccessfulbuild".
+          Creating "cmTC_68b9b.dir\\Debug\\cmTC_68b9b.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_68b9b.dir\\Debug\\cmTC_68b9b.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_35607.dir\\Debug\\\\" /Fd"cmTC_35607.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_68b9b.dir\\Debug\\\\" /Fd"cmTC_68b9b.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35217 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_35607.dir\\Debug\\\\" /Fd"cmTC_35607.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_68b9b.dir\\Debug\\\\" /Fd"cmTC_68b9b.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fc2rdu\\Debug\\cmTC_35607.exe" /INCREMENTAL /ILK:"cmTC_35607.dir\\Debug\\cmTC_35607.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-fc2rdu/Debug/cmTC_35607.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-fc2rdu/Debug/cmTC_35607.lib" /MACHINE:X64  /machine:x64 cmTC_35607.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_35607.vcxproj -> D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fc2rdu\\Debug\\cmTC_35607.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0mul87\\Debug\\cmTC_68b9b.exe" /INCREMENTAL /ILK:"cmTC_68b9b.dir\\Debug\\cmTC_68b9b.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-0mul87/Debug/cmTC_68b9b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-0mul87/Debug/cmTC_68b9b.lib" /MACHINE:X64  /machine:x64 cmTC_68b9b.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_68b9b.vcxproj -> D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0mul87\\Debug\\cmTC_68b9b.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_35607.dir\\Debug\\cmTC_35607.tlog\\unsuccessfulbuild".
-          Touching "cmTC_35607.dir\\Debug\\cmTC_35607.tlog\\cmTC_35607.lastbuildstate".
-        Done Building Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fc2rdu\\cmTC_35607.vcxproj" (default targets).
+          Deleting file "cmTC_68b9b.dir\\Debug\\cmTC_68b9b.tlog\\unsuccessfulbuild".
+          Touching "cmTC_68b9b.dir\\Debug\\cmTC_68b9b.tlog\\cmTC_68b9b.lastbuildstate".
+        Done Building Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0mul87\\cmTC_68b9b.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.56
+        Time Elapsed 00:00:00.50
         
       exitCode: 0
   -
@@ -1910,50 +1910,50 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-y5q7ht"
-      binary: "D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-y5q7ht"
+      source: "D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-z53irg"
+      binary: "D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-z53irg"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      CMAKE_MODULE_PATH: "D:/Projects/EnJinn/EnJinn/thirdparty/glfw-3.3.2/CMake/modules"
+      CMAKE_MODULE_PATH: "D:/Projects/EnJinn/Enjinn/thirdparty/glfw-3.3.2/CMake/modules"
     buildResult:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-y5q7ht'
+        Change Dir: 'D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-z53irg'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_2af53.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_08c5d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.23+b0019275e for .NET Framework
-        Build started 26-01-2026 14:55:43.
+        Build started 31-01-2026 01:29:31.
         
-        Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y5q7ht\\cmTC_2af53.vcxproj" on node 1 (default targets).
+        Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-z53irg\\cmTC_08c5d.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y5q7ht\\Debug\\".
-          Creating directory "cmTC_2af53.dir\\Debug\\cmTC_2af53.tlog\\".
+          Creating directory "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-z53irg\\Debug\\".
+          Creating directory "cmTC_08c5d.dir\\Debug\\cmTC_08c5d.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_2af53.dir\\Debug\\cmTC_2af53.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_2af53.dir\\Debug\\cmTC_2af53.tlog\\unsuccessfulbuild".
+          Creating "cmTC_08c5d.dir\\Debug\\cmTC_08c5d.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_08c5d.dir\\Debug\\cmTC_08c5d.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_2af53.dir\\Debug\\\\" /Fd"cmTC_2af53.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y5q7ht\\src.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_08c5d.dir\\Debug\\\\" /Fd"cmTC_08c5d.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-z53irg\\src.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35217 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_2af53.dir\\Debug\\\\" /Fd"cmTC_2af53.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y5q7ht\\src.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_08c5d.dir\\Debug\\\\" /Fd"cmTC_08c5d.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-z53irg\\src.c"
           src.c
-        D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y5q7ht\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y5q7ht\\cmTC_2af53.vcxproj]
-        Done Building Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y5q7ht\\cmTC_2af53.vcxproj" (default targets) -- FAILED.
+        D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-z53irg\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-z53irg\\cmTC_08c5d.vcxproj]
+        Done Building Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-z53irg\\cmTC_08c5d.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y5q7ht\\cmTC_2af53.vcxproj" (default target) (1) ->
+        "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-z53irg\\cmTC_08c5d.vcxproj" (default target) (1) ->
         (ClCompile target) -> 
-          D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y5q7ht\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y5q7ht\\cmTC_2af53.vcxproj]
+          D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-z53irg\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-z53irg\\cmTC_08c5d.vcxproj]
         
             0 Warning(s)
             1 Error(s)
         
-        Time Elapsed 00:00:00.43
+        Time Elapsed 00:00:00.31
         
       exitCode: 1
   -
@@ -1966,52 +1966,52 @@ events:
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-3i01zm"
-      binary: "D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-3i01zm"
+      source: "D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-45dwpr"
+      binary: "D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-45dwpr"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      CMAKE_MODULE_PATH: "D:/Projects/EnJinn/EnJinn/thirdparty/glfw-3.3.2/CMake/modules"
+      CMAKE_MODULE_PATH: "D:/Projects/EnJinn/Enjinn/thirdparty/glfw-3.3.2/CMake/modules"
     buildResult:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-3i01zm'
+        Change Dir: 'D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-45dwpr'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_6ede8.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_53127.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.23+b0019275e for .NET Framework
-        Build started 26-01-2026 14:55:44.
+        Build started 31-01-2026 01:29:31.
         
-        Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3i01zm\\cmTC_6ede8.vcxproj" on node 1 (default targets).
+        Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-45dwpr\\cmTC_53127.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3i01zm\\Debug\\".
-          Creating directory "cmTC_6ede8.dir\\Debug\\cmTC_6ede8.tlog\\".
+          Creating directory "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-45dwpr\\Debug\\".
+          Creating directory "cmTC_53127.dir\\Debug\\cmTC_53127.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_6ede8.dir\\Debug\\cmTC_6ede8.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_6ede8.dir\\Debug\\cmTC_6ede8.tlog\\unsuccessfulbuild".
+          Creating "cmTC_53127.dir\\Debug\\cmTC_53127.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_53127.dir\\Debug\\cmTC_53127.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_6ede8.dir\\Debug\\\\" /Fd"cmTC_6ede8.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3i01zm\\CheckFunctionExists.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_53127.dir\\Debug\\\\" /Fd"cmTC_53127.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-45dwpr\\CheckFunctionExists.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35217 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_6ede8.dir\\Debug\\\\" /Fd"cmTC_6ede8.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3i01zm\\CheckFunctionExists.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_53127.dir\\Debug\\\\" /Fd"cmTC_53127.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-45dwpr\\CheckFunctionExists.c"
           CheckFunctionExists.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3i01zm\\Debug\\cmTC_6ede8.exe" /INCREMENTAL /ILK:"cmTC_6ede8.dir\\Debug\\cmTC_6ede8.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-3i01zm/Debug/cmTC_6ede8.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-3i01zm/Debug/cmTC_6ede8.lib" /MACHINE:X64  /machine:x64 cmTC_6ede8.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3i01zm\\cmTC_6ede8.vcxproj]
-        Done Building Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3i01zm\\cmTC_6ede8.vcxproj" (default targets) -- FAILED.
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-45dwpr\\Debug\\cmTC_53127.exe" /INCREMENTAL /ILK:"cmTC_53127.dir\\Debug\\cmTC_53127.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-45dwpr/Debug/cmTC_53127.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-45dwpr/Debug/cmTC_53127.lib" /MACHINE:X64  /machine:x64 cmTC_53127.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-45dwpr\\cmTC_53127.vcxproj]
+        Done Building Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-45dwpr\\cmTC_53127.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3i01zm\\cmTC_6ede8.vcxproj" (default target) (1) ->
+        "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-45dwpr\\cmTC_53127.vcxproj" (default target) (1) ->
         (Link target) -> 
-          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3i01zm\\cmTC_6ede8.vcxproj]
+          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-45dwpr\\cmTC_53127.vcxproj]
         
             0 Warning(s)
             1 Error(s)
         
-        Time Elapsed 00:00:00.49
+        Time Elapsed 00:00:00.41
         
       exitCode: 1
   -
@@ -2024,52 +2024,52 @@ events:
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-uo3sk8"
-      binary: "D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-uo3sk8"
+      source: "D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-v884x5"
+      binary: "D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-v884x5"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      CMAKE_MODULE_PATH: "D:/Projects/EnJinn/EnJinn/thirdparty/glfw-3.3.2/CMake/modules"
+      CMAKE_MODULE_PATH: "D:/Projects/EnJinn/Enjinn/thirdparty/glfw-3.3.2/CMake/modules"
     buildResult:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-uo3sk8'
+        Change Dir: 'D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-v884x5'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_9f5e0.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_5d6cf.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.23+b0019275e for .NET Framework
-        Build started 26-01-2026 14:55:44.
+        Build started 31-01-2026 01:29:32.
         
-        Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uo3sk8\\cmTC_9f5e0.vcxproj" on node 1 (default targets).
+        Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v884x5\\cmTC_5d6cf.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uo3sk8\\Debug\\".
-          Creating directory "cmTC_9f5e0.dir\\Debug\\cmTC_9f5e0.tlog\\".
+          Creating directory "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v884x5\\Debug\\".
+          Creating directory "cmTC_5d6cf.dir\\Debug\\cmTC_5d6cf.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_9f5e0.dir\\Debug\\cmTC_9f5e0.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_9f5e0.dir\\Debug\\cmTC_9f5e0.tlog\\unsuccessfulbuild".
+          Creating "cmTC_5d6cf.dir\\Debug\\cmTC_5d6cf.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_5d6cf.dir\\Debug\\cmTC_5d6cf.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_9f5e0.dir\\Debug\\\\" /Fd"cmTC_9f5e0.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uo3sk8\\CheckFunctionExists.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_5d6cf.dir\\Debug\\\\" /Fd"cmTC_5d6cf.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v884x5\\CheckFunctionExists.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35217 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_9f5e0.dir\\Debug\\\\" /Fd"cmTC_9f5e0.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uo3sk8\\CheckFunctionExists.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_5d6cf.dir\\Debug\\\\" /Fd"cmTC_5d6cf.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v884x5\\CheckFunctionExists.c"
           CheckFunctionExists.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uo3sk8\\Debug\\cmTC_9f5e0.exe" /INCREMENTAL /ILK:"cmTC_9f5e0.dir\\Debug\\cmTC_9f5e0.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-uo3sk8/Debug/cmTC_9f5e0.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-uo3sk8/Debug/cmTC_9f5e0.lib" /MACHINE:X64  /machine:x64 cmTC_9f5e0.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uo3sk8\\cmTC_9f5e0.vcxproj]
-        Done Building Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uo3sk8\\cmTC_9f5e0.vcxproj" (default targets) -- FAILED.
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v884x5\\Debug\\cmTC_5d6cf.exe" /INCREMENTAL /ILK:"cmTC_5d6cf.dir\\Debug\\cmTC_5d6cf.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-v884x5/Debug/cmTC_5d6cf.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/Projects/EnJinn/EnJinn/build/CMakeFiles/CMakeScratch/TryCompile-v884x5/Debug/cmTC_5d6cf.lib" /MACHINE:X64  /machine:x64 cmTC_5d6cf.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v884x5\\cmTC_5d6cf.vcxproj]
+        Done Building Project "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v884x5\\cmTC_5d6cf.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uo3sk8\\cmTC_9f5e0.vcxproj" (default target) (1) ->
+        "D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v884x5\\cmTC_5d6cf.vcxproj" (default target) (1) ->
         (Link target) -> 
-          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uo3sk8\\cmTC_9f5e0.vcxproj]
+          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [D:\\Projects\\EnJinn\\EnJinn\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v884x5\\cmTC_5d6cf.vcxproj]
         
             0 Warning(s)
             1 Error(s)
         
-        Time Elapsed 00:00:00.49
+        Time Elapsed 00:00:00.41
         
       exitCode: 1
 ...

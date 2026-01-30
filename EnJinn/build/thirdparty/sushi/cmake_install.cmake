@@ -1,4 +1,4 @@
-# Install script for directory: D:/Projects/EnJinn/EnJinn/thirdparty/sushi
+# Install script for directory: D:/Projects/EnJinn/Enjinn/thirdparty/sushi
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

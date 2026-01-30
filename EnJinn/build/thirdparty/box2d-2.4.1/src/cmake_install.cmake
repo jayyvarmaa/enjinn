@@ -1,4 +1,4 @@
-# Install script for directory: D:/Projects/EnJinn/EnJinn/thirdparty/box2d-2.4.1/src
+# Install script for directory: D:/Projects/EnJinn/Enjinn/thirdparty/box2d-2.4.1/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,4 +1,4 @@
-# Install script for directory: D:/Projects/EnJinn/EnJinn/thirdparty/profilerLib
+# Install script for directory: D:/Projects/EnJinn/Enjinn/thirdparty/profilerLib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

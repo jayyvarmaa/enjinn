@@ -276,7 +276,7 @@ EnJinnCore_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build
 EnJinnCore_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-EnJinnCore_SOURCE_DIR:STATIC=D:/Projects/EnJinn/EnJinn
+EnJinnCore_SOURCE_DIR:STATIC=D:/Projects/EnJinn/Enjinn
 
 //Value Computed by CMake
 EnJinnGameplay_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build
@@ -285,7 +285,7 @@ EnJinnGameplay_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build
 EnJinnGameplay_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-EnJinnGameplay_SOURCE_DIR:STATIC=D:/Projects/EnJinn/EnJinn
+EnJinnGameplay_SOURCE_DIR:STATIC=D:/Projects/EnJinn/Enjinn
 
 //Value Computed by CMake
 GLFW_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/glfw-3.3.2
@@ -306,7 +306,7 @@ GLFW_INSTALL:BOOL=OFF
 GLFW_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-GLFW_SOURCE_DIR:STATIC=D:/Projects/EnJinn/EnJinn/thirdparty/glfw-3.3.2
+GLFW_SOURCE_DIR:STATIC=D:/Projects/EnJinn/Enjinn/thirdparty/glfw-3.3.2
 
 //Force use of high-performance GPU on hybrid systems
 GLFW_USE_HYBRID_HPG:BOOL=OFF
@@ -324,7 +324,7 @@ box2d_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/box2d-2.4.1
 box2d_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-box2d_SOURCE_DIR:STATIC=D:/Projects/EnJinn/EnJinn/thirdparty/box2d-2.4.1
+box2d_SOURCE_DIR:STATIC=D:/Projects/EnJinn/Enjinn/thirdparty/box2d-2.4.1
 
 //Value Computed by CMake
 gl2d_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/gl2d
@@ -333,7 +333,7 @@ gl2d_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/gl2d
 gl2d_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-gl2d_SOURCE_DIR:STATIC=D:/Projects/EnJinn/EnJinn/thirdparty/gl2d
+gl2d_SOURCE_DIR:STATIC=D:/Projects/EnJinn/Enjinn/thirdparty/gl2d
 
 //Value Computed by CMake
 gl3d_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/gl3d
@@ -342,7 +342,7 @@ gl3d_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/gl3d
 gl3d_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-gl3d_SOURCE_DIR:STATIC=D:/Projects/EnJinn/EnJinn/thirdparty/gl3d
+gl3d_SOURCE_DIR:STATIC=D:/Projects/EnJinn/Enjinn/thirdparty/gl3d
 
 //Value Computed by CMake
 glad_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/glad
@@ -351,7 +351,7 @@ glad_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/glad
 glad_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-glad_SOURCE_DIR:STATIC=D:/Projects/EnJinn/EnJinn/thirdparty/glad
+glad_SOURCE_DIR:STATIC=D:/Projects/EnJinn/Enjinn/thirdparty/glad
 
 //Value Computed by CMake
 glm_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/glm
@@ -360,7 +360,7 @@ glm_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/glm
 glm_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-glm_SOURCE_DIR:STATIC=D:/Projects/EnJinn/EnJinn/thirdparty/glm
+glm_SOURCE_DIR:STATIC=D:/Projects/EnJinn/Enjinn/thirdparty/glm
 
 //Value Computed by CMake
 glui_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/glui
@@ -369,7 +369,7 @@ glui_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/glui
 glui_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-glui_SOURCE_DIR:STATIC=D:/Projects/EnJinn/EnJinn/thirdparty/glui
+glui_SOURCE_DIR:STATIC=D:/Projects/EnJinn/Enjinn/thirdparty/glui
 
 //Value Computed by CMake
 imgui_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/imgui-docking
@@ -378,7 +378,7 @@ imgui_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/imgui-docking
 imgui_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-imgui_SOURCE_DIR:STATIC=D:/Projects/EnJinn/EnJinn/thirdparty/imgui-docking
+imgui_SOURCE_DIR:STATIC=D:/Projects/EnJinn/Enjinn/thirdparty/imgui-docking
 
 //Value Computed by CMake
 ph2d_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/ph2d
@@ -387,7 +387,7 @@ ph2d_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/ph2d
 ph2d_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-ph2d_SOURCE_DIR:STATIC=D:/Projects/EnJinn/EnJinn/thirdparty/ph2d
+ph2d_SOURCE_DIR:STATIC=D:/Projects/EnJinn/Enjinn/thirdparty/ph2d
 
 //Value Computed by CMake
 profilerLib_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/profilerLib
@@ -396,7 +396,7 @@ profilerLib_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/profile
 profilerLib_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-profilerLib_SOURCE_DIR:STATIC=D:/Projects/EnJinn/EnJinn/thirdparty/profilerLib
+profilerLib_SOURCE_DIR:STATIC=D:/Projects/EnJinn/Enjinn/thirdparty/profilerLib
 
 //Value Computed by CMake
 safeSave_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/safeSafe
@@ -405,7 +405,7 @@ safeSave_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/safeSafe
 safeSave_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-safeSave_SOURCE_DIR:STATIC=D:/Projects/EnJinn/EnJinn/thirdparty/safeSafe
+safeSave_SOURCE_DIR:STATIC=D:/Projects/EnJinn/Enjinn/thirdparty/safeSafe
 
 //Value Computed by CMake
 stb_image_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/stb_image
@@ -414,7 +414,7 @@ stb_image_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/stb_image
 stb_image_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-stb_image_SOURCE_DIR:STATIC=D:/Projects/EnJinn/EnJinn/thirdparty/stb_image
+stb_image_SOURCE_DIR:STATIC=D:/Projects/EnJinn/Enjinn/thirdparty/stb_image
 
 //Value Computed by CMake
 stb_truetype_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/stb_truetype
@@ -423,7 +423,7 @@ stb_truetype_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/stb_tr
 stb_truetype_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-stb_truetype_SOURCE_DIR:STATIC=D:/Projects/EnJinn/EnJinn/thirdparty/stb_truetype
+stb_truetype_SOURCE_DIR:STATIC=D:/Projects/EnJinn/Enjinn/thirdparty/stb_truetype
 
 //Value Computed by CMake
 sushi_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/sushi
@@ -432,7 +432,7 @@ sushi_BINARY_DIR:STATIC=D:/Projects/EnJinn/EnJinn/build/thirdparty/sushi
 sushi_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-sushi_SOURCE_DIR:STATIC=D:/Projects/EnJinn/EnJinn/thirdparty/sushi
+sushi_SOURCE_DIR:STATIC=D:/Projects/EnJinn/Enjinn/thirdparty/sushi
 
 
 ########################
@@ -509,7 +509,7 @@ CMAKE_HAVE_PTHREADS_CREATE:INTERNAL=
 CMAKE_HAVE_PTHREAD_CREATE:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=D:/Projects/EnJinn/EnJinn
+CMAKE_HOME_DIRECTORY:INTERNAL=D:/Projects/EnJinn/Enjinn
 //ADVANCED property for variable: CMAKE_INSTALL_BINDIR
 CMAKE_INSTALL_BINDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_INSTALL_DATADIR

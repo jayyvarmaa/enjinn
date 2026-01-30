@@ -1,4 +1,4 @@
-# Install script for directory: D:/Projects/EnJinn/EnJinn/thirdparty/imgui-docking
+# Install script for directory: D:/Projects/EnJinn/Enjinn/thirdparty/imgui-docking
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

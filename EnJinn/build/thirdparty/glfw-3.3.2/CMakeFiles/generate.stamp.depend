@@ -12,7 +12,7 @@ C:/Program Files/CMake/share/cmake-4.2/Modules/GNUInstallDirs.cmake
 C:/Program Files/CMake/share/cmake-4.2/Modules/Internal/CheckSourceCompiles.cmake
 C:/Program Files/CMake/share/cmake-4.2/Modules/WriteBasicConfigVersionFile.cmake
 D:/Projects/EnJinn/EnJinn/build/CMakeFiles/cmake.verify_globs
-D:/Projects/EnJinn/EnJinn/thirdparty/glfw-3.3.2/CMakeLists.txt
-D:/Projects/EnJinn/EnJinn/thirdparty/glfw-3.3.2/src/glfw3.pc.in
-D:/Projects/EnJinn/EnJinn/thirdparty/glfw-3.3.2/src/glfw3Config.cmake.in
-D:/Projects/EnJinn/EnJinn/thirdparty/glfw-3.3.2/src/glfw_config.h.in
+D:/Projects/EnJinn/Enjinn/thirdparty/glfw-3.3.2/CMakeLists.txt
+D:/Projects/EnJinn/Enjinn/thirdparty/glfw-3.3.2/src/glfw3.pc.in
+D:/Projects/EnJinn/Enjinn/thirdparty/glfw-3.3.2/src/glfw3Config.cmake.in
+D:/Projects/EnJinn/Enjinn/thirdparty/glfw-3.3.2/src/glfw_config.h.in

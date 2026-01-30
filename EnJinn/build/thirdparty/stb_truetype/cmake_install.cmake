@@ -1,4 +1,4 @@
-# Install script for directory: D:/Projects/EnJinn/EnJinn/thirdparty/stb_truetype
+# Install script for directory: D:/Projects/EnJinn/Enjinn/thirdparty/stb_truetype
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

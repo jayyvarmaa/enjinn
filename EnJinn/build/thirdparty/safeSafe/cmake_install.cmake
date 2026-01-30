@@ -1,4 +1,4 @@
-# Install script for directory: D:/Projects/EnJinn/EnJinn/thirdparty/safeSafe
+# Install script for directory: D:/Projects/EnJinn/Enjinn/thirdparty/safeSafe
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

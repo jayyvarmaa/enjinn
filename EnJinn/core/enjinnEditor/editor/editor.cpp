@@ -12,10 +12,13 @@
 #include "IconsFontAwesome6.h"
 #include "shortcutApi/shortcutApi.h"
 #include <editShortcuts/editShortcuts.h>
+#include "../../sharedRuntime/windowSystemm/window.h" // Native Window Flag
 #include <safeSave/safeSave.h>
+#include <GLFW/glfw3.h> // Custom Title Bar Controls
 #include <filesystem>
 #include <string>
 #include <phaseManager/phaseManager.h>
+#include <svgTexture/svgTexture.h>
 #include "imgui_internal.h"
 
 
@@ -72,18 +75,29 @@ void enjinn::Editor::init(enjinn::ShortcutManager &shortcutManager, enjinn::enji
 		windowFlags = {};
 	}
 	
-	std::string path = ENJINN_ENGINE_RESOURCES_PATH "LOGO.png";
-	std::cout << "Loading logo from: " << path << "\n";
-	if (std::filesystem::exists(path))
+	// Load SVG logo at high resolution for crisp display
+	std::string svgPath = ENJINN_ENGINE_RESOURCES_PATH "LOGO.svg";
+	std::cout << "Loading logo from: " << svgPath << "\n";
+	if (std::filesystem::exists(svgPath))
 	{
-		std::cout << "File exists.\n";
+		std::cout << "SVG file exists.\n";
+		// Rasterize at 1000px height for High Quality Supersampling (Scaled down in UI)
+		logoTextureId = enjinn::loadSVGTexture(svgPath, 1000, &logoWidth, &logoHeight);
 	}
 	else
 	{
-		std::cout << "File DOES NOT exist.\n";
+		std::cout << "SVG file DOES NOT exist, falling back to PNG.\n";
+		// Fallback to PNG if SVG not available
+		std::string pngPath = ENJINN_ENGINE_RESOURCES_PATH "LOGO.png";
+		if (std::filesystem::exists(pngPath))
+		{
+			gl2d::Texture fallbackTexture;
+			fallbackTexture.loadFromFile(pngPath.c_str());
+			logoTextureId = fallbackTexture.id;
+			logoWidth = fallbackTexture.GetSize().x;
+			logoHeight = fallbackTexture.GetSize().y;
+		}
 	}
-
-	logoTexture.loadFromFile(path.c_str());
 
     assetManagerWindow.loadData();
 }
@@ -156,11 +170,54 @@ void enjinn::Editor::update(const enjinn::Input &input,
 				static const ImGuiDockNodeFlags dockspaceFlags = ImGuiDockNodeFlags_None;
 				ImGuiID dockSpace = ImGui::GetID("MainWindowDockspace");
 				ImGui::DockSpace(dockSpace, ImVec2(0.0f, 0.0f), dockspaceFlags);
+                
+                // --- CUSTOM WINDOW BORDER ---
+                // "Way to change thickness": Modify this variable.
+                static float windowBorderThickness = 6.0f; 
+                
+                if (windowBorderThickness > 0.0f)
+                {
+                    ImGuiViewport* viewport = ImGui::GetMainViewport();
+                    ImDrawList* drawList = ImGui::GetForegroundDrawList();
+                    ImU32 borderColor = ImGui::GetColorU32(ImGuiCol_MenuBarBg);
+                    
+                    // Positions (Inset by half thickness to stay inside)
+                    float t = windowBorderThickness;
+                    float half = t * 0.5f;
+                    ImVec2 min = viewport->Pos;
+                    ImVec2 max = ImVec2(min.x + viewport->Size.x, min.y + viewport->Size.y);
+                    
+                    // Left
+                    drawList->AddLine(ImVec2(min.x + half, min.y), ImVec2(min.x + half, max.y), borderColor, t);
+                    // Right
+                    drawList->AddLine(ImVec2(max.x - half, min.y), ImVec2(max.x - half, max.y), borderColor, t);
+                    // Bottom
+                    drawList->AddLine(ImVec2(min.x, max.y - half), ImVec2(max.x, max.y - half), borderColor, t);
+                    
+                    // Resize Grip (Bottom Right Visual Hint)
+                    // Like a modern "Bootstrap" resize handle equivalent
+                    if (!glfwGetWindowAttrib(glfwGetCurrentContext(), GLFW_MAXIMIZED))
+                    {
+                        ImVec2 gripP1 = ImVec2(max.x - half, max.y - 12);
+                        ImVec2 gripP2 = ImVec2(max.x - 12, max.y - half);
+                        drawList->AddLine(gripP1, ImVec2(max.x - half, max.y - half), borderColor, t);
+                        drawList->AddLine(ImVec2(max.x - half, max.y - half), gripP2, borderColor, t);
+                    }
+                }
+                // -----------------------------
 			}
 
 		#pragma region menu
+			ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(0, 30.0f)); // Visual Height ~75px (Matches Logical 75px)
 			if (ImGui::BeginMenuBar())
 			{
+				ImGui::PopStyleVar(); // Apply style only to the bar geometry logic initial phase if needed, but usually kept for items. 
+				// Actually ImGui recommends keeping it for the duration.
+				// But wait, if I pop it here, items will be small in a big bar.
+				// If I don't pop, items will be big. User probably wants big items too?
+				// Title bar items are usually centered vertically. 
+				// Let's keep it pushed until EndMenuBar.
+
 
 				if (ImGui::BeginMenu(ICON_FK_COGS " EnJinn"))
 				{
@@ -384,7 +441,7 @@ void enjinn::Editor::update(const enjinn::Input &input,
 					ImGui::EndMenu();
 				}
 
-				if (logoTexture.id)
+				if (logoTextureId)
 				{
 					// Use GetFrameHeight to fit inside the menu bar
 					float height = ImGui::GetFrameHeight(); 
@@ -393,27 +450,70 @@ void enjinn::Editor::update(const enjinn::Input &input,
 					float padding = 4.0f;
 					float drawHeight = height - padding;
 					
-					if(drawHeight > 0)
+					if(drawHeight > 0 && logoHeight > 0)
 					{
-						float aspect = (float)logoTexture.GetSize().x / (float)logoTexture.GetSize().y;
+						float aspect = (float)logoWidth / (float)logoHeight;
 						float width = drawHeight * aspect;
 
 						// Center the image in the window (not just the remaining space)
 						float windowWidth = ImGui::GetWindowWidth();
 						
 						// Ensure we don't overlap with existing menu items if the window is too small,
-						// but primarily try to center it.
-						float cursorX = (windowWidth - width) * 0.5f;
+						// DRAG AREA 1 & 2 Removed - Handled by OS via WM_NCHITTEST
+
+                        float standardBtnWidth = 60.0f;
+                        float buttonsWidth = standardBtnWidth * 3.0f; 
+                        float buttonsStart = windowWidth - buttonsWidth;
 						
-						// Only set cursor if it's past the current cursor position (avoid overwriting text)
-						if (cursorX > ImGui::GetCursorPosX())
+						// Draw Logo (High Res, Scaled Down)
+						// Center Logo Logic
+                        float logoX = (windowWidth - width) * 0.5f;
+						if (logoX > ImGui::GetCursorPosX()) ImGui::SetCursorPosX(logoX);
+						
+						ImGui::SetCursorPosY(ImGui::GetCursorPosY() + padding * 0.5f);
+						ImGui::Image((void*)(intptr_t)logoTextureId, { width, drawHeight });
+
+                        // Continue to Buttons
+                        ImGui::SameLine();
+                        if (ImGui::GetCursorPosX() < buttonsStart) ImGui::SetCursorPosX(buttonsStart);
+
+						// DRAW CUSTOM WINDOW CONTROLS
+						ImGui::SameLine();
+						ImGui::SetCursorPosX(buttonsStart);
+						ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(0, 0)); // Tight buttons
+                        ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(0, 0)); // No gaps between buttons
+						ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0,0,0,0)); // Transparent background
+						
+						if (ImGui::Button(ICON_FK_MINUS, ImVec2(standardBtnWidth, height)))
 						{
-							ImGui::SetCursorPosX(cursorX);
-							// Center vertically in the bar
-							ImGui::SetCursorPosY(ImGui::GetCursorPosY() + padding * 0.5f);
-							// UVs flipped to (0,1) and (1,0) to correct vertical flip
-							ImGui::Image((void*)(intptr_t)logoTexture.id, { width, drawHeight }, ImVec2(0, 1), ImVec2(1, 0));
+                            logs.log("Minimize Clicked");
+							glfwIconifyWindow(glfwGetCurrentContext());
 						}
+						ImGui::SameLine(0, 0); // No spacing
+
+						// Maximize / Restore
+						GLFWwindow* win = glfwGetCurrentContext();
+						bool isMaximized = glfwGetWindowAttrib(win, GLFW_MAXIMIZED);
+						if (ImGui::Button(isMaximized ? ICON_FK_WINDOW_RESTORE : ICON_FK_WINDOW_MAXIMIZE, ImVec2(standardBtnWidth, height)))
+						{
+                            logs.log(isMaximized ? "Restore Clicked" : "Maximize Clicked");
+							if (isMaximized) glfwRestoreWindow(win);
+							else glfwMaximizeWindow(win);
+						}
+						ImGui::SameLine(0, 0); // No spacing
+
+						// Close
+						ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(0.9f, 0.1f, 0.1f, 1.0f)); // Red on hover
+                        ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(0.8f, 0.0f, 0.0f, 1.0f));
+						if (ImGui::Button(ICON_FK_TIMES, ImVec2(standardBtnWidth, height)))
+						{
+                            logs.log("Close Clicked");
+							glfwSetWindowShouldClose(win, true);
+						}
+						ImGui::PopStyleColor(2); // hover, active
+
+						ImGui::PopStyleColor(); // bg
+						ImGui::PopStyleVar(2); // padding, spacing
 					}
 				}
 

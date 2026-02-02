@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="D:\Projects\EnJinn\EnJinn\build\CMakeFiles\6f836810d94a980aff1c58f517cadedf\INSTALL_force.rule">
+    <CustomBuild Include="D:\Projects\Enjinn\enjinn\EnJinn\build\CMakeFiles\bf529c38764460e37d25faf9ad553598\INSTALL_force.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{2CF397BA-320A-36DD-A6D4-024DC20F33B0}</UniqueIdentifier>
+      <UniqueIdentifier>{C0722D8F-5D63-353C-AFEB-BF29BCD2DA96}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

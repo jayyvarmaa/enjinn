@@ -1,1 +1,3 @@
-IDI_ICON1 ICON "engineResources/onlylogo.ico"
+// EnJinn Application Icon
+// Use numeric ID 1 for the main application icon (required for Windows taskbar)
+1 ICON "engineResources/onlylogo.ico"

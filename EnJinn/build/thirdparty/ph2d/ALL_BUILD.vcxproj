@@ -25,7 +25,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{72D2AADD-D50D-3B66-8584-947DCCB03BA6}</ProjectGuid>
+    <ProjectGuid>{757DED6C-41D1-3122-B35D-365D089A7A9B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -108,11 +108,11 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\Projects\EnJinn\Enjinn\thirdparty\ph2d\CMakeLists.txt">
+    <CustomBuild Include="D:\Projects\Enjinn\enjinn\EnJinn\thirdparty\ph2d\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Projects/EnJinn/Enjinn/thirdparty/ph2d/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Projects/Enjinn/enjinn/EnJinn/thirdparty/ph2d/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/Projects/EnJinn/Enjinn -BD:/Projects/EnJinn/EnJinn/build --check-stamp-file D:/Projects/EnJinn/EnJinn/build/thirdparty/ph2d/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Projects/Enjinn/enjinn/EnJinn -BD:/Projects/Enjinn/enjinn/EnJinn/build --check-stamp-file D:/Projects/Enjinn/enjinn/EnJinn/build/thirdparty/ph2d/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -120,12 +120,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Projects\EnJinn\EnJinn\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Projects\EnJinn\EnJinn\build\thirdparty\ph2d\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Projects\Enjinn\enjinn\EnJinn\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Projects\Enjinn\enjinn\EnJinn\build\thirdparty\ph2d\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Projects/EnJinn/Enjinn/thirdparty/ph2d/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Projects/Enjinn/enjinn/EnJinn/thirdparty/ph2d/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/Projects/EnJinn/Enjinn -BD:/Projects/EnJinn/EnJinn/build --check-stamp-file D:/Projects/EnJinn/EnJinn/build/thirdparty/ph2d/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Projects/Enjinn/enjinn/EnJinn -BD:/Projects/Enjinn/enjinn/EnJinn/build --check-stamp-file D:/Projects/Enjinn/enjinn/EnJinn/build/thirdparty/ph2d/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -133,12 +133,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Projects\EnJinn\EnJinn\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Projects\EnJinn\EnJinn\build\thirdparty\ph2d\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Projects\Enjinn\enjinn\EnJinn\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Projects\Enjinn\enjinn\EnJinn\build\thirdparty\ph2d\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Projects/EnJinn/Enjinn/thirdparty/ph2d/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Projects/Enjinn/enjinn/EnJinn/thirdparty/ph2d/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/Projects/EnJinn/Enjinn -BD:/Projects/EnJinn/EnJinn/build --check-stamp-file D:/Projects/EnJinn/EnJinn/build/thirdparty/ph2d/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Projects/Enjinn/enjinn/EnJinn -BD:/Projects/Enjinn/enjinn/EnJinn/build --check-stamp-file D:/Projects/Enjinn/enjinn/EnJinn/build/thirdparty/ph2d/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -146,12 +146,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Projects\EnJinn\EnJinn\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Projects\EnJinn\EnJinn\build\thirdparty\ph2d\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Projects\Enjinn\enjinn\EnJinn\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Projects\Enjinn\enjinn\EnJinn\build\thirdparty\ph2d\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Projects/EnJinn/Enjinn/thirdparty/ph2d/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Projects/Enjinn/enjinn/EnJinn/thirdparty/ph2d/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/Projects/EnJinn/Enjinn -BD:/Projects/EnJinn/EnJinn/build --check-stamp-file D:/Projects/EnJinn/EnJinn/build/thirdparty/ph2d/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Projects/Enjinn/enjinn/EnJinn -BD:/Projects/Enjinn/enjinn/EnJinn/build --check-stamp-file D:/Projects/Enjinn/enjinn/EnJinn/build/thirdparty/ph2d/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -159,8 +159,8 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Projects\EnJinn\EnJinn\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Projects\EnJinn\EnJinn\build\thirdparty\ph2d\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Projects\Enjinn\enjinn\EnJinn\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Projects\Enjinn\enjinn\EnJinn\build\thirdparty\ph2d\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
@@ -168,14 +168,14 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="D:\Projects\EnJinn\EnJinn\build\ZERO_CHECK.vcxproj">
-      <Project>{13FED478-5964-31F9-8825-2087599B6401}</Project>
+    <ProjectReference Include="D:\Projects\Enjinn\enjinn\EnJinn\build\ZERO_CHECK.vcxproj">
+      <Project>{A94A7DD0-38A5-3145-BB71-74D41D33BB13}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="D:\Projects\EnJinn\EnJinn\build\thirdparty\ph2d\ph2d.vcxproj">
-      <Project>{EBADB39B-0472-355D-8B50-617394D3FA58}</Project>
+    <ProjectReference Include="D:\Projects\Enjinn\enjinn\EnJinn\build\thirdparty\ph2d\ph2d.vcxproj">
+      <Project>{0772277B-8B25-3502-9B18-E132DBE4C30E}</Project>
       <Name>ph2d</Name>
     </ProjectReference>
   </ItemGroup>

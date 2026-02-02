@@ -13,6 +13,7 @@
 
 #include <enjinnImgui/enjinnImgui.h>
 #include <gl2d/gl2d.h>
+#include <glad/glad.h>
 #include <logs/logWindow.h>
 #include <windowSystemm/input.h>
 #include <shortcutApi/shortcutApi.h>
@@ -76,7 +77,9 @@ namespace enjinn
 
 		bool shouldReloadDll = 0;
 		int imguiId = 0;
-		gl2d::Texture logoTexture = {};
+		GLuint logoTextureId = 0;  // SVG logo texture
+		int logoWidth = 0;
+		int logoHeight = 0;
 		char secretCodeBuffer[64] = {};  // SECRET: Phase unlock
 	};
 

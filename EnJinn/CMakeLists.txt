@@ -41,6 +41,7 @@ add_subdirectory(thirdparty/profilerLib)
 add_subdirectory(thirdparty/box2d-2.4.1)
 add_subdirectory(thirdparty/sushi)
 add_subdirectory(thirdparty/ph2d)
+add_subdirectory(thirdparty/nanosvg)
 
 #Define some macros for the project sources
 file(GLOB_RECURSE ENJINN_SOURCES_CORE_CONFIG			CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/core/coreConfig/*.cpp")
@@ -85,7 +86,7 @@ target_include_directories(EnJinnCore PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/core/s
 target_include_directories(EnJinnCore PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 target_include_directories(EnJinnCore PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/imgui-docking/imgui/")
 target_link_libraries(EnJinnCore PRIVATE glad glfw gl2d  gl3d glui
-	glm stb_image stb_truetype imgui safeSave profilerLib sushi ph2d dwmapi box2d)
+	glm stb_image stb_truetype imgui safeSave profilerLib sushi ph2d dwmapi box2d nanosvg)
 #################^^^^^^^^#############################
 
 
@@ -103,7 +104,7 @@ target_include_directories(EnJinnGameplay PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/co
 target_include_directories(EnJinnGameplay PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/pluggins/")
 target_include_directories(EnJinnGameplay PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 target_link_libraries(EnJinnGameplay PRIVATE glad glfw gl2d gl3d glui glm stb_image 
-	stb_truetype imgui safeSave profilerLib box2d sushi ph2d dwmapi)
+	stb_truetype imgui safeSave profilerLib box2d sushi ph2d dwmapi nanosvg)
 #################^^^^^^^^^^^^^^############################
 
 

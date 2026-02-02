@@ -10,6 +10,85 @@
 #define GLFW_EXPOSE_NATIVE_WIN32
 #include <Windows.h>
 #include <GLFW/glfw3native.h>
+#include <dwmapi.h>
+#include <commctrl.h>
+#pragma comment(lib, "dwmapi.lib")
+#pragma comment(lib, "comctl32.lib")
+
+// Native Window Subclass Procedure
+LRESULT CALLBACK SubclassProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam, UINT_PTR uIdSubclass, DWORD_PTR dwRefData)
+{
+    switch (uMsg)
+    {
+    case WM_NCCALCSIZE:
+        if (wParam) {
+            // By returning 0 (or simply not calling DefWindowProc), we tell Windows that 
+            // the Client Area takes up the entire window (removing the standard frame).
+            // However, we must ensure we handle resize handles manually in WM_NCHITTEST.
+            return 0;
+        }
+        break;
+
+    case WM_NCHITTEST:
+        {
+            // Get window pos and size
+            RECT rcWindow;
+            GetWindowRect(hWnd, &rcWindow);
+            int w = rcWindow.right - rcWindow.left;
+            int h = rcWindow.bottom - rcWindow.top;
+
+            // Get mouse position
+            POINT cursor = { LOWORD(lParam), HIWORD(lParam) };
+            POINT clientCursor = cursor;
+            ScreenToClient(hWnd, &clientCursor);
+
+            // CUSTOM TITLE BAR SETTINGS
+            const int titleBarHeight = 75; // Synced with Visual Height (~75px)
+            const int buttonAreaWidth = 200; // Width of 3 buttons (60*3 + safety)
+            const int menuAreaWidth = 600; // Allow clicking on the Left Menu (Logo + Text options)
+            const int resizeBorder = 8; // Thickness of resize area (Larger than visual 6px to make it easier to grab)
+
+            // 1. Manually Check Resize Borders (Top/Left/Right/Bottom) - Needed because NCCALCSIZE removed the frame
+            if (clientCursor.y < resizeBorder && clientCursor.x < resizeBorder) return HTTOPLEFT;
+            if (clientCursor.y < resizeBorder && clientCursor.x > (w - resizeBorder)) return HTTOPRIGHT;
+            if (clientCursor.y > (h - resizeBorder) && clientCursor.x < resizeBorder) return HTBOTTOMLEFT;
+            if (clientCursor.y > (h - resizeBorder) && clientCursor.x > (w - resizeBorder)) return HTBOTTOMRIGHT;
+            if (clientCursor.y < resizeBorder) return HTTOP;
+            if (clientCursor.y > (h - resizeBorder) && clientCursor.y < h) return HTBOTTOM; // Check logic
+            if (clientCursor.x < resizeBorder) return HTLEFT;
+            if (clientCursor.x > (w - resizeBorder)) return HTRIGHT;
+
+            // 2. Check Title Bar Area
+            if (clientCursor.y >= 0 && clientCursor.y <= titleBarHeight)
+            {
+                // Check if we are over the Buttons Area (Top-Right) or Menu Area (Top-Left)
+                RECT rcClient;
+                GetClientRect(hWnd, &rcClient);
+                int clientW = rcClient.right - rcClient.left;
+
+                if (clientCursor.x > (clientW - buttonAreaWidth))
+                {
+                    return HTCLIENT; // Let ImGui handle clicks on Window Controls
+                }
+                
+                if (clientCursor.x < menuAreaWidth)
+                {
+                     return HTCLIENT; // Let ImGui handle clicks on Menu Options
+                }
+                
+                return HTCAPTION; // Drag/Snap!
+            }
+            
+            return HTCLIENT;
+        }
+        break;
+    
+    case WM_DESTROY:
+        RemoveWindowSubclass(hWnd, SubclassProc, uIdSubclass);
+        break;
+    }
+    return DefSubclassProc(hWnd, uMsg, wParam, lParam);
+}
 #endif
 
 #include <enjinnSizes.h>
@@ -47,6 +126,9 @@ void enjinn::EnJinnWindow::create()
 	//glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	//glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
+	// Custom Borderless Window: Disable standard decorations
+	glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);
+
 	context.wind = glfwCreateWindow((std::max)(wr.z, 1280), (std::max)(wr.w, 720), "EnJinn", NULL, NULL);
 	glfwSetWindowPos(context.wind, wr.x, wr.y);
 
@@ -54,6 +136,26 @@ void enjinn::EnJinnWindow::create()
 
 	ENJINN_PERMA_ASSERT(context.wind, "problem initializing window");
 	glfwMakeContextCurrent(context.wind);
+
+#ifdef ENJINN_WINDOWS
+	// Apply Native Subclassing & Styles for robust Borderless Window behavior
+	HWND hwnd = glfwGetWin32Window(context.wind);
+    
+    // 1. Enable DWM Immersive Dark Mode (Windows 11 / 10 20H1+)
+    BOOL useDarkMode = TRUE;
+    DwmSetWindowAttribute(hwnd, DWMWA_USE_IMMERSIVE_DARK_MODE, &useDarkMode, sizeof(useDarkMode));
+
+    // 2. Restore Standard Window Styles (Caption/ThickFrame) to enable Snap Layouts & Animations
+    //    We will hide the visual result using WM_NCCALCSIZE in SubclassProc.
+    LONG style = GetWindowLong(hwnd, GWL_STYLE);
+    style |= WS_OVERLAPPEDWINDOW; 
+    SetWindowLong(hwnd, GWL_STYLE, style);
+    
+    // 3. Trigger frame update
+    SetWindowPos(hwnd, nullptr, 0, 0, 0, 0, SWP_NOZORDER | SWP_NOOWNERZORDER | SWP_NOMOVE | SWP_NOSIZE | SWP_FRAMECHANGED);
+
+	SetWindowSubclass(hwnd, SubclassProc, 1, 0);
+#endif
 
 	glfwSetWindowUserPointer(context.wind, this);
 

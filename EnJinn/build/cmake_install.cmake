@@ -1,4 +1,4 @@
-# Install script for directory: D:/Projects/EnJinn/Enjinn
+# Install script for directory: D:/Projects/Enjinn/enjinn/EnJinn
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,78 +34,83 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Projects/EnJinn/EnJinn/build/thirdparty/glfw-3.3.2/cmake_install.cmake")
+  include("D:/Projects/Enjinn/enjinn/EnJinn/build/thirdparty/glfw-3.3.2/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Projects/EnJinn/EnJinn/build/thirdparty/glad/cmake_install.cmake")
+  include("D:/Projects/Enjinn/enjinn/EnJinn/build/thirdparty/glad/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Projects/EnJinn/EnJinn/build/thirdparty/gl2d/cmake_install.cmake")
+  include("D:/Projects/Enjinn/enjinn/EnJinn/build/thirdparty/gl2d/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Projects/EnJinn/EnJinn/build/thirdparty/gl3d/cmake_install.cmake")
+  include("D:/Projects/Enjinn/enjinn/EnJinn/build/thirdparty/gl3d/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Projects/EnJinn/EnJinn/build/thirdparty/glui/cmake_install.cmake")
+  include("D:/Projects/Enjinn/enjinn/EnJinn/build/thirdparty/glui/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Projects/EnJinn/EnJinn/build/thirdparty/glm/cmake_install.cmake")
+  include("D:/Projects/Enjinn/enjinn/EnJinn/build/thirdparty/glm/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Projects/EnJinn/EnJinn/build/thirdparty/stb_image/cmake_install.cmake")
+  include("D:/Projects/Enjinn/enjinn/EnJinn/build/thirdparty/stb_image/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Projects/EnJinn/EnJinn/build/thirdparty/stb_truetype/cmake_install.cmake")
+  include("D:/Projects/Enjinn/enjinn/EnJinn/build/thirdparty/stb_truetype/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Projects/EnJinn/EnJinn/build/thirdparty/imgui-docking/cmake_install.cmake")
+  include("D:/Projects/Enjinn/enjinn/EnJinn/build/thirdparty/imgui-docking/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Projects/EnJinn/EnJinn/build/thirdparty/safeSafe/cmake_install.cmake")
+  include("D:/Projects/Enjinn/enjinn/EnJinn/build/thirdparty/safeSafe/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Projects/EnJinn/EnJinn/build/thirdparty/profilerLib/cmake_install.cmake")
+  include("D:/Projects/Enjinn/enjinn/EnJinn/build/thirdparty/profilerLib/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Projects/EnJinn/EnJinn/build/thirdparty/box2d-2.4.1/cmake_install.cmake")
+  include("D:/Projects/Enjinn/enjinn/EnJinn/build/thirdparty/box2d-2.4.1/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Projects/EnJinn/EnJinn/build/thirdparty/sushi/cmake_install.cmake")
+  include("D:/Projects/Enjinn/enjinn/EnJinn/build/thirdparty/sushi/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Projects/EnJinn/EnJinn/build/thirdparty/ph2d/cmake_install.cmake")
+  include("D:/Projects/Enjinn/enjinn/EnJinn/build/thirdparty/ph2d/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/Projects/Enjinn/enjinn/EnJinn/build/thirdparty/nanosvg/cmake_install.cmake")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "D:/Projects/EnJinn/EnJinn/build/install_local_manifest.txt"
+  file(WRITE "D:/Projects/Enjinn/enjinn/EnJinn/build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -121,6 +126,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "D:/Projects/EnJinn/EnJinn/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "D:/Projects/Enjinn/enjinn/EnJinn/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

@@ -42,6 +42,10 @@ namespace enjinn
 		bool shouldClose();
 
 		void update();
+		
+		// Communication flag for Native Borderless Window
+		// True = Mouse is over the custom "Title Bar" area -> Handle as HTCATION
+		static inline bool isTitleBarHovered = false;
 
 		std::chrono::steady_clock::time_point timer = {};
 	};

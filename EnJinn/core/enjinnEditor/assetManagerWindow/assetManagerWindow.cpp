@@ -70,15 +70,26 @@ namespace enjinn
 			if (a.isDirectory != b.isDirectory)
 				return a.isDirectory > b.isDirectory; 
 
-			bool ret = false;
-			switch (currentSortMode)
-			{
-			case SortMode::Name: ret = a.name < b.name; break;
-			case SortMode::Date: ret = a.lastWriteTime() < b.lastWriteTime(); break;
-			case SortMode::Size: ret = a.size < b.size; break;
-			case SortMode::Type: ret = a.extension < b.extension; break;
+			// Use proper comparison for ascending/descending to maintain strict weak ordering
+			// Note: negating the result (!ret) breaks strict weak ordering requirements
+			if (sortAscending) {
+				switch (currentSortMode)
+				{
+				case SortMode::Name: return a.name < b.name;
+				case SortMode::Date: return a.lastWriteTime() < b.lastWriteTime();
+				case SortMode::Size: return a.size < b.size;
+				case SortMode::Type: return a.extension < b.extension;
+				}
+			} else {
+				switch (currentSortMode)
+				{
+				case SortMode::Name: return a.name > b.name;
+				case SortMode::Date: return a.lastWriteTime() > b.lastWriteTime();
+				case SortMode::Size: return a.size > b.size;
+				case SortMode::Type: return a.extension > b.extension;
+				}
 			}
-			return sortAscending ? ret : !ret;
+			return false; // Default case (should never reach)
 		});
 	}
 	
@@ -170,8 +181,39 @@ namespace enjinn
 		ImGui::SameLine();
 		ImGui::SetNextItemWidth(100);
         
-        float* currentIconSizePtr = (currentViewMode == ViewMode::Grid) ? &gridIconSize : &listIconSize;
-		ImGui::SliderFloat("Size", currentIconSizePtr, 32.0f, 256.0f, "%.0f");
+        // Mapped UI Slider Logic
+        int sliderMin = 30;
+        int sliderMax = 100;
+        int sliderVal = sliderMin;
+
+        float* storePtr = (currentViewMode == ViewMode::Grid) ? &gridIconSize : &listIconSize;
+        float actualMin = (currentViewMode == ViewMode::Grid) ? 75.0f : 30.0f; // User requested 75 min for Grid, 30 for List
+        float actualMax = (currentViewMode == ViewMode::Grid) ? 256.0f : 100.0f; // User requested 256 max for Grid, 100 for List
+        
+        // Reverse Map: Actual -> Slider
+        float t = (*storePtr - actualMin) / (actualMax - actualMin);
+        if (t < 0.0f) t = 0.0f; if (t > 1.0f) t = 1.0f;
+        
+        sliderVal = sliderMin + (int)(t * (sliderMax - sliderMin));
+
+		if (ImGui::SliderInt("Size", &sliderVal, sliderMin, sliderMax))
+        {
+            // Forward Map: Slider -> Actual
+            float t2 = (float)(sliderVal - sliderMin) / (float)(sliderMax - sliderMin);
+            *storePtr = actualMin + t2 * (actualMax - actualMin);
+        }
+        
+        // Ctrl + Scroll Zoom Logic
+        if (ImGui::IsWindowHovered(ImGuiHoveredFlags_ChildWindows) && ImGui::GetIO().KeyCtrl)
+        {
+            float wheel = ImGui::GetIO().MouseWheel;
+            if (wheel != 0)
+            {
+                *storePtr += wheel * 5.0f; // Scale speed
+                if (*storePtr < actualMin) *storePtr = actualMin;
+                if (*storePtr > actualMax) *storePtr = actualMax;
+            }
+        }
 
         // Mouse Back Button Navigation (Button 3)
         if (ImGui::IsMouseClicked(3))
@@ -255,16 +297,22 @@ namespace enjinn
 			ImGui::PushID(file.path.c_str());
 			
 			bool hasTexture = (texID != 0);
-			float useSize = *currentIconSizePtr; 
-			if(listView) useSize = *currentIconSizePtr;
+			float useSize = *storePtr; 
+			if(listView) useSize = *storePtr;
 
 			if(hasTexture)
 			{
 				TextureInfo& info = textureCache[file.path];
 				float scale = 1.0f;
+
+				ImGuiStyle& style = ImGui::GetStyle();
+                float framePad = style.FramePadding.x;
+                float maxContentSize = useSize - (framePad * 2.0f);
+                if(maxContentSize < 1.0f) maxContentSize = 1.0f;
+
 				if(info.w > 0 && info.h > 0)
 				{
-					scale = std::min(useSize / (float)info.w, useSize / (float)info.h);
+					scale = std::min(maxContentSize / (float)info.w, maxContentSize / (float)info.h);
 				}
 				
 				float w = info.w * scale;
@@ -272,16 +320,14 @@ namespace enjinn
 				
 				if(!listView)
 				{
-					float PadX = (useSize - w) * 0.5f;
-					float PadY = (useSize - h) * 0.5f;
-					ImGui::SetCursorPosX(ImGui::GetCursorPosX() + PadX);
-					ImGui::SetCursorPosY(ImGui::GetCursorPosY() + PadY);
+                    // Grid View: Center the button in the cell
+                    // Button Size = ContentSize(w,h) + Padding*2
+                    float totalButtonW = w + (framePad * 2.0f);
+					float PadX = (useSize - totalButtonW) * 0.5f;
+                    
+					ImGui::SetCursorPosX(ImGui::GetCursorPosX() + std::max(0.0f, PadX));
 				}
 				
-				// Fix: UVs (0,0) to (1,1) for standard GL texture orientation (if stbi didn't flip)
-                // If previous was (0,1)->(1,0) (Upside down), then flipping V should work.
-                // Assuming stbi raw data + GL default = Upside Down logic.
-                // Let's try standard UVs.
 				if(ImGui::ImageButton(texID, {w, h}, ImVec2(0, 1), ImVec2(1, 0)))
 				{
 					if(isImage)
@@ -290,7 +336,17 @@ namespace enjinn
                         currentTextureW = info.w;
                         currentTextureH = info.h;
                         currentImageName = file.name;
-                        imageZoom = 1.0f;
+                        
+                        // Fit to Screen Logic
+                        ImVec2 viewport = ImGui::GetMainViewport()->Size;
+                        float availW = viewport.x * 0.8f; // Estimation
+                        float availH = viewport.y * 0.8f; 
+                        
+                        float scaleX = availW / (float)currentTextureW;
+                        float scaleY = availH / (float)currentTextureH;
+                        imageZoom = std::min(scaleX, scaleY);
+                        if(imageZoom > 1.0f) imageZoom = 1.0f; // Don't upscale small images by default
+                        
                         imageOffset = { 0.0f, 0.0f };
                         showImageViewer = true;
                         ImGui::OpenPopup("ImageViewerModal");
@@ -299,8 +355,15 @@ namespace enjinn
 			}
 			else
 			{
-				const char* icon = file.isDirectory ? ICON_FK_FOLDER_O : ICON_FK_FILE_O;
-				if(ImGui::Button(icon, {useSize, useSize}))
+                // "4K" Vector Icon Rendering
+                // Instead of scaling a font (blurry), we draw the shape procedurally.
+                
+                // 1. Draw Invisible Button to handle interactions
+                ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(0,0)); // Ensure exact size
+                bool clicked = ImGui::InvisibleButton("##iconBtn", ImVec2(useSize, useSize));
+                ImGui::PopStyleVar();
+
+				if(clicked)
 				{
 					if(file.isDirectory)
 					{
@@ -317,6 +380,67 @@ namespace enjinn
                         }
 					}
 				}
+                
+                // 2. Procedural Drawing
+                ImDrawList* drawList = ImGui::GetWindowDrawList();
+                ImVec2 pMin = ImGui::GetItemRectMin();
+                ImVec2 pMax = ImGui::GetItemRectMax();
+                float w = pMax.x - pMin.x;
+                float h = pMax.y - pMin.y;
+                
+                // Padding inside the button (so icon isn't touching edges)
+                float pad = w * 0.15f; 
+                ImVec2 iMin = ImVec2(pMin.x + pad, pMin.y + pad);
+                ImVec2 iMax = ImVec2(pMax.x - pad, pMax.y - pad);
+                float iw = iMax.x - iMin.x;
+                float ih = iMax.y - iMin.y;
+                
+                ImU32 iconColor = file.isDirectory ? IM_COL32(255, 215, 0, 255) : ImGui::GetColorU32(ImGuiCol_Text);
+                
+                if(file.isDirectory)
+                {
+                    // Draw Folder
+                    // Tab: Top Left, ~40% width, 15% height
+                    float tabH = ih * 0.15f;
+                    float tabW = iw * 0.4f;
+                    
+                    // Body: Full width, remaining height
+                    // Rounding: ~10%
+                    float rounding = iw * 0.1f;
+                    
+                    // Tab
+                    drawList->AddRectFilled(iMin, ImVec2(iMin.x + tabW, iMin.y + tabH + rounding), iconColor, rounding, ImDrawFlags_RoundCornersTop);
+                    
+                    // Body
+                    drawList->AddRectFilled(ImVec2(iMin.x, iMin.y + tabH), iMax, iconColor, rounding);
+                }
+                else
+                {
+                    // Draw File
+                    // "Dog Ear" style
+                    float foldSize = iw * 0.25f;
+                    float rounding = iw * 0.05f;
+                    
+                    // Points for main shape (missing top right corner)
+                    ImVec2 p1 = iMin; // Top Left
+                    ImVec2 p2 = ImVec2(iMax.x - foldSize, iMin.y); // Top Right (start of fold)
+                    ImVec2 p3 = ImVec2(iMax.x, iMin.y + foldSize); // Right (end of fold)
+                    ImVec2 p4 = iMax; // Bottom Right
+                    ImVec2 p5 = ImVec2(iMin.x, iMax.y); // Bottom Left
+                    
+                    ImVec2 polyPoints[] = { p1, p2, p3, p4, p5 };
+                    drawList->AddConvexPolyFilled(polyPoints, 5, iconColor);
+                    
+                    // Fold Flap
+                    // Triangle or small rect to simulate fold
+                    // Let's just draw the fold line or a slightly darker flap
+                     drawList->AddTriangleFilled(
+                        ImVec2(iMax.x - foldSize, iMin.y),
+                        ImVec2(iMax.x - foldSize, iMin.y + foldSize),
+                        ImVec2(iMax.x, iMin.y + foldSize),
+                        ImGui::GetColorU32(ImGuiCol_TextDisabled) // Slightly different color for depth
+                    );
+                }
 			}
 
 			if (ImGui::BeginDragDropSource())
@@ -398,17 +522,8 @@ namespace enjinn
                     // --- Name & Icon ---
                 float contentHeight = std::max(15.0f, listIconSize * 0.8f); 
 
-                    // 1. Draw Icon
-                    ImGui::PushFont(iconFont); 
-                    float iconBase = (iconFont->FontSize > 50.0f) ? 100.0f : 14.0f; 
-                    ImGui::SetWindowFontScale(contentHeight / iconBase);
-                    
-                    const char* icon = file.isDirectory ? ICON_FK_FOLDER_O : ICON_FK_FILE_O;
-                    if(file.isDirectory) ImGui::TextColored({1,1,0,1}, icon);
-                    else ImGui::Text(icon);
-                    
-                    ImGui::PopFont(); 
-                    ImGui::SetWindowFontScale(1.0f); 
+                    // 1. Draw Icon (Vector)
+                    DrawFileIcon(file, true); 
 
                     ImGui::SameLine();
                     
@@ -501,6 +616,19 @@ namespace enjinn
                     showImageViewer = false;
                     ImGui::CloseCurrentPopup();
                 }
+                ImGui::SameLine();
+                if (ImGui::Button("Reset Zoom"))
+                {
+                    // Re-calculate fit
+                    ImVec2 viewport = ImGui::GetMainViewport()->Size;
+                    float availW = viewport.x * 0.8f; 
+                    float availH = viewport.y * 0.8f; 
+                    float scaleX = availW / (float)currentTextureW;
+                    float scaleY = availH / (float)currentTextureH;
+                    imageZoom = std::min(scaleX, scaleY);
+                    if(imageZoom > 1.0f) imageZoom = 1.0f;
+                    imageOffset = { 0.0f, 0.0f };
+                }
                 ImGui::Separator();
 
                 // Canvas Area (Rest of the window)
@@ -584,6 +712,13 @@ namespace enjinn
                 // Render Image (Clipped to Canvas)
                 ImGui::PushClipRect(canvasPos, ImVec2(canvasPos.x + availRegion.x, canvasPos.y + availRegion.y), true);
                 
+                // Draw dark background for canvas area (different from navbar)
+                // Using #050505 from the custom palette - darkest for canvas contrast
+                ImGui::GetWindowDrawList()->AddRectFilled(
+                    canvasPos,
+                    ImVec2(canvasPos.x + availRegion.x, canvasPos.y + availRegion.y),
+                    IM_COL32(5, 5, 5, 255) // #050505 - Darkest from palette
+                );
                 // Draw using calculated values
                 ImGui::GetWindowDrawList()->AddImage(
                     (void*)(intptr_t)currentTextureId,

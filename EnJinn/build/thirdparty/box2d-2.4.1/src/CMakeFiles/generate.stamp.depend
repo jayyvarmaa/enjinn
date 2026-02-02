@@ -2,5 +2,5 @@
 C:/Program Files/CMake/share/cmake-4.2/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
 C:/Program Files/CMake/share/cmake-4.2/Modules/CMakePackageConfigHelpers.cmake
 C:/Program Files/CMake/share/cmake-4.2/Modules/WriteBasicConfigVersionFile.cmake
-D:/Projects/EnJinn/EnJinn/build/CMakeFiles/cmake.verify_globs
-D:/Projects/EnJinn/Enjinn/thirdparty/box2d-2.4.1/src/CMakeLists.txt
+D:/Projects/Enjinn/enjinn/EnJinn/build/CMakeFiles/cmake.verify_globs
+D:/Projects/Enjinn/enjinn/EnJinn/thirdparty/box2d-2.4.1/src/CMakeLists.txt

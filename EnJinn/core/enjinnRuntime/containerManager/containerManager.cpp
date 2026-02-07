@@ -68,9 +68,6 @@ bool enjinn::ContainerManager::setSnapshotToContainer(enjinn::containerId_t cont
 	enjinn::readEntireFile(file.c_str(), c->second.getBaseAdress(),
 		c->second.totalSize, sizeof(enjinn::RuntimeContainer));
 
-	//c->second.requestedContainerInfo.requestedImguiIds 
-	//	= imguiIdManager.getImguiIds(c->second.requestedContainerInfo.imguiTotalRequestedIds);
-
 	logManager.log("Loaded snapshot");
 	return true;
 }

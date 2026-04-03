@@ -1,201 +1,146 @@
-# EnJinn – A Modular 2D/3D Game Engine
+# EnJinn: Modular 2D/3D Game Engine
 
-## Project Overview
+EnJinn is a C++17 game engine and editor focused on modular runtime architecture, explicit memory control, and practical tooling for 2D/3D gameplay development.
 
-**EnJinn** is a custom-built, modular game engine written in **C++17** using **OpenGL** for rendering. The engine is designed to provide a complete development environment for creating 2D and 3D games with real-time visual editing, physics simulation, and hot-reload capabilities.
+The project is structured for engine-level learning and production-style subsystem design, including:
 
-This project aims to explore core game engine architecture concepts including rendering pipelines, entity-component systems, memory management, and editor tooling.
+- Runtime container orchestration with hot-reloadable gameplay modules
+- Scene graph and component model for hierarchical game logic
+- Custom memory allocators with guard-value safety checks
+- Integrated Dear ImGui editor for diagnostics and inspection
+- OpenGL rendering path for both 2D and 3D workloads
 
----
+## Why EnJinn
 
-## Problem Statement
+EnJinn was built to make engine internals visible and controllable, instead of abstracting away key systems behind monolithic tooling.
 
-Modern game development requires sophisticated tools that handle rendering, physics, input management, and scene organization. Commercial engines like Unity and Unreal are powerful but opaque—developers don't understand what happens "under the hood."
+Core motivations:
 
-**EnJinn** addresses this by building a game engine from scratch, providing:
-- Deep understanding of graphics programming (OpenGL, shaders)
-- Hands-on experience with game architecture patterns
-- Custom memory management and optimization techniques
-- Real-time editor development using Dear ImGui
+- Understand rendering, update loops, and engine state transitions directly
+- Enforce memory ownership and isolation across gameplay modules
+- Support iterative gameplay development through DLL hot reload
+- Build practical editor and diagnostics workflows around runtime systems
 
----
+## Core Capabilities
 
-## Proposed Features
+### Runtime and Architecture
 
-### 🎮 Core Engine
-| Feature | Description |
-|---------|-------------|
-| **Container System** | Hot-reloadable DLL-based game modules for rapid iteration |
-| **Scene Graph** | Node/Component architecture for hierarchical game objects |
-| **2D Renderer** | Custom `gl2d` library for sprite rendering, animations, and post-processing |
-| **3D Renderer** | Custom `gl3d` library for 3D mesh rendering and lighting |
-| **Physics Engine** | Box2D integration for realistic 2D physics simulation |
-| **Input System** | Unified input handling for keyboard, mouse, and controllers |
-| **Asset Manager** | Centralized texture and resource loading/caching |
+- Container-based plugin model for gameplay modules
+- Per-container lifecycle management: create, update, destruct
+- Deterministic frame pipeline integrating editor and gameplay passes
+- Runtime DLL reload support with preserved workflow context
 
-### 🛠️ Editor Tools
-| Tool | Purpose |
-|------|---------|
-| **Hierarchy Window** | Visual tree-view of all scene nodes |
-| **Inspector Window** | Property editing for selected nodes/components |
-| **Scene View** | Real-time game preview with editor overlays |
-| **Console Window** | Runtime logging and debugging output |
-| **Asset Manager** | Browse and manage game resources |
+### Scene and Gameplay Systems
 
-### 🧠 Technical Systems
-- **Custom Memory Allocators** – FreeList allocator for controlled memory management
-- **Serialization** – SafeSave system for persistent game data
-- **Shortcut System** – Configurable keyboard shortcuts
-- **Post-Processing** – Shader-based visual effects (blur, color grading)
-- **Hot Reload** – Modify gameplay code without restarting the editor
+- Node-component scene graph with parent-child hierarchy
+- Transform propagation and per-frame component update traversal
+- Scene serialization and deserialization workflow
+- Shared runtime contracts between engine and gameplay modules
 
----
+### Memory and Safety
+
+- Free-list allocator with 8-byte alignment
+- Guard-value verification for corruption and double-free detection
+- Container-level allocator binding to isolate memory realms
+- Fragmentation and allocation metrics for diagnostics
+
+### Rendering and Tooling
+
+- OpenGL rendering with shader compilation diagnostics
+- Uniform location caching for reduced runtime lookup overhead
+- Editor windows for hierarchy, inspector, scene, profiler, and console
+- Logging and assertion mechanisms for development and release diagnostics
 
 ## Technology Stack
 
 | Category | Technology |
-|----------|------------|
+|---|---|
 | Language | C++17 |
 | Build System | CMake |
-| Graphics API | OpenGL 3.3+ (via GLAD) |
-| Windowing | GLFW 3.3 |
-| UI Framework | Dear ImGui (Docking Branch) |
-| Math Library | GLM |
-| Physics | Box2D 2.4.1 |
-| Image Loading | stb_image |
-| Font Rendering | stb_truetype |
+| Package Manager | vcpkg |
+| Graphics API | OpenGL (via GLAD) |
+| Windowing/Input | GLFW |
+| UI/Editor | Dear ImGui (docking) |
+| Math | GLM |
+| Physics | Box2D |
+| Assets | stb_image, stb_truetype |
 
----
+## High-Level Project Layout
 
-## Architecture Overview
+| Path | Responsibility |
+|---|---|
+| EnJinn/core/enjinnRuntime | Main loop, runtime orchestration, container manager, rendering |
+| EnJinn/core/enjinnEditor | Editor UI and diagnostics windows |
+| EnJinn/core/sharedRuntime | Shared scene/container/component contracts |
+| EnJinn/core/enjinnSTD | Allocators, logging, utilities, core support types |
+| EnJinn/gameplay | Gameplay modules compiled as DLLs |
+| EnJinn/resources | Textures, models, shaders, scenes and assets |
+| EnJinn/thirdparty | Bundled third-party libraries |
+| docs/diagrams | Architecture and analysis diagrams used in project docs |
 
-```
-EnJinn/
-├── core/
-│   ├── enjinnEditor/      # Editor UI (Hierarchy, Inspector, Scene View)
-│   ├── enjinnRuntime/     # Core runtime systems
-│   ├── enjinnSTD/         # Standard utilities (allocators, file I/O, logging)
-│   └── sharedRuntime/     # Scene Graph, Components, Asset Manager
-├── gameplay/
-│   └── containers/        # Game modules (hot-reloadable DLLs)
-├── resources/             # Game assets (textures, shaders, maps)
-└── thirdparty/            # External libraries (GLFW, ImGui, Box2D, etc.)
-```
+## Build and Run
 
-### Container Architecture
+### Windows (Visual Studio 2022)
 
-The engine uses a unique **Container** pattern where each game is a separate DLL that can be loaded/unloaded at runtime:
+1. Change into the engine directory.
+2. Configure with CMake using the vcpkg toolchain.
+3. Build the Release configuration.
+4. Run the generated EnJinnCore executable.
 
-```cpp
-struct Container {
-    virtual bool create(RequestedContainerInfo& info) = 0;
-    virtual bool update(Input input, WindowState state) = 0;
-    virtual void destruct() = 0;
-    virtual Scene* getScene() { return nullptr; }
-};
-```
+Commands:
 
-This enables:
-- ✅ Hot-reload during development (no engine restart needed)
-- ✅ Multiple games running simultaneously in separate windows
-- ✅ Memory isolation between game modules
+    cd EnJinn
+    cmake -B build -G "Visual Studio 17 2022" -DCMAKE_TOOLCHAIN_FILE=../vcpkg/scripts/buildsystems/vcpkg.cmake -DCMAKE_BUILD_TYPE=Release
+    cmake --build build --config Release --parallel 8
+    .\build\Release\EnJinnCore.exe
 
-### Scene Graph System
+### Linux/macOS (Clang or GCC)
 
-```cpp
-struct Node {
-    std::string name;
-    Node* parent;
-    std::vector<Node*> children;
-    std::vector<Component*> components;
-    glm::vec3 localPosition;
-    glm::quat localRotation;
-    glm::vec3 localScale;
-};
+Commands:
 
-struct Component {
-    virtual void onCreate() {}
-    virtual void onUpdate(float deltaTime) {}
-    virtual void onRender() {}
-    virtual void onInspector() {}  // Editor UI
-};
-```
+    cd EnJinn
+    cmake -B build -DCMAKE_TOOLCHAIN_FILE=../vcpkg/scripts/buildsystems/vcpkg.cmake -DCMAKE_BUILD_TYPE=Release
+    cmake --build build --parallel 8
+    ./build/EnJinnCore
 
----
+## Architectural Highlights
 
-## Development Roadmap
+### Container Pattern
 
-### Phase 1: Foundation (Weeks 1-3)
-- [ ] Window creation and OpenGL context
-- [ ] Basic 2D rendering pipeline
-- [ ] Input handling system
-- [ ] ImGui integration for debug UI
+Gameplay is implemented in dynamically loaded modules. This enables hot reload and isolates gameplay logic from core runtime/editor internals.
 
-### Phase 2: Core Systems (Weeks 4-6)
-- [ ] Container/DLL hot-reload architecture
-- [ ] Custom memory allocators
-- [ ] Asset loading and caching
-- [ ] Scene Graph implementation
+### Allocator Binding Model
 
-### Phase 3: Editor (Weeks 7-9)
-- [ ] Hierarchy panel with node tree
-- [ ] Inspector panel for component editing
-- [ ] Scene view with camera controls
-- [ ] Console and logging system
+During container update, the runtime binds the container allocator as active, executes gameplay update, then resets allocator context. This prevents cross-realm allocation leakage.
 
-### Phase 4: Physics & Gameplay (Weeks 10-12)
-- [ ] Box2D physics integration
-- [ ] Collision detection and response
-- [ ] Character controller implementation
-- [ ] Demo game: Platformer prototype
+### Scene Graph Design
 
-### Phase 5: Polish & Demo (Weeks 13-15)
-- [ ] Post-processing effects
-- [ ] Particle systems
-- [ ] Audio integration
-- [ ] Final demo game showcase
+Scene update performs transform propagation followed by component update traversal, keeping hierarchy correctness and behavior evaluation explicit.
 
----
+### Editor Integration
 
-## Demo Games (Planned)
+The editor is frame-synchronous with runtime and exposes hierarchy, inspection, profiling, and console diagnostics in one loop.
 
-| Game | Description |
-|------|-------------|
-| **Platformer** | Mario-style side-scroller with tile-based levels |
-| **Metroidvania** | Hollow Knight-inspired action platformer |
-| **Physics Sandbox** | Angry Birds-style physics puzzle game |
-| **3D Showcase** | Minecraft Dungeons-style isometric 3D |
+## Quality, Testing, and Security Summary
 
----
+- Unit and system test plans were defined for allocator, scene graph, rendering, and runtime behavior
+- Memory safety is reinforced with assertions, pointer checks, and guard-value verification
+- Profiling outputs include frame-time and container-level metrics
+- Build reports target clean compilation and reproducible release outputs
 
-## Expected Outcomes
+## Future Roadmap
 
-1. **Working Game Engine** – Fully functional editor with rendering, physics, and scene management
-2. **Playable Demo** – At least one complete game demonstrating engine capabilities
-3. **Documentation** – Comprehensive technical documentation and usage guides
-4. **Learning** – Deep understanding of:
-   - Graphics programming and rendering pipelines
-   - Game architecture and design patterns
-   - Memory management and optimization
-   - Tool/Editor development
+- Re-establish and automate test suites in CI
+- Improve allocator performance and fragmentation behavior
+- Expand gameplay systems (audio, particles, scripting, AI)
+- Add networking and advanced asset workflows
+- Explore mobile and XR deployment paths
 
----
+## Repository Notes
 
-## References
-
-- *Game Engine Architecture* by Jason Gregory
-- *Real-Time Rendering* by Tomas Akenine-Möller
-- Learn OpenGL (https://learnopengl.com)
-- Box2D Documentation (https://box2d.org/documentation/)
-- Dear ImGui (https://github.com/ocornut/imgui)
-
----
+Generated report artifacts and academic export files are intentionally excluded through gitignore rules to keep the repository focused on source, assets, and maintainable documentation.
 
 ## Author
 
-**© JAY VARMA**  
-[2026]
-
----
-
-> *"The best way to understand how games work is to build the tools that make them."*
+Jay Varma
+2026

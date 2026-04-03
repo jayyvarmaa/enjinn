@@ -1,3 +1,11 @@
+# Ignore build directories
+bin/
+build/
+out/
+*.iobj
+*.ipdb
+*.pdb
+
 # Logs
 logs
 *.log
@@ -222,6 +230,19 @@ UI_SYSTEM_DOCUMENTATION.md
 
 # Generated images
 generated-image*.png
+
+# Generated project report artifacts
+EnJinn_Complete_Academic_Report.html
+EnJinn_Complete_Project_Report.html
+EnJinn_Supplementary_Appendices.html
+project_report.html
+project_report_part1.html
+project_report_part2.html
+project_report_part3.html
+
+# Reference sample documents
+SOE - Project Report Sample Format_Part B.docx
+SOE- Project Report Sample Format_Part A.docx
 
 # Runtime generated directories (engine settings, window state)
 enjinn/

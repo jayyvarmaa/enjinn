@@ -14,6 +14,7 @@
 #include <stringManipulation/stringManipulation.h>
 #include <fstream>
 #include <string_view>
+#include <glm/glm.hpp>
 #include <sceneGraph/scene.h>
 
 #define READENTIREFILE(x) bool x(const char* name, void* buffer, size_t size)
@@ -410,6 +411,12 @@ struct Container
     // New Scene Graph Integration
     // Returns the active scene if the container uses the Scene Graph system.
     virtual enjinn::Scene* getScene() { return nullptr; }
+	virtual bool getEditorCameraMatrices(glm::mat4& view, glm::mat4& projection)
+	{
+		(void)view;
+		(void)projection;
+		return false;
+	}
 
 	virtual ~Container() {};
 

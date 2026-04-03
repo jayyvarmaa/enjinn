@@ -1,0 +1,41 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 1360">
+  <defs><style>.bg{fill:#0b0d12}.title{fill:#edf2f7;font:700 40px 'Segoe UI',sans-serif}.h{fill:#edf2f7;font:700 24px 'Segoe UI',sans-serif}.s{fill:#b9c6d6;font:500 18px 'Segoe UI',sans-serif}.edge{stroke:#d0d7de;stroke-width:3;fill:none;marker-end:url(#m)}</style><marker id="m" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#d0d7de"/></marker></defs>
+  <rect class="bg" width="920" height="1360"/>
+  <text x="24" y="52" class="title">Allocator Flow Diagram</text>
+  <ellipse cx="460" cy="110" rx="180" ry="46" fill="#4f4f4f" stroke="#b4b4b4" stroke-width="3"/>
+  <text x="460" y="118" text-anchor="middle" class="h">Start frame update</text>
+
+  <rect x="250" y="180" width="420" height="120" rx="14" fill="#124e86" stroke="#83b7ee" stroke-width="3"/>
+  <text x="460" y="238" text-anchor="middle" class="h">Get container</text>
+  <text x="460" y="270" text-anchor="middle" class="s">ContainerManager::get(i)</text>
+
+  <polygon points="460,360 660,450 460,540 260,450" fill="#7a4300" stroke="#ffb347" stroke-width="3"/>
+  <text x="460" y="445" text-anchor="middle" class="h">Is running?</text>
+  <text x="460" y="475" text-anchor="middle" class="s">Check state flag</text>
+
+  <rect x="700" y="400" width="170" height="100" rx="14" fill="#4f4f4f" stroke="#b4b4b4" stroke-width="3"/>
+  <text x="785" y="458" text-anchor="middle" class="h">Skip</text>
+
+  <rect x="250" y="620" width="420" height="120" rx="14" fill="#0b5a4e" stroke="#3ee0c7" stroke-width="3"/>
+  <text x="460" y="678" text-anchor="middle" class="h">Bind allocator</text>
+  <text x="460" y="710" text-anchor="middle" class="s">Set thread-local heap ptr</text>
+
+  <rect x="250" y="820" width="420" height="120" rx="14" fill="#433c94" stroke="#a79cff" stroke-width="3"/>
+  <text x="460" y="878" text-anchor="middle" class="h">Call update()</text>
+  <text x="460" y="910" text-anchor="middle" class="s">Execute container code</text>
+
+  <rect x="250" y="1020" width="420" height="120" rx="14" fill="#0b5a4e" stroke="#3ee0c7" stroke-width="3"/>
+  <text x="460" y="1078" text-anchor="middle" class="h">Reset allocator</text>
+  <text x="460" y="1110" text-anchor="middle" class="s">Restore engine heap ptr</text>
+
+  <ellipse cx="460" cy="1260" rx="180" ry="46" fill="#4f4f4f" stroke="#b4b4b4" stroke-width="3" stroke-dasharray="8 6"/>
+  <text x="460" y="1268" text-anchor="middle" class="h">End frame update</text>
+
+  <path d="M460 156 L460 180" class="edge"/>
+  <path d="M460 300 L460 360" class="edge"/>
+  <path d="M660 450 L700 450" class="edge"/>
+  <path d="M460 540 L460 620" class="edge"/>
+  <path d="M460 740 L460 820" class="edge"/>
+  <path d="M460 940 L460 1020" class="edge"/>
+  <path d="M460 1140 L460 1214" class="edge"/>
+</svg>

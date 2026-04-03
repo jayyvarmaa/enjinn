@@ -193,9 +193,8 @@ struct Component {
 
 ## Author
 
-**[Your Name]**  
-Semester Project – [University Name]  
-[Year]
+**© JAY VARMA**  
+[2026]
 
 ---
 

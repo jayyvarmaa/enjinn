@@ -115,6 +115,24 @@
     <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\sharedRuntime\windowSystemm\window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnRuntime\audio\audioComponents.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnEditor\editor\gizmos.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnRuntime\animation\animationSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnRuntime\prefab\prefab.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnRuntime\particles\particleSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnRuntime\ai\behaviorTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\Projects\Enjinn\enjinn\EnJinn\CMakeLists.txt" />

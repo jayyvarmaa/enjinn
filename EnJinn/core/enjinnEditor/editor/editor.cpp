@@ -17,6 +17,7 @@
 #include <GLFW/glfw3.h> // Custom Title Bar Controls
 #include <filesystem>
 #include <string>
+#include <algorithm>
 #include <phaseManager/phaseManager.h>
 #include <svgTexture/svgTexture.h>
 #include "imgui_internal.h"
@@ -35,10 +36,22 @@
 #define HIERARCHY_WINDOW ICON_FK_LIST " Hierarchy"
 #define INSPECTOR_WINDOW ICON_FK_INFO " Inspector"
 #define SCENE_VIEW_WINDOW ICON_FK_PICTURE_O " Scene View"
+#define PROFILER_WINDOW ICON_FK_TACHOMETER " Profiler"
+#define PREFAB_WINDOW ICON_FK_CUBES " Prefabs"
+#define UNDO_HISTORY_WINDOW ICON_FK_HISTORY " Undo History"
+#define MATERIAL_EDITOR_WINDOW ICON_FK_PAINT_BRUSH " Material Editor"
+#define PROJECT_SETTINGS_WINDOW ICON_FK_SLIDERS " Project Settings"
+#define BUILD_WINDOW ICON_FK_COG " Build"
+#define DIAGNOSTIC_WINDOW ICON_FK_STETHOSCOPE " Diagnostics"
 
 
 void enjinn::Editor::init(enjinn::ShortcutManager &shortcutManager, enjinn::enjinnImgui::ImGuiIdsManager &imguiIDManager)
 {
+
+	// Restrict window dragging to explicit title bars only (avoid dragging from toolbar/menu area)
+	ImGuiIO& io = ImGui::GetIO();
+	io.ConfigWindowsMoveFromTitleBarOnly = true;
+
 
 	shortcutManager.registerShortcut(DOCK_MAIN_WINDOW_SHORTCUT, "Ctrl+Alt+D", &optionsFlags.hideMainWindow);
 	shortcutManager.registerShortcut(LOGS_SHORTCUT, "Ctrl+L", &windowFlags.logsWindow);
@@ -52,9 +65,13 @@ void enjinn::Editor::init(enjinn::ShortcutManager &shortcutManager, enjinn::enji
     shortcutManager.registerShortcut(HIERARCHY_WINDOW, "", &windowFlags.hierarchyWindow);
     shortcutManager.registerShortcut(INSPECTOR_WINDOW, "", &windowFlags.inspectorWindow);
     shortcutManager.registerShortcut(SCENE_VIEW_WINDOW, "", &windowFlags.sceneViewWindow);
-
-	imguiId = imguiIDManager.getImguiIds(1);
-
+	shortcutManager.registerShortcut(PROFILER_WINDOW, "Ctrl+Alt+P", &windowFlags.profilerWindow);
+	shortcutManager.registerShortcut(PREFAB_WINDOW, "", &windowFlags.prefabWindow);
+	shortcutManager.registerShortcut(UNDO_HISTORY_WINDOW, "", &windowFlags.undoHistoryWindow);
+	shortcutManager.registerShortcut(MATERIAL_EDITOR_WINDOW, "", &windowFlags.materialEditorWindow);
+	shortcutManager.registerShortcut(PROJECT_SETTINGS_WINDOW, "", &windowFlags.projectSettingsWindow);
+	shortcutManager.registerShortcut(BUILD_WINDOW, "Ctrl+B", &windowFlags.buildWindow);
+	shortcutManager.registerShortcut(DIAGNOSTIC_WINDOW, "Ctrl+Shift+D", &windowFlags.diagnosticWindow);
 	logWindow.init(imguiIDManager);
 	editShortcutsWindow.init(imguiIDManager);
 	containersWindow.init(imguiIDManager);
@@ -64,6 +81,13 @@ void enjinn::Editor::init(enjinn::ShortcutManager &shortcutManager, enjinn::enji
     hierarchyWindow.init(imguiIDManager);
     inspectorWindow.init(imguiIDManager);
     sceneViewWindow.init(imguiIDManager);
+    profilerWindow.init(imguiIDManager);
+    prefabWindow.init(imguiIDManager);
+    undoHistoryWindow.init(imguiIDManager);
+    materialEditorWindow.init(imguiIDManager);
+    projectSettingsWindow.init(imguiIDManager);
+    buildWindow.init(imguiIDManager);
+    diagnosticWindow.init(imguiIDManager);
 
 	if (sfs::safeLoad(&optionsFlags, sizeof(optionsFlags), ENJINN_ENGINE_SAVES_PATH "options", false) != sfs::noError)
 	{
@@ -111,6 +135,7 @@ void enjinn::Editor::update(const enjinn::Input &input,
 {
 
 #pragma region push notification if hide window
+	static bool lastHideWindowState = false;
 
 	if (lastHideWindowState == 0 && optionsFlags.hideMainWindow)
 	{
@@ -173,13 +198,13 @@ void enjinn::Editor::update(const enjinn::Input &input,
                 
                 // --- CUSTOM WINDOW BORDER ---
                 // "Way to change thickness": Modify this variable.
-                static float windowBorderThickness = 6.0f; 
+				static float windowBorderThickness = 1.0f; 
                 
                 if (windowBorderThickness > 0.0f)
                 {
                     ImGuiViewport* viewport = ImGui::GetMainViewport();
                     ImDrawList* drawList = ImGui::GetForegroundDrawList();
-                    ImU32 borderColor = ImGui::GetColorU32(ImGuiCol_MenuBarBg);
+					ImU32 borderColor = ImGui::GetColorU32(ImGuiCol_Border);
                     
                     // Positions (Inset by half thickness to stay inside)
                     float t = windowBorderThickness;
@@ -208,16 +233,20 @@ void enjinn::Editor::update(const enjinn::Input &input,
 			}
 
 		#pragma region menu
-			ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(0, 30.0f)); // Visual Height ~75px (Matches Logical 75px)
+			// FramePadding Y determines the bar height: barH = FontSize + FramePadding.y * 2.
+			// Keeping it pushed through EndMenuBar makes every BeginMenu hit-box fill the full bar.
+			ImVec4 topBarColor = ImGui::GetStyle().Colors[ImGuiCol_TitleBgActive];
+			ImGui::PushStyleColor(ImGuiCol_MenuBarBg, topBarColor);
+
+			// Match VS Code-like title bar height and spacing
+			ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(6.0f, 3.0f));
+			ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(8.0f, 3.0f));
+			ImGui::PushStyleVar(ImGuiStyleVar_ItemInnerSpacing, ImVec2(6.0f, 3.0f));
 			if (ImGui::BeginMenuBar())
 			{
-				ImGui::PopStyleVar(); // Apply style only to the bar geometry logic initial phase if needed, but usually kept for items. 
-				// Actually ImGui recommends keeping it for the duration.
-				// But wait, if I pop it here, items will be small in a big bar.
-				// If I don't pop, items will be big. User probably wants big items too?
-				// Title bar items are usually centered vertically. 
-				// Let's keep it pushed until EndMenuBar.
+				// NOTE: do NOT PopStyleVar here – keep padding so item hot-areas span full bar height.
 
+				ImGui::Dummy(ImVec2(10.0f, 0));
 
 				if (ImGui::BeginMenu(ICON_FK_COGS " EnJinn"))
 				{
@@ -233,6 +262,8 @@ void enjinn::Editor::update(const enjinn::Input &input,
 					ImGui::EndMenu();
 				}
 
+				ImGui::SameLine(0, 12.0f);
+
 				if (ImGui::BeginMenu("Options"))
 				{
 
@@ -242,6 +273,8 @@ void enjinn::Editor::update(const enjinn::Input &input,
 
 					ImGui::EndMenu();
 				}
+
+				ImGui::SameLine(0, 12.0f);
 
 				if (ImGui::BeginMenu(ICON_FK_GAMEPAD " Gameplay"))
 				{
@@ -253,7 +286,16 @@ void enjinn::Editor::update(const enjinn::Input &input,
 					{
 						for (auto &c : loadedDll.containerInfo)
 						{
-							if (ImGui::MenuItem(c.containerName.c_str()))
+							if (c.containerName.find("DiagnosticsLab") != std::string::npos &&
+								c.containerName != "AIBehaviorDiagnosticsLab") { continue; }
+
+							const char* menuLabel = c.containerName.c_str();
+							if (c.containerName == "AIBehaviorDiagnosticsLab")
+							{
+								menuLabel = "AI & Behavior Lab";
+							}
+
+							if (ImGui::MenuItem(menuLabel))
 							{
 								containerManager.createContainer(c.containerName, loadedDll, logs, imguiIDsManager, &consoleWindow, std::string());
 							}
@@ -261,6 +303,8 @@ void enjinn::Editor::update(const enjinn::Input &input,
 					}
 					ImGui::EndMenu();
 				}
+
+				ImGui::SameLine(0, 12.0f);
 
 				if (ImGui::BeginMenu(ICON_FK_WINDOW_MAXIMIZE " Windows"))
 				{
@@ -294,6 +338,21 @@ void enjinn::Editor::update(const enjinn::Input &input,
 						
 						ImGui::MenuItem(enjinn::SceneViewWindow::ICON_NAME,
 							shortcutManager.getShortcut(SCENE_VIEW_WINDOW), &windowFlags.sceneViewWindow);
+						
+						ImGui::MenuItem(enjinn::PrefabWindow::ICON_NAME,
+							shortcutManager.getShortcut(PREFAB_WINDOW), &windowFlags.prefabWindow);
+						
+						ImGui::MenuItem(enjinn::MaterialEditorWindow::ICON_NAME,
+							shortcutManager.getShortcut(MATERIAL_EDITOR_WINDOW), &windowFlags.materialEditorWindow);
+						
+						ImGui::MenuItem(enjinn::ProjectSettingsWindow::ICON_NAME,
+							shortcutManager.getShortcut(PROJECT_SETTINGS_WINDOW), &windowFlags.projectSettingsWindow);
+						
+						ImGui::MenuItem(enjinn::BuildWindow::ICON_NAME,
+							shortcutManager.getShortcut(BUILD_WINDOW), &windowFlags.buildWindow);
+					
+						ImGui::MenuItem(enjinn::UndoHistoryWindow::ICON_NAME,
+							shortcutManager.getShortcut(UNDO_HISTORY_WINDOW), &windowFlags.undoHistoryWindow);
 					}
 					
 					// PHASE 4: Physics & Gameplay
@@ -301,11 +360,16 @@ void enjinn::Editor::update(const enjinn::Input &input,
 					{
 						ImGui::MenuItem(enjinn::OpenglLogsWindow::ICON_NAME,
 							shortcutManager.getShortcut(OPENGL_ERRORS_WINDOW), &windowFlags.openglErrorsWindow);
+						
+						ImGui::MenuItem(enjinn::ProfilerWindow::ICON_NAME,
+							shortcutManager.getShortcut(PROFILER_WINDOW), &windowFlags.profilerWindow);
 					}
 
 					ImGui::EndMenu();
 
 				}
+
+				ImGui::SameLine(0, 12.0f);
 
 				if (ImGui::BeginMenu(ICON_FK_COG " Settings"))
 				{
@@ -441,84 +505,12 @@ void enjinn::Editor::update(const enjinn::Input &input,
 					ImGui::EndMenu();
 				}
 
-				if (logoTextureId)
-				{
-					// Use GetFrameHeight to fit inside the menu bar
-					float height = ImGui::GetFrameHeight(); 
-					
-					// Add some padding if needed
-					float padding = 4.0f;
-					float drawHeight = height - padding;
-					
-					if(drawHeight > 0 && logoHeight > 0)
-					{
-						float aspect = (float)logoWidth / (float)logoHeight;
-						float width = drawHeight * aspect;
-
-						// Center the image in the window (not just the remaining space)
-						float windowWidth = ImGui::GetWindowWidth();
-						
-						// Ensure we don't overlap with existing menu items if the window is too small,
-						// DRAG AREA 1 & 2 Removed - Handled by OS via WM_NCHITTEST
-
-                        float standardBtnWidth = 60.0f;
-                        float buttonsWidth = standardBtnWidth * 3.0f; 
-                        float buttonsStart = windowWidth - buttonsWidth;
-						
-						// Draw Logo (High Res, Scaled Down)
-						// Center Logo Logic
-                        float logoX = (windowWidth - width) * 0.5f;
-						if (logoX > ImGui::GetCursorPosX()) ImGui::SetCursorPosX(logoX);
-						
-						ImGui::SetCursorPosY(ImGui::GetCursorPosY() + padding * 0.5f);
-						ImGui::Image((void*)(intptr_t)logoTextureId, { width, drawHeight });
-
-                        // Continue to Buttons
-                        ImGui::SameLine();
-                        if (ImGui::GetCursorPosX() < buttonsStart) ImGui::SetCursorPosX(buttonsStart);
-
-						// DRAW CUSTOM WINDOW CONTROLS
-						ImGui::SameLine();
-						ImGui::SetCursorPosX(buttonsStart);
-						ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(0, 0)); // Tight buttons
-                        ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(0, 0)); // No gaps between buttons
-						ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0,0,0,0)); // Transparent background
-						
-						if (ImGui::Button(ICON_FK_MINUS, ImVec2(standardBtnWidth, height)))
-						{
-                            logs.log("Minimize Clicked");
-							glfwIconifyWindow(glfwGetCurrentContext());
-						}
-						ImGui::SameLine(0, 0); // No spacing
-
-						// Maximize / Restore
-						GLFWwindow* win = glfwGetCurrentContext();
-						bool isMaximized = glfwGetWindowAttrib(win, GLFW_MAXIMIZED);
-						if (ImGui::Button(isMaximized ? ICON_FK_WINDOW_RESTORE : ICON_FK_WINDOW_MAXIMIZE, ImVec2(standardBtnWidth, height)))
-						{
-                            logs.log(isMaximized ? "Restore Clicked" : "Maximize Clicked");
-							if (isMaximized) glfwRestoreWindow(win);
-							else glfwMaximizeWindow(win);
-						}
-						ImGui::SameLine(0, 0); // No spacing
-
-						// Close
-						ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(0.9f, 0.1f, 0.1f, 1.0f)); // Red on hover
-                        ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(0.8f, 0.0f, 0.0f, 1.0f));
-						if (ImGui::Button(ICON_FK_TIMES, ImVec2(standardBtnWidth, height)))
-						{
-                            logs.log("Close Clicked");
-							glfwSetWindowShouldClose(win, true);
-						}
-						ImGui::PopStyleColor(2); // hover, active
-
-						ImGui::PopStyleColor(); // bg
-						ImGui::PopStyleVar(2); // padding, spacing
-					}
-				}
+				// Native window chrome is now used; skip drawing custom logo and window buttons.
 
 				ImGui::EndMenuBar();
 			}
+			ImGui::PopStyleVar(3); // FramePadding + ItemSpacing + ItemInnerSpacing for menu bar
+			ImGui::PopStyleColor();
 		#pragma endregion
 
 		}
@@ -610,6 +602,14 @@ void enjinn::Editor::update(const enjinn::Input &input,
         if(activeContainer && activeContainer->pointer)
         {
             enjinn::Scene* scene = activeContainer->pointer->getScene();
+			sceneViewWindow.setSelectedNode(hierarchyWindow.selectedNode);
+
+			glm::mat4 viewMatrix(1.0f);
+			glm::mat4 projectionMatrix(1.0f);
+			if (activeContainer->pointer->getEditorCameraMatrices(viewMatrix, projectionMatrix))
+			{
+				sceneViewWindow.setCameraMatrices(viewMatrix, projectionMatrix);
+			}
             
             // Enforce flags
             windowFlags.hierarchyWindow = true;
@@ -625,9 +625,63 @@ void enjinn::Editor::update(const enjinn::Input &input,
             // Scene View
             unsigned int textureId = activeContainer->requestedContainerInfo.requestedFBO.texture;
             sceneViewWindow.update(textureId, windowFlags.sceneViewWindow);
+            
+            // Prefab Window
+            if (windowFlags.prefabWindow)
+            {
+                prefabWindow.setScene(scene);
+                prefabWindow.setSelectedNode(hierarchyWindow.selectedNode);
+                prefabWindow.update(windowFlags.prefabWindow);
+            }
+            
+            // Undo History Window
+            if (windowFlags.undoHistoryWindow)
+            {
+                undoHistoryWindow.update(undoRedoManager, windowFlags.undoHistoryWindow);
+            }
         }
     }
 #pragma endregion
+
+#pragma region standalone windows
+    // Profiler Window
+    if (windowFlags.profilerWindow)
+    {
+        profilerWindow.update(windowFlags.profilerWindow);
+    }
+    
+    // Material Editor Window
+    if (windowFlags.materialEditorWindow)
+    {
+        materialEditorWindow.update(windowFlags.materialEditorWindow);
+    }
+    
+    // Project Settings Window
+    if (windowFlags.projectSettingsWindow)
+    {
+        projectSettingsWindow.update(windowFlags.projectSettingsWindow);
+    }
+    
+    // Build Window
+    if (windowFlags.buildWindow)
+    {
+        buildWindow.update(windowFlags.buildWindow);
+    }
+
+    // Diagnostic Window
+    if (windowFlags.diagnosticWindow)
+    {
+        diagnosticWindow.update(windowFlags.diagnosticWindow);
+    }
+#pragma endregion
+
+    // Status Bar
+    {
+        StatusBarInfo statusInfo;
+        statusInfo.fps = ImGui::GetIO().Framerate;
+        statusInfo.currentTool = "Select";
+        statusBar.render(statusInfo);
+    }
 
 
 }

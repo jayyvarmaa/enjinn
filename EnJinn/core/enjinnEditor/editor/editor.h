@@ -26,6 +26,16 @@
 #include "hierarchyWindow.h"
 #include "inspectorWindow.h"
 #include "sceneViewWindow.h"
+#include "profilerWindow.h"
+#include "prefabWindow.h"
+#include "undoHistoryWindow.h"
+#include "materialEditorWindow.h"
+#include "toolbar.h"
+#include "statusBar.h"
+#include "undoRedo.h"
+#include "projectSettingsWindow.h"
+#include "buildWindow.h"
+#include "diagnosticWindow.h"
 #include <phaseManager/phaseManager.h>
 
 namespace enjinn
@@ -61,6 +71,13 @@ namespace enjinn
             bool hierarchyWindow = 1;
             bool inspectorWindow = 1;
             bool sceneViewWindow = 1;
+            bool profilerWindow = 0;
+            bool prefabWindow = 0;
+            bool undoHistoryWindow = 0;
+            bool materialEditorWindow = 0;
+            bool projectSettingsWindow = 0;
+            bool buildWindow = 0;
+            bool diagnosticWindow = 0;
 		}windowFlags;
 
 		enjinn::LogWindow logWindow;
@@ -72,9 +89,16 @@ namespace enjinn
         enjinn::HierarchyWindow hierarchyWindow;
         enjinn::InspectorWindow inspectorWindow;
         enjinn::SceneViewWindow sceneViewWindow;
-
-		bool lastHideWindowState = optionsFlags.hideMainWindow;
-
+		enjinn::ProfilerWindow profilerWindow;
+		enjinn::PrefabWindow prefabWindow;
+		enjinn::UndoHistoryWindow undoHistoryWindow;
+		enjinn::MaterialEditorWindow materialEditorWindow;
+		enjinn::Toolbar toolbar;
+		enjinn::StatusBar statusBar;
+		enjinn::UndoRedoManager undoRedoManager;
+		enjinn::ProjectSettingsWindow projectSettingsWindow;
+		enjinn::BuildWindow buildWindow;
+		enjinn::DiagnosticWindow diagnosticWindow;
 		bool shouldReloadDll = 0;
 		int imguiId = 0;
 		GLuint logoTextureId = 0;  // SVG logo texture

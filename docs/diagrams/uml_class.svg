@@ -1,0 +1,78 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1700 1300">
+  <defs>
+    <style>
+      .bg{fill:#0b0d12}.title{fill:#edf2f7;font:700 36px 'Segoe UI',sans-serif}
+      .name{fill:#edf2f7;font:700 24px 'Segoe UI',sans-serif}.txt{fill:#c9d3df;font:500 19px 'Segoe UI',sans-serif}
+      .edge{stroke:#d0d7de;stroke-width:3;fill:none;marker-end:url(#m)}
+    </style>
+    <marker id="m" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#d0d7de"/></marker>
+  </defs>
+  <rect class="bg" width="1700" height="1300"/>
+  <text x="24" y="52" class="title">UML Class Diagram</text>
+
+  <g transform="translate(540,100)">
+    <rect width="520" height="280" rx="14" fill="#433c94" stroke="#a79cff" stroke-width="3"/>
+    <line x1="0" y1="82" x2="520" y2="82" stroke="#a79cff"/>
+    <line x1="0" y1="174" x2="520" y2="174" stroke="#a79cff"/>
+    <text x="260" y="52" text-anchor="middle" class="name">Component</text>
+    <text x="20" y="126" class="txt">- node: Node*</text>
+    <text x="20" y="156" class="txt">- enabled: bool</text>
+    <text x="20" y="212" class="txt">+ onCreate()</text>
+    <text x="20" y="242" class="txt">+ onUpdate(dt)</text>
+    <text x="20" y="272" class="txt">+ onDestroy()</text>
+  </g>
+
+  <g transform="translate(1120,120)">
+    <rect width="500" height="250" rx="14" fill="#124e86" stroke="#83b7ee" stroke-width="3"/>
+    <line x1="0" y1="82" x2="500" y2="82" stroke="#83b7ee"/>
+    <text x="250" y="52" text-anchor="middle" class="name">Node</text>
+    <text x="20" y="126" class="txt">- parent: Node*</text>
+    <text x="20" y="156" class="txt">- children: Node[]</text>
+    <text x="20" y="200" class="txt">+ addChild()</text>
+    <text x="20" y="230" class="txt">+ addComponent()</text>
+  </g>
+
+  <g transform="translate(70,580)">
+    <rect width="440" height="290" rx="14" fill="#0b5a4e" stroke="#3ee0c7" stroke-width="3"/>
+    <line x1="0" y1="82" x2="440" y2="82" stroke="#3ee0c7"/>
+    <line x1="0" y1="178" x2="440" y2="178" stroke="#3ee0c7"/>
+    <text x="220" y="52" text-anchor="middle" class="name">GenericSprite</text>
+    <text x="20" y="128" class="txt">- texture: char*</text>
+    <text x="20" y="220" class="txt">+ onRender()</text>
+    <text x="20" y="250" class="txt">+ setTexture()</text>
+  </g>
+
+  <g transform="translate(560,580)">
+    <rect width="440" height="290" rx="14" fill="#8a3218" stroke="#f38f74" stroke-width="3"/>
+    <line x1="0" y1="82" x2="440" y2="82" stroke="#f38f74"/>
+    <line x1="0" y1="178" x2="440" y2="178" stroke="#f38f74"/>
+    <text x="220" y="52" text-anchor="middle" class="name">GenericPhysics</text>
+    <text x="20" y="128" class="txt">- rigidBody: b2Body*</text>
+    <text x="20" y="220" class="txt">+ onUpdate(dt)</text>
+    <text x="20" y="250" class="txt">+ setMass()</text>
+  </g>
+
+  <g transform="translate(1050,580)">
+    <rect width="440" height="290" rx="14" fill="#7a4300" stroke="#ffb347" stroke-width="3"/>
+    <line x1="0" y1="82" x2="440" y2="82" stroke="#ffb347"/>
+    <line x1="0" y1="178" x2="440" y2="178" stroke="#ffb347"/>
+    <text x="220" y="52" text-anchor="middle" class="name">Renderer</text>
+    <text x="20" y="128" class="txt">- shader: Shader*</text>
+    <text x="20" y="220" class="txt">+ onRender()</text>
+    <text x="20" y="250" class="txt">+ drawCall()</text>
+  </g>
+
+  <g transform="translate(110,1020)">
+    <rect width="440" height="220" rx="14" fill="#4f4f4f" stroke="#b4b4b4" stroke-width="3"/>
+    <line x1="0" y1="82" x2="440" y2="82" stroke="#b4b4b4"/>
+    <text x="220" y="52" text-anchor="middle" class="name">FreeListAllocator</text>
+    <text x="20" y="132" class="txt">+ allocate(size)</text>
+    <text x="20" y="168" class="txt">+ free(ptr)</text>
+  </g>
+
+  <path d="M1060 235 L1120 235" class="edge"/>
+  <path d="M640 380 L290 580" class="edge"/>
+  <path d="M800 380 L780 580" class="edge"/>
+  <path d="M960 380 L1240 580" class="edge"/>
+  <path d="M330 1020 L330 870" class="edge"/>
+</svg>

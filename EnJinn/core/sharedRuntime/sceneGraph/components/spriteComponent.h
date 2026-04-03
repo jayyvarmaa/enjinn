@@ -1,3 +1,4 @@
+#pragma once
 #include <sceneGraph/component.h>
 #include <gl2d/gl2d.h>
 #include <imgui.h>

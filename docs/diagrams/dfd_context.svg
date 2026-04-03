@@ -1,0 +1,37 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <style>
+      .bg{fill:#0b0d12}
+      .box{stroke-width:3}
+      .title{fill:#edf2f7;font:700 40px 'Segoe UI',sans-serif}
+      .h{fill:#edf2f7;font:700 24px 'Segoe UI',sans-serif}
+      .s{fill:#b9c6d6;font:500 18px 'Segoe UI',sans-serif}
+      .edge{stroke:#d0d7de;stroke-width:4;fill:none;marker-end:url(#m)}
+    </style>
+    <marker id="m" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#d0d7de"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="900"/>
+  <text x="30" y="58" class="title">DFD Context</text>
+
+  <rect x="90" y="300" width="300" height="180" rx="18" fill="#0b5a4e" stroke="#3ee0c7" class="box"/>
+  <text x="240" y="378" text-anchor="middle" class="h">Developer</text>
+  <text x="240" y="412" text-anchor="middle" class="s">User / Editor</text>
+
+  <ellipse cx="790" cy="390" rx="280" ry="150" fill="#433c94" stroke="#a79cff" class="box"/>
+  <text x="790" y="385" text-anchor="middle" class="h">EnJinn</text>
+  <text x="790" y="420" text-anchor="middle" class="s">Game Engine</text>
+
+  <rect x="1210" y="150" width="300" height="170" rx="18" fill="#0b5a4e" stroke="#3ee0c7" class="box"/>
+  <text x="1360" y="224" text-anchor="middle" class="h">Display</text>
+  <text x="1360" y="258" text-anchor="middle" class="s">Rendered frames</text>
+
+  <rect x="1210" y="500" width="300" height="190" rx="18" fill="#7a4300" stroke="#ffb347" class="box"/>
+  <text x="1360" y="580" text-anchor="middle" class="h">File I/O</text>
+  <text x="1360" y="615" text-anchor="middle" class="s">Scene save / load</text>
+
+  <path d="M390 360 L510 340" class="edge"/>
+  <path d="M510 430 L390 440" class="edge"/>
+  <path d="M1070 310 L1210 235" class="edge"/>
+  <path d="M1210 560 L1070 500" class="edge"/>
+  <path d="M1070 550 L1210 620" class="edge"/>
+</svg>

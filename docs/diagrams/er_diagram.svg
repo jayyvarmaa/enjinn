@@ -1,0 +1,59 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1700 1040">
+  <defs>
+    <style>
+      .bg{fill:#0b0d12}.title{fill:#edf2f7;font:700 34px 'Segoe UI',sans-serif}
+      .name{fill:#edf2f7;font:700 24px 'Segoe UI',sans-serif}.txt{fill:#c9d3df;font:500 18px 'Segoe UI',sans-serif}
+      .edge{stroke:#d0d7de;stroke-width:3;fill:none;marker-end:url(#m)}.dash{stroke-dasharray:10 8}
+      .card{fill:#edf2f7;font:700 24px 'Segoe UI',sans-serif}
+    </style>
+    <marker id="m" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#d0d7de"/></marker>
+  </defs>
+  <rect class="bg" width="1700" height="1040"/>
+  <text x="24" y="52" class="title">Entity Relationship Diagram</text>
+
+  <g transform="translate(70,300)">
+    <rect width="420" height="330" rx="14" fill="#124e86" stroke="#83b7ee" stroke-width="3"/>
+    <line x1="0" y1="82" x2="420" y2="82" stroke="#83b7ee"/>
+    <text x="210" y="52" text-anchor="middle" class="name">SCENE</text>
+    <text x="20" y="126" class="txt">id: string (PK)</text>
+    <text x="20" y="162" class="txt">name: string</text>
+    <text x="20" y="198" class="txt">root_node_id: int</text>
+    <text x="20" y="234" class="txt">created_at: timestamp</text>
+    <text x="20" y="270" class="txt">file_path: string</text>
+  </g>
+
+  <g transform="translate(630,180)">
+    <rect width="500" height="410" rx="14" fill="#433c94" stroke="#a79cff" stroke-width="3"/>
+    <line x1="0" y1="82" x2="500" y2="82" stroke="#a79cff"/>
+    <text x="250" y="52" text-anchor="middle" class="name">NODE</text>
+    <text x="20" y="126" class="txt">id: int (PK)</text>
+    <text x="20" y="162" class="txt">name: string</text>
+    <text x="20" y="198" class="txt">parent_id: int (FK)</text>
+    <text x="20" y="234" class="txt">scene_id: string (FK)</text>
+    <text x="20" y="270" class="txt">position: vec3</text>
+    <text x="20" y="306" class="txt">rotation: vec3</text>
+  </g>
+
+  <g transform="translate(1230,300)">
+    <rect width="400" height="330" rx="14" fill="#0b5a4e" stroke="#3ee0c7" stroke-width="3"/>
+    <line x1="0" y1="82" x2="400" y2="82" stroke="#3ee0c7"/>
+    <text x="200" y="52" text-anchor="middle" class="name">COMPONENT</text>
+    <text x="20" y="126" class="txt">id: int (PK)</text>
+    <text x="20" y="162" class="txt">type: enum</text>
+    <text x="20" y="198" class="txt">node_id: int (FK)</text>
+    <text x="20" y="234" class="txt">enabled: bool</text>
+    <text x="20" y="270" class="txt">data: JSON</text>
+  </g>
+
+  <path d="M490 420 L630 360" class="edge"/>
+  <text x="530" y="370" class="card">1</text>
+  <text x="610" y="395" class="card">N</text>
+
+  <path d="M1130 360 L1230 420" class="edge"/>
+  <text x="1150" y="352" class="card">1</text>
+  <text x="1210" y="388" class="card">N</text>
+
+  <path d="M900 590 Q900 760 700 790" class="edge dash"/>
+  <path d="M700 790 Q470 820 470 630" class="edge dash"/>
+  <text x="700" y="890" text-anchor="middle" class="txt">Self-reference: NODE.parent_id -> NODE.id (1:N)</text>
+</svg>

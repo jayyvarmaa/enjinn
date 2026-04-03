@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EnJinn Project Report - Part 2</title>
+  <style>
+    :root {
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #0f4c81;
+      --border: #d1d5db;
+      --bg: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: "Times New Roman", Times, serif; line-height: 1.6; }
+    .page { max-width: 920px; margin: 0 auto; padding: 48px 56px; }
+    h1, h2, h3, h4 { color: var(--accent); line-height: 1.3; margin-top: 1.3em; margin-bottom: 0.45em; }
+    h1 { font-size: 30px; margin-top: 0; text-align: center; }
+    h2 { font-size: 24px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+    h3 { font-size: 20px; }
+    h4 { font-size: 17px; }
+    p { text-align: justify; margin: 0.5em 0 0.9em; }
+    ul, ol { margin-top: 0.4em; margin-bottom: 1em; }
+    li { margin: 0.3em 0; }
+    .muted { color: var(--muted); font-style: italic; }
+    .box { border: 1px solid var(--border); background: #fafafa; padding: 16px 18px; margin: 14px 0; }
+    pre { background: #f8fafc; border: 1px solid var(--border); padding: 14px; overflow-x: auto; font-size: 14px; line-height: 1.45; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0 18px; }
+    th, td { border: 1px solid var(--border); padding: 8px 10px; vertical-align: top; }
+    th { background: #f3f4f6; text-align: left; }
+    @media print {
+      .page { max-width: none; padding: 20mm; }
+      h2, h3, h4 { page-break-after: avoid; }
+      pre, .box, table { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>Part 2: System Design and Coding</h1>
+    <p class="muted">Based strictly on analyzed workspace code and architecture.</p>
+
+    <h2>3. System Design</h2>
+
+    <h3>3.1 Modularization of the Engine</h3>
+    <p>
+      The EnJinn architecture is organized into multiple independent but cooperating modules. The folder structure and
+      compile targets show a clear split between runtime, editor, shared systems, and gameplay modules.
+    </p>
+
+    <table>
+      <thead>
+        <tr><th>Module</th><th>Primary Responsibility</th><th>Design Role</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>core/enjinnRuntime</td><td>Main engine loop, DLL/container loading, update scheduling, runtime services</td><td>Execution backbone</td></tr>
+        <tr><td>core/enjinnEditor</td><td>Editor windows (hierarchy, inspector, scene view, diagnostics, tools)</td><td>Development UI layer</td></tr>
+        <tr><td>core/sharedRuntime</td><td>Common contracts (Container, Scene, Node, Component, AssetManager, window state)</td><td>Shared domain model</td></tr>
+        <tr><td>core/enjinnSTD</td><td>Low-level utility layer: allocators, static containers, file and path helpers</td><td>Infrastructure utility layer</td></tr>
+        <tr><td>gameplay</td><td>Container implementations loaded via DLL (Mario, ThreeDTest, labs, examples)</td><td>Application/plugin layer</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      This modularization allows the runtime to remain stable while gameplay modules evolve independently. It also
+      supports hot-reload and per-container resource control, which is a strong systems-level choice for iterative game
+      development.
+    </p>
+
+    <h3>3.2 Data Integrity and Constraints</h3>
+    <ol>
+      <li>Container-level memory constraints are declared via ContainerStaticInfo (heap size, bonus allocators, FBO/UI needs).</li>
+      <li>Scene graph integrity is maintained through parent-child ownership and recursive update/render traversal.</li>
+      <li>Component allocation uses a fixed-size pool with overflow fallback, reducing fragmentation for normal component sizes.</li>
+      <li>Serialization boundaries are explicit through serialize and deserialize methods in Node and Component derivatives.</li>
+      <li>Runtime allocator binding around container updates enforces memory realm separation between engine and gameplay code.</li>
+    </ol>
+
+    <h3>3.3 Object-Oriented Design Principles Used</h3>
+
+    <h4>Inheritance</h4>
+    <p>
+      The design uses inheritance for engine extension points. Container is an abstract base type; gameplay modules
+      implement create, update, and destruct. Similarly, Component is the base type and concrete systems such as
+      GenericSpriteComponent, GenericPhysicsComponent, CameraComponent, and ScriptComponent derive from it.
+    </p>
+
+    <h4>Polymorphism</h4>
+    <p>
+      Runtime polymorphism appears in two key loops: the container update dispatch (calling each container through base
+      pointer) and scene traversal (calling component virtual methods during onUpdate and onRender). This enables the
+      engine to execute heterogeneous gameplay and component logic through uniform contracts.
+    </p>
+
+    <h4>Encapsulation</h4>
+    <p>
+      Subsystems encapsulate state and responsibilities: Shader caches uniform locations internally; ContainerManager
+      owns container lifecycle; EnJinnWindow centralizes input/window state; ComponentPool hides allocation mechanics.
+    </p>
+
+    <h4>Abstraction</h4>
+    <p>
+      Engine-facing interfaces abstract platform and API details. Gameplay code receives RequestedContainerInfo,
+      Input, and WindowState rather than direct runtime internals. This keeps gameplay modules focused on logic,
+      with memory and runtime orchestration handled by the core.
+    </p>
+
+    <h3>3.4 User Interface Design (Editor GUI)</h3>
+    <p>
+      The editor is implemented using Dear ImGui (docking branch). The editor class aggregates multiple specialized
+      windows: hierarchy, inspector, scene view, profiler, material editor, build window, and diagnostics. The design
+      follows a tool-window paradigm suitable for engine development: live diagnostics, scene inspection, and runtime
+      control in one frame-driven interface.
+    </p>
+    <p>
+      Diagnostic and lab windows indicate a usability focus on subsystem verification. Runtime containers can also
+      request ImGui framebuffers and IDs, allowing integrated tool and gameplay views.
+    </p>
+
+    <h2>4. Coding</h2>
+
+    <h3>4.1 Crucial Code Snippet 1: Runtime Main Loop</h3>
+    <div class="box">
+      File: EnJinn/core/enjinnRuntime/enjinnMain.cpp (runtime orchestration loop)
+    </div>
+    <pre>while (!shouldClose)
+{
+    if (window.shouldClose())
+    {
+        shouldClose = true;
+        break;
+    }
+
+    enjinn::enjinnImgui::imguiStartFrame(window.context);
+    glClear(GL_COLOR_BUFFER_BIT);
+
+#if !ENJINN_SHOULD_REMOVE_EDITOR
+    editor.update(window.input, shortcutManager, logs,
+        pushNotificationManager, loadedDll, containerManager, imguiIdsManager);
+#endif
+
+#if !(ENJINN_SHOULD_REMOVE_EDITOR)
+    if (editor.shouldReloadDll)
+    {
+        editor.shouldReloadDll = false;
+        containerManager.reloadDll(loadedDll, window, logs);
+    }
+
+    containerManager.update(loadedDll, window, logs, imguiIdsManager, &editor.consoleWindow);
+#else
+    containerManager.update(loadedDll, window, logs, imguiIdsManager, nullptr);
+#endif
+
+    enjinn::enjinnImgui::imguiEndFrame(window.context);
+    window.update();
+    shortcutManager.update(window.input);
+}</pre>
+    <p>
+      This loop shows a layered execution pipeline: frame begin, editor pass, container pass, frame end, and IO/state
+      updates. The design keeps tooling and gameplay synchronized within one deterministic cycle. Runtime reload logic
+      is handled in-loop, minimizing restart cost during development.
+    </p>
+
+    <h3>4.2 Crucial Code Snippet 2: Allocator Binding Around Container Update</h3>
+    <div class="box">
+      File: EnJinn/core/enjinnRuntime/containerManager/containerManager.cpp (per-container update wrapper)
+    </div>
+    <pre>loadedDll.bindAllocatorDllRealm(&c.second.allocator);
+bool rez = c.second.pointer->update(windowInput, windowState, c.second.requestedContainerInfo);
+loadedDll.resetAllocatorDllRealm();</pre>
+    <p>
+      This is one of the most important architectural points in the codebase. Every container update executes under its
+      own allocator context. It reduces accidental cross-realm allocation patterns and helps diagnostics/snapshot systems.
+      The explicit reset call immediately after update prevents allocator leakage into runtime code paths.
+    </p>
+
+    <h3>4.3 Crucial Code Snippet 3: Component Pool Allocation Strategy</h3>
+    <div class="box">
+      File: EnJinn/core/sharedRuntime/sceneGraph/node.h (ComponentPool)
+    </div>
+    <pre>void* allocate(size_t size)
+{
+    size = (size + 15) & ~15;
+
+    if (size > MAX_ALLOC || offset + size > POOL_SIZE)
+    {
+        return std::malloc(size);
+    }
+
+    void* ptr = pool + offset;
+    offset += size;
+    return ptr;
+}
+
+void deallocate(void* ptr)
+{
+    if (ptr >= pool && ptr < pool + POOL_SIZE)
+    {
+        return;
+    }
+    std::free(ptr);
+}</pre>
+    <p>
+      This snippet demonstrates a pragmatic hybrid allocator: fixed pool for common component sizes and heap fallback
+      for overflow cases. Alignment is explicit. Deallocation avoids per-object pool reclamation and instead supports
+      fast reset semantics, which suits frame/update-oriented component workloads.
+    </p>
+
+    <h3>4.4 Crucial Code Snippet 4: Shader Uniform Location Caching</h3>
+    <div class="box">
+      File: EnJinn/core/enjinnRuntime/rendering/material.cpp (Shader class)
+    </div>
+    <pre>int Shader::getUniformLocation(const std::string& name)
+{
+    auto it = uniformLocations.find(name);
+    if (it != uniformLocations.end())
+    {
+        return it->second;
+    }
+
+    int loc = glGetUniformLocation(programID, name.c_str());
+    uniformLocations[name] = loc;
+
+    return loc;
+}
+
+bool Shader::compileShader(unsigned int shaderID, const std::string& source, const std::string& type)
+{
+    glCompileShader(shaderID);
+
+    GLint success;
+    glGetShaderiv(shaderID, GL_COMPILE_STATUS, &success);
+
+    if (!success)
+    {
+        std::cerr << "Shader compilation failed (" << type << "): " << getCompilationErrors(shaderID) << std::endl;
+        return false;
+    }
+
+    return true;
+}</pre>
+    <p>
+      This code improves rendering efficiency by caching uniform lookups instead of repeatedly querying OpenGL.
+      It also includes immediate shader compile-status checks and error reporting, improving diagnosability of pipeline
+      failures.
+    </p>
+
+    <h2>5. Code Quality Discussion</h2>
+
+    <h3>5.1 Code Standardization Practices</h3>
+    <ol>
+      <li>Consistent subsystem foldering and header-based API boundaries.</li>
+      <li>Engine-prefixed macros and compile-time feature flags for development vs production behavior.</li>
+      <li>Stable interface contracts for containers and components.</li>
+      <li>Separation between runtime-side orchestration and gameplay-side implementation.</li>
+    </ol>
+
+    <h3>5.2 Efficiency Techniques</h3>
+    <ol>
+      <li>Component pool allocation and alignment for common small objects.</li>
+      <li>Per-container allocator binding to localize allocation costs and control memory domains.</li>
+      <li>Uniform location caching in shader system.</li>
+      <li>Frame timing aggregation per container for lightweight performance monitoring.</li>
+      <li>CMake interprocedural optimization enabled at project level.</li>
+    </ol>
+
+    <h3>5.3 Error Handling Techniques</h3>
+    <ol>
+      <li>Assertion guards for critical initialization steps (GLFW/GLAD/DLL load).</li>
+      <li>Boolean return-based checks for creation/update/load operations.</li>
+      <li>Shader compilation/link diagnostics through explicit status checks and logs.</li>
+      <li>Fallback behaviors in allocator and file-load paths to avoid immediate catastrophic failure in non-critical paths.</li>
+    </ol>
+
+    <h3>5.4 Parameter Passing Methods</h3>
+    <ol>
+      <li>Heavy or mutable structures passed by reference where orchestration is required (for example RequestedContainerInfo and manager objects).</li>
+      <li>Frame input/window-state are passed explicitly to update calls, maintaining deterministic frame context.</li>
+      <li>Const references used in several rendering/material APIs to avoid unnecessary copies.</li>
+      <li>Function pointers and callback signatures are used for DLL interface boundaries and file-opener bindings.</li>
+    </ol>
+
+    <p>
+      Overall, the codebase reflects an engine-oriented C++ style emphasizing clear subsystem contracts,
+      explicit runtime control, and pragmatic performance-conscious implementation.
+    </p>
+
+  </div>
+</body>
+</html>

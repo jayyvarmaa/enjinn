@@ -352,6 +352,18 @@ namespace sfs
 		//can return error: entryNotFound, entryHasDifferentDataType
 		Errors getString(std::string at, std::string &s);
 
+		// Convenience overloads: writeData dispatches to the correct set* method
+		Errors writeData(std::string at, float f) { return setFloat(at, f); }
+		Errors writeData(std::string at, int i) { return setInt(at, i); }
+		Errors writeData(std::string at, bool b) { return setBool(at, b); }
+		Errors writeData(std::string at, const std::string &s) { return setString(at, s); }
+
+		// Convenience overloads: readData dispatches to the correct get* method
+		Errors readData(std::string at, float &f) { return getFloat(at, f); }
+		Errors readData(std::string at, int &i) { return getInt(at, i); }
+		Errors readData(std::string at, bool &b) { return getBool(at, b); }
+		Errors readData(std::string at, std::string &s) { return getString(at, s); }
+
 		std::vector<char> formatIntoFileDataBinary() const;
 
 		//not finished yet

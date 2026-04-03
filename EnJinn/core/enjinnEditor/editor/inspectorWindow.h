@@ -2,6 +2,7 @@
 #include <enjinnConfig.h>
 #include <enjinnImgui/enjinnImgui.h>
 #include <sceneGraph/node.h>
+#include "IconsFontAwesome6.h"
 
 namespace enjinn
 {
@@ -14,5 +15,13 @@ namespace enjinn
 
     private:
         int windowId = 0;
+        
+        void drawTransformSection(Node* node);
+        void drawComponentSection(Node* node);
+        void drawAddComponentMenu(Node* node);
+        
+        const char* getComponentIcon(Component* component);
+        
+        Component* componentToRemove = nullptr;
     };
 }

@@ -1,5 +1,6 @@
 #include "fileManipulation.h"
 #include <fstream>
+#include <cstdio>
 
 namespace enjinn
 {
@@ -69,6 +70,10 @@ namespace enjinn
 
 	void deleteFile(const char *f)
 	{
+		if (f && f[0] != '\0')
+		{
+			std::remove(f);
+		}
 	}
 
 

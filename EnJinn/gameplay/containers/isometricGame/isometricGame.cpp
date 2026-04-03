@@ -99,7 +99,7 @@ bool IsometricGame::create(RequestedContainerInfo &requestedInfo, enjinn::Static
 				{
 					memcpy(&playerPosition, ptr, s);					
 				}
-				else { return 0; }
+				else { delete[] buffer; return 0; }
 
 				for (int i = 0; i < MAPS_COUNT; i++)
 				{
@@ -120,9 +120,10 @@ bool IsometricGame::create(RequestedContainerInfo &requestedInfo, enjinn::Static
 					}
 				}
 
-				if (!good) { return 0; }
+				if (!good) { delete[] buffer; return 0; }
 			}
 		}
+		else { delete[] buffer; return 0; }
 		
 		delete[] buffer;
 	}

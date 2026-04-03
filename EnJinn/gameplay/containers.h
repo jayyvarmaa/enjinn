@@ -53,6 +53,11 @@ Container *getContainer(const char* name, enjinn::memory::MemoryArena *memoryAre
 #include "containers/my3DGame/my3DGame.h"
 #include "containers/cubeIO/cubeIO_inspected.h"
 
+#include "containers/runtimeLabs/mcDungeonsAnimationLab.h"
+#include "containers/runtimeLabs/mcDungeonsAudioLab.h"
+#include "containers/runtimeLabs/crabParticleLab.h"
+#include "containers/runtimeLabs/diagnosticCategoryLabs.h"
+
 #if ENJINN_PRODUCTION == 1
 
 #define ENJINN_ALL_CONTAINERS() \
@@ -90,7 +95,11 @@ Container *getContainer(const char* name, enjinn::memory::MemoryArena *memoryAre
 	ENJINN_DECLARE_CONTAINER(McDungeonsEditor) \
 	ENJINN_DECLARE_CONTAINER(McDungeonsMenu) \
 	ENJINN_DECLARE_CONTAINER(My3DGame) \
-	ENJINN_DECLARE_CONTAINER(CubeIO)
+	ENJINN_DECLARE_CONTAINER(CubeIO) \
+	ENJINN_DECLARE_CONTAINER(AnimationLab) \
+	ENJINN_DECLARE_CONTAINER(AudioLab) \
+	ENJINN_DECLARE_CONTAINER(ParticleLab) \
+	ENJINN_DECLARE_CONTAINER(AIBehaviorDiagnosticsLab)
 
 	
 

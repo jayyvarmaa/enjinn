@@ -9,6 +9,7 @@
 #include <functional>
 #include <glm/glm.hpp>
 #include <imgui.h>
+#include <imfilebrowser.h>
 
 namespace enjinn
 {
@@ -149,10 +150,43 @@ namespace PropertyDrawer
         }
         
         ImGui::SameLine();
+        
+        static ImGui::FileBrowser assetBrowser;
+        static bool assetBrowserInit = false;
+        if (!assetBrowserInit)
+        {
+            assetBrowser.SetTitle("Select Asset");
+            assetBrowserInit = true;
+        }
+        
+        ImGui::PushID(label);
         if (ImGui::Button("Browse..."))
         {
-            // TODO: Open file browser
-            // This would integrate with the AssetManagerWindow
+            // Parse filter to set type filters
+            if (filter && filter[0] != '\0')
+            {
+                std::vector<std::string> filters;
+                std::string filterStr(filter);
+                size_t pos = 0;
+                while ((pos = filterStr.find(',')) != std::string::npos)
+                {
+                    std::string tok = filterStr.substr(0, pos);
+                    if (!tok.empty()) filters.push_back(tok);
+                    filterStr.erase(0, pos + 1);
+                }
+                if (!filterStr.empty()) filters.push_back(filterStr);
+                assetBrowser.SetTypeFilters(filters);
+            }
+            assetBrowser.Open();
+        }
+        ImGui::PopID();
+        
+        assetBrowser.Display();
+        if (assetBrowser.HasSelected())
+        {
+            assetPath = assetBrowser.GetSelected().string();
+            changed = true;
+            assetBrowser.ClearSelected();
         }
         
         return changed;

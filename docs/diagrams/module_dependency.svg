@@ -1,0 +1,32 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1700 1080">
+  <defs><style>.bg{fill:#0b0d12}.title{fill:#edf2f7;font:700 34px 'Segoe UI',sans-serif}.name{fill:#edf2f7;font:700 24px 'Segoe UI',sans-serif}.txt{fill:#c9d3df;font:500 19px 'Segoe UI',sans-serif}.edge{stroke:#d0d7de;stroke-width:4;fill:none;marker-end:url(#m)}.edge2{stroke:#c0c0c0;stroke-width:3;stroke-dasharray:10 8;fill:none;marker-end:url(#m2)}</style><marker id="m" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#d0d7de"/></marker><marker id="m2" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#c0c0c0"/></marker></defs>
+  <rect class="bg" width="1700" height="1080"/>
+  <text x="24" y="52" class="title">Module Dependency Diagram</text>
+
+  <rect x="520" y="100" width="660" height="190" rx="18" fill="#433c94" stroke="#a79cff" stroke-width="3"/>
+  <text x="850" y="175" text-anchor="middle" class="name">enjinnRuntime</text>
+  <text x="850" y="215" text-anchor="middle" class="txt">Main loop, ContainerManager, DLL loader</text>
+
+  <rect x="80" y="420" width="540" height="200" rx="18" fill="#0b5a4e" stroke="#3ee0c7" stroke-width="3"/>
+  <text x="350" y="500" text-anchor="middle" class="name">enjinnEditor</text>
+  <text x="350" y="540" text-anchor="middle" class="txt">ImGui, Hierarchy, Profiler</text>
+
+  <rect x="580" y="420" width="540" height="200" rx="18" fill="#124e86" stroke="#83b7ee" stroke-width="3"/>
+  <text x="850" y="500" text-anchor="middle" class="name">sharedRuntime</text>
+  <text x="850" y="540" text-anchor="middle" class="txt">Container, Scene, Node, Component</text>
+
+  <rect x="1180" y="420" width="440" height="200" rx="18" fill="#8a3218" stroke="#f38f74" stroke-width="3" stroke-dasharray="10 8"/>
+  <text x="1400" y="500" text-anchor="middle" class="name">gameplay (DLL)</text>
+  <text x="1400" y="540" text-anchor="middle" class="txt">Hot-reloadable user plugin</text>
+
+  <rect x="520" y="820" width="660" height="180" rx="18" fill="#4f4f4f" stroke="#b4b4b4" stroke-width="3"/>
+  <text x="850" y="890" text-anchor="middle" class="name">enjinnSTD</text>
+  <text x="850" y="930" text-anchor="middle" class="txt">FreeListAllocator, Utilities, Logs</text>
+
+  <path d="M640 290 L430 420" class="edge"/>
+  <path d="M850 290 L850 420" class="edge"/>
+  <path d="M1060 290 L1290 420" class="edge"/>
+  <path d="M340 620 L620 820" class="edge2"/>
+  <path d="M850 620 L850 820" class="edge2"/>
+  <path d="M1360 620 L1080 820" class="edge2"/>
+</svg>

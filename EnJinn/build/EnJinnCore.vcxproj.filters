@@ -13,7 +13,16 @@
     <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnEditor\editShortcuts\editShortcuts.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnEditor\editor\buildWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnEditor\editor\diagnosticWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnEditor\editor\editor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnEditor\editor\gizmos.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnEditor\editor\hierarchyWindow.cpp">
@@ -22,7 +31,34 @@
     <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnEditor\editor\inspectorWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnEditor\editor\materialEditorWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnEditor\editor\menuBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnEditor\editor\prefabWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnEditor\editor\profilerWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnEditor\editor\projectSettingsWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnEditor\editor\sceneViewWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnEditor\editor\statusBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnEditor\editor\toolbar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnEditor\editor\undoHistoryWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnEditor\editor\undoRedo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnEditor\logs\logWindow.cpp">
@@ -34,6 +70,21 @@
     <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnEditor\phaseManager\phaseManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnRuntime\ai\behaviorTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnRuntime\ai\pathfinding.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnRuntime\animation\animationSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnRuntime\audio\audioComponents.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnRuntime\cinematic\timeline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnRuntime\containerManager\containerManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -41,6 +92,30 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnRuntime\enjinnMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnRuntime\networking\networkManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnRuntime\particles\particleSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnRuntime\prefab\prefab.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnRuntime\profiler\profiler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnRuntime\rendering\material.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnRuntime\scripting\visualScripting.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnRuntime\terrain\terrainSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnRuntime\ui\runtimeUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="D:\Projects\Enjinn\enjinn\EnJinn\core\enjinnSTD\engineLibraresSupport\engineGL2DSupport.cpp">

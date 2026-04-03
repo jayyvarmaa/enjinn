@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 760">
+  <defs>
+    <style>
+      .bg{fill:#0b0d12}
+      .title{fill:#edf2f7;font:700 36px 'Segoe UI',sans-serif}
+      .head{fill:#aab6c5;font:600 22px 'Segoe UI',sans-serif}
+      .cell{fill:#f5f7fb;font:600 20px 'Segoe UI',sans-serif}
+      .grid{stroke:#d0d7de;stroke-width:2}
+    </style>
+  </defs>
+  <rect class="bg" width="1600" height="760"/>
+  <text x="24" y="52" class="title">PERT - Critical Path Analysis</text>
+
+  <rect x="20" y="86" width="1560" height="650" fill="none" class="grid"/>
+  <line x1="20" y1="146" x2="1580" y2="146" class="grid"/>
+  <line x1="380" y1="86" x2="380" y2="736" class="grid"/>
+  <line x1="620" y1="86" x2="620" y2="736" class="grid"/>
+  <line x1="860" y1="86" x2="860" y2="736" class="grid"/>
+  <line x1="1100" y1="86" x2="1100" y2="736" class="grid"/>
+
+  <line x1="20" y1="206" x2="1580" y2="206" class="grid"/>
+  <line x1="20" y1="266" x2="1580" y2="266" class="grid"/>
+  <line x1="20" y1="326" x2="1580" y2="326" class="grid"/>
+  <line x1="20" y1="386" x2="1580" y2="386" class="grid"/>
+  <line x1="20" y1="446" x2="1580" y2="446" class="grid"/>
+  <line x1="20" y1="506" x2="1580" y2="506" class="grid"/>
+  <line x1="20" y1="566" x2="1580" y2="566" class="grid"/>
+
+  <rect x="20" y="566" width="1560" height="170" fill="#2b4669"/>
+
+  <text x="120" y="126" class="head">Phase</text>
+  <text x="430" y="126" class="head">Optimistic (O)</text>
+  <text x="670" y="126" class="head">Most Likely (M)</text>
+  <text x="910" y="126" class="head">Pessimistic (P)</text>
+  <text x="1130" y="126" class="head">Expected E=(O+4M+P)/6</text>
+
+  <text x="36" y="186" class="cell">Design and Planning</text>
+  <text x="36" y="246" class="cell">Core Engine</text>
+  <text x="36" y="306" class="cell">Plugin System</text>
+  <text x="36" y="366" class="cell">Editor Development</text>
+  <text x="36" y="426" class="cell">Testing and Refinement</text>
+  <text x="36" y="486" class="cell">Documentation</text>
+
+  <text x="420" y="186" class="cell">1.5 w</text>
+  <text x="420" y="246" class="cell">3.0 w</text>
+  <text x="420" y="306" class="cell">2.5 w</text>
+  <text x="420" y="366" class="cell">2.0 w</text>
+  <text x="420" y="426" class="cell">1.5 w</text>
+  <text x="420" y="486" class="cell">0.5 w</text>
+
+  <text x="660" y="186" class="cell">2.0 w</text>
+  <text x="660" y="246" class="cell">4.0 w</text>
+  <text x="660" y="306" class="cell">3.0 w</text>
+  <text x="660" y="366" class="cell">3.0 w</text>
+  <text x="660" y="426" class="cell">2.0 w</text>
+  <text x="660" y="486" class="cell">1.0 w</text>
+
+  <text x="900" y="186" class="cell">3.0 w</text>
+  <text x="900" y="246" class="cell">6.0 w</text>
+  <text x="900" y="306" class="cell">4.0 w</text>
+  <text x="900" y="366" class="cell">4.0 w</text>
+  <text x="900" y="426" class="cell">3.0 w</text>
+  <text x="900" y="486" class="cell">1.5 w</text>
+
+  <text x="1130" y="186" class="cell">2.1 w</text>
+  <text x="1130" y="246" class="cell">4.2 w</text>
+  <text x="1130" y="306" class="cell">3.1 w</text>
+  <text x="1130" y="366" class="cell">3.0 w</text>
+  <text x="1130" y="426" class="cell">2.1 w</text>
+  <text x="1130" y="486" class="cell">1.0 w</text>
+
+  <text x="36" y="612" class="cell">Critical Path Total</text>
+  <text x="420" y="612" class="cell">11.5 w</text>
+  <text x="660" y="612" class="cell">15.0 w</text>
+  <text x="900" y="612" class="cell">21.5 w</text>
+  <text x="1130" y="612" class="cell">15.5 weeks</text>
+</svg>

@@ -25,6 +25,8 @@ project(EnJinnGameplay)
 project(EnJinnCore)
 #project(enjinnProduction)
 
+include(CTest)
+
 
 #add third party libraries
 add_subdirectory(thirdparty/glfw-3.3.2)
@@ -59,6 +61,7 @@ add_compile_definitions(ENJINN_ENGINE_RESOURCES_PATH="${CMAKE_CURRENT_SOURCE_DIR
 
 if(MSVC)
 add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
+add_compile_options(/FS)
 
 #https://stackoverflow.com/questions/5559357/debugheapdelete-access-violation-at-termination
 #add_compile_definitions(_STATIC_CPPLIB)
@@ -86,7 +89,7 @@ target_include_directories(EnJinnCore PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/core/s
 target_include_directories(EnJinnCore PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 target_include_directories(EnJinnCore PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/imgui-docking/imgui/")
 target_link_libraries(EnJinnCore PRIVATE glad glfw gl2d  gl3d glui
-	glm stb_image stb_truetype imgui safeSave profilerLib sushi ph2d dwmapi box2d nanosvg)
+	glm stb_image stb_truetype imgui safeSave profilerLib sushi ph2d dwmapi box2d nanosvg winmm)
 #################^^^^^^^^#############################
 
 
@@ -96,15 +99,23 @@ add_library(EnJinnGameplay SHARED)
 target_compile_definitions(EnJinnGameplay PUBLIC ENJINN_DEVELOPMENT)
 set_property(TARGET EnJinnGameplay PROPERTY CXX_STANDARD 17)
 target_sources(EnJinnGameplay PRIVATE "${ENJINN_SOURCES_CORE_CONFIG}" "${ENJINN_SOURCES_PLUGGINS}"
-	"${ENJINN_SOURCES_CORE_STD}" "${ENJINN_SOURCES_GAMEPLAY}" "${ENJINN_SOURCES_CORE_SHARED_RUNTIME}")
+	"${ENJINN_SOURCES_CORE_STD}" "${ENJINN_SOURCES_GAMEPLAY}" "${ENJINN_SOURCES_CORE_SHARED_RUNTIME}"
+	"${CMAKE_CURRENT_SOURCE_DIR}/core/enjinnRuntime/audio/audioComponents.cpp"
+	"${CMAKE_CURRENT_SOURCE_DIR}/core/enjinnEditor/editor/gizmos.cpp"
+	"${CMAKE_CURRENT_SOURCE_DIR}/core/enjinnRuntime/animation/animationSystem.cpp"
+	"${CMAKE_CURRENT_SOURCE_DIR}/core/enjinnRuntime/prefab/prefab.cpp"
+	"${CMAKE_CURRENT_SOURCE_DIR}/core/enjinnRuntime/particles/particleSystem.cpp"
+	"${CMAKE_CURRENT_SOURCE_DIR}/core/enjinnRuntime/ai/behaviorTree.cpp")
 target_include_directories(EnJinnGameplay PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/core/enjinnSTD/")
 target_include_directories(EnJinnGameplay PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/core/coreConfig/")
 target_include_directories(EnJinnGameplay PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/gameplay/")
 target_include_directories(EnJinnGameplay PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/core/sharedRuntime/")
+target_include_directories(EnJinnGameplay PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/core/enjinnRuntime/")
+target_include_directories(EnJinnGameplay PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/core/enjinnEditor/")
 target_include_directories(EnJinnGameplay PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/pluggins/")
 target_include_directories(EnJinnGameplay PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 target_link_libraries(EnJinnGameplay PRIVATE glad glfw gl2d gl3d glui glm stb_image 
-	stb_truetype imgui safeSave profilerLib box2d sushi ph2d dwmapi nanosvg)
+	stb_truetype imgui safeSave profilerLib box2d sushi ph2d dwmapi nanosvg winmm)
 #################^^^^^^^^^^^^^^############################
 
 
@@ -143,3 +154,5 @@ if(MSVC)
 	 set_target_properties(EnJinnCore PROPERTIES LINK_FLAGS "/SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
 
 endif()
+
+#Tests removed

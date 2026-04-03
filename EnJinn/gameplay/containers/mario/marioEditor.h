@@ -27,7 +27,7 @@ struct MarioEditor: public Container
 	int currentBlock = 0;
 	bool flip = 0;
 	
-	mario::Block *map;
+	mario::Block *map = nullptr;
 
 	mario::Block &getMapBlockUnsafe(int x, int y)
 	{

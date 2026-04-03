@@ -1,0 +1,42 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 980">
+  <defs>
+    <style>
+      .bg{fill:#0b0d12}.title{fill:#edf2f7;font:700 40px 'Segoe UI',sans-serif}
+      .h{fill:#edf2f7;font:700 24px 'Segoe UI',sans-serif}.s{fill:#b9c6d6;font:500 18px 'Segoe UI',sans-serif}
+      .edge{stroke:#d0d7de;stroke-width:4;fill:none;marker-end:url(#m)}
+    </style>
+    <marker id="m" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#d0d7de"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="980"/>
+  <text x="30" y="58" class="title">DFD Level 1</text>
+
+  <rect x="80" y="370" width="210" height="120" rx="16" fill="#4f4f4f" stroke="#b4b4b4" stroke-width="3"/>
+  <text x="185" y="430" text-anchor="middle" class="h">Developer</text>
+
+  <ellipse cx="500" cy="150" rx="210" ry="95" fill="#433c94" stroke="#a79cff" stroke-width="3"/>
+  <text x="500" y="145" text-anchor="middle" class="h">1. Load Project</text>
+  <text x="500" y="180" text-anchor="middle" class="s">Parse scene / DLL</text>
+
+  <ellipse cx="700" cy="430" rx="240" ry="105" fill="#433c94" stroke="#a79cff" stroke-width="3"/>
+  <text x="700" y="425" text-anchor="middle" class="h">2. Update Scene</text>
+  <text x="700" y="460" text-anchor="middle" class="s">Tick containers</text>
+
+  <ellipse cx="420" cy="760" rx="190" ry="90" fill="#0b5a4e" stroke="#3ee0c7" stroke-width="3"/>
+  <text x="420" y="755" text-anchor="middle" class="h">3a. Editor</text>
+
+  <ellipse cx="760" cy="760" rx="190" ry="90" fill="#8a3218" stroke="#f38f74" stroke-width="3"/>
+  <text x="760" y="755" text-anchor="middle" class="h">3b. Physics</text>
+
+  <ellipse cx="1100" cy="760" rx="190" ry="90" fill="#7a4300" stroke="#ffb347" stroke-width="3"/>
+  <text x="1100" y="755" text-anchor="middle" class="h">3c. Render</text>
+
+  <rect x="1320" y="370" width="200" height="120" rx="16" fill="#4f4f4f" stroke="#b4b4b4" stroke-width="3"/>
+  <text x="1420" y="430" text-anchor="middle" class="h">Display</text>
+
+  <path d="M290 390 L380 240" class="edge"/>
+  <path d="M620 230 L650 330" class="edge"/>
+  <path d="M620 520 L500 680" class="edge"/>
+  <path d="M700 535 L760 670" class="edge"/>
+  <path d="M780 520 L1000 680" class="edge"/>
+  <path d="M1270 760 L1380 490" class="edge"/>
+</svg>

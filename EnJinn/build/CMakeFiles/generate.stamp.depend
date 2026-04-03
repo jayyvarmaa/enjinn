@@ -8,6 +8,8 @@ C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeLanguageInformation.cmake
 C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeRCInformation.cmake
 C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake
 C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Program Files/CMake/share/cmake-4.2/Modules/CTest.cmake
+C:/Program Files/CMake/share/cmake-4.2/Modules/CTestUseLaunchers.cmake
 C:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/CMakeCommonCompilerMacros.cmake
 C:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/MSVC-C.cmake
 C:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/MSVC-CXX.cmake

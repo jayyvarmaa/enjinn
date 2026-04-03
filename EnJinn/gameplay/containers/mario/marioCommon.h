@@ -108,8 +108,14 @@ struct GameplaySimulation
 		return rez;
 	}
 
-	Block *map;
+	Block *map = nullptr;
 	glm::ivec2 mapSize = {100, 100};
+
+	~GameplaySimulation()
+	{
+		delete[] map;
+		map = nullptr;
+	}
 
 	Block &getMapBlockUnsafe(int x, int y)
 	{
@@ -164,6 +170,7 @@ struct GameplaySimulation
 	void cleanup()
 	{
 		delete[] map;
+		map = nullptr;
 	}
 
 };
@@ -190,9 +197,9 @@ struct GameplayRenderer
 				tiles.createFromFileDataWithPixelPadding((unsigned char *)data, s, 8, true, false);
 
 			}
-			else { return 0; }
+			else { delete[] static_cast<unsigned char*>(data); return 0; }
 
-			delete[] data;
+			delete[] static_cast<unsigned char*>(data);
 		}
 		else { return 0; }
 

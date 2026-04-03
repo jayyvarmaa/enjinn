@@ -11,6 +11,7 @@ struct Test
 {
 	int *ptr = 0;
 	Test() { ptr = new int(5); }
+	~Test() { delete ptr; ptr = nullptr; }
 };
 
 struct Gameplay : public Container
@@ -91,6 +92,27 @@ struct Gameplay : public Container
 			requestedInfo.createContainer("Gameplay");
 		}
 
+		auto launchLab = [&](const char* containerName)
+		{
+			requestedInfo.createContainer(containerName);
+			requestedInfo.consoleWrite(containerName);
+			requestedInfo.consoleWrite(" launched\n");
+		};
+
+		// Quick keyboard launch shortcuts for the new runtime labs.
+		if (input.buttons[enjinn::Button::NR1].released())
+		{
+			launchLab("AnimationLab");
+		}
+		if (input.buttons[enjinn::Button::NR2].released())
+		{
+			launchLab("AudioLab");
+		}
+		if (input.buttons[enjinn::Button::NR3].released())
+		{
+			launchLab("ParticleLab");
+		}
+
 		requestedInfo.consoleWrite(input.typedInput);
 
 		if (input.buttons[enjinn::Button::P].held())
@@ -144,16 +166,38 @@ struct Gameplay : public Container
 
 		renderer.flush();
 
-		//ImGui::SetAllocatorFunctions(userMalloc, userFree);
+		ImGui::SetNextWindowBgAlpha(0.85f);
+		ImGui::SetNextWindowSize(ImVec2(360, 260), ImGuiCond_FirstUseEver);
+		if (ImGui::Begin("Runtime Lab Launcher"))
+		{
+			ImGui::Text("New gameplay runtime containers");
+			ImGui::Separator();
 
-		//ImGui::Begin("window from gameplay");
-		//ImGui::Spinner("spinner", 10, 2);
-		//ImGui::ProgressBar(0.4);
-		//ImGui::BufferingBar("buffering bar", 0.4, {100, 5});
-		//ImGui::LoadingIndicatorCircle("circle", 20, 8, 8);
-		//ImGui::End();
-		
-		//ImGui::ShowDemoWindow();
+			ImGui::Text("Minecraft Dungeons Character Labs");
+			if (ImGui::Button("Launch Animation Lab (1)", ImVec2(-1, 0)))
+			{
+				launchLab("AnimationLab");
+			}
+			if (ImGui::Button("Launch Audio Lab (2)", ImVec2(-1, 0)))
+			{
+				launchLab("AudioLab");
+			}
+			if (ImGui::Button("Launch Particle Emitter Lab (3)", ImVec2(-1, 0)))
+			{
+				launchLab("ParticleLab");
+			}
+
+			ImGui::Separator();
+			ImGui::Text("Diagnostics Labs");
+			if (ImGui::Button("AI & Behavior Diagnostics", ImVec2(-1, 0)))
+			{
+				launchLab("AIBehaviorDiagnosticsLab");
+			}
+
+			ImGui::Separator();
+			ImGui::TextWrapped("AI & Behavior is the only active diagnostics lab exposed here right now. Other diagnostics labs are hidden until they are completed one by one.");
+		}
+		ImGui::End();
 
 		return true;
 	}
@@ -161,7 +205,8 @@ struct Gameplay : public Container
 	//optional
 	void destruct(RequestedContainerInfo &requestedInfo)
 	{
-
+		delete r;
+		r = nullptr;
 	}
 
 };

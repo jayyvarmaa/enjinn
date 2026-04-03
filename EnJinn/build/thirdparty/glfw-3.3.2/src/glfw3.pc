@@ -1,7 +1,7 @@
-prefix=C:/Program Files (x86)/EnJinnGameplay
+prefix=C:/Program Files/EnJinnGameplay
 exec_prefix=${prefix}
-includedir=C:/Program Files (x86)/EnJinnGameplay/include
-libdir=C:/Program Files (x86)/EnJinnGameplay/lib
+includedir=C:/Program Files/EnJinnGameplay/include
+libdir=C:/Program Files/EnJinnGameplay/lib
 
 Name: GLFW
 Description: A multi-platform library for OpenGL, window and input

@@ -140,7 +140,8 @@ namespace enjinn
     {
         for (auto c : components)
         {
-            delete c;
+            c->~Component();
+            ComponentPool::getInstance().deallocate(c);
         }
         for (auto c : children)
         {

@@ -1,4 +1,5 @@
 #include "scene.h"
+#include <safeSave/safeSave.h>
 
 namespace enjinn
 {
@@ -52,5 +53,48 @@ namespace enjinn
         {
             renderNode(rootNode);
         }
+    }
+
+    bool Scene::saveScene(const char* filepath)
+    {
+        if (!rootNode || !filepath) return false;
+        
+        sfs::SafeSafeKeyValueData data;
+        data.setString("engineVersion", "EnJinn_1.0");
+        rootNode->serialize(data);
+        
+        auto err = sfs::safeSave(data, filepath, false);
+        if (err == sfs::noError)
+        {
+            scenePath = filepath;
+            return true;
+        }
+        return false;
+    }
+
+    bool Scene::loadScene(const char* filepath)
+    {
+        if (!filepath) return false;
+        
+        sfs::SafeSafeKeyValueData data;
+        auto err = sfs::safeLoad(data, filepath, false);
+        if (err != sfs::noError) return false;
+        
+        // Clear existing scene
+        clear();
+        
+        // Rebuild from data
+        rootNode = new Node();
+        rootNode->deserialize(data);
+        scenePath = filepath;
+        return true;
+    }
+
+    void Scene::clear()
+    {
+        delete rootNode;
+        rootNode = new Node();
+        rootNode->name = "Root";
+        scenePath.clear();
     }
 }

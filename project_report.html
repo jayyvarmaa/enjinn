@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EnJinn Project Report - Complete</title>
+  <style>
+    :root {
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #0f4c81;
+      --border: #d1d5db;
+      --bg: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Times New Roman", Times, serif;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 56px;
+    }
+
+    h1, h2, h3, h4 {
+      color: var(--accent);
+      margin-top: 1.4em;
+      margin-bottom: 0.5em;
+      line-height: 1.3;
+    }
+
+    h1 {
+      font-size: 30px;
+      text-align: center;
+      margin-top: 0;
+    }
+
+    h2 { font-size: 24px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+    h3 { font-size: 20px; }
+    h4 { font-size: 17px; }
+
+    p { margin: 0.5em 0 0.9em; text-align: justify; }
+    ul, ol { margin-top: 0.4em; margin-bottom: 1em; }
+    li { margin: 0.3em 0; }
+
+    .cover {
+      min-height: 80vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border: 2px solid var(--border);
+      padding: 48px;
+    }
+
+    .cover h1 { margin-bottom: 0.7em; }
+    .cover .subtitle { font-size: 20px; margin-bottom: 1.2em; }
+    .cover .meta { font-size: 18px; margin: 0.35em 0; }
+
+    .block {
+      border: 1px solid var(--border);
+      padding: 18px 20px;
+      margin: 16px 0;
+      background: #fafafa;
+    }
+
+    .cite {
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 0.25em;
+    }
+
+    pre {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      padding: 14px;
+      overflow-x: auto;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    hr { border: 0; border-top: 1px solid var(--border); margin: 24px 0; }
+
+    .toc {
+      border: 1px solid var(--border);
+      background: #f9fafb;
+      padding: 24px;
+      margin: 20px 0;
+    }
+
+    .toc h2 { color: var(--accent); border: none; padding: 0; margin: 0 0 12px 0; font-size: 22px; }
+
+    .toc ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .toc > ul > li {
+      margin: 8px 0;
+    }
+
+    .toc ul ul {
+      margin-left: 20px;
+      list-style-type: disc;
+    }
+
+    .toc a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    table { width: 100%; border-collapse: collapse; margin: 10px 0 18px; }
+    th, td { border: 1px solid var(--border); padding: 8px 10px; vertical-align: top; }
+    th { background: #f3f4f6; text-align: left; }
+
+    @media print {
+      .page { max-width: none; padding: 20mm; }
+      h2, h3, h4 { page-break-after: avoid; }
+      pre, .block, table { page-break-inside: avoid; }
+      .toc { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- TITLE PAGE -->
+    <section class="cover">
+      <div>
+        <div class="subtitle">P P Savani University</div>
+        <h1>Major/Minor Project Report</h1>
+        <h2 style="border:0; padding:0; margin-top:0; color:#111827;">2D/3D Custom Game Engine in C++</h2>
+        <p class="meta"><strong>Submitted By:</strong> Jay Varma</p>
+        <p class="meta"><strong>Program:</strong> Bachelor of Technology (Computer Engineering)</p>
+        <p class="meta"><strong>Academic Year:</strong> 2025-2026</p>
+        <p class="meta"><strong>Department:</strong> Computer Engineering</p>
+        <p class="meta"><strong>Guide:</strong> ____________________</p>
+      </div>
+    </section>
+
+    <p class="cite">[cite: 72, 73, 76]</p>
+
+    <!-- TABLE OF CONTENTS -->
+    <section class="toc">
+      <h2>Table of Contents</h2>
+      <ul>
+        <li><a href="#section1">1. Front Matter</a>
+          <ul>
+            <li><a href="#section1-1">1.1 Certificate</a></li>
+            <li><a href="#section1-2">1.2 Acknowledgement</a></li>
+            <li><a href="#section1-3">1.3 Abstract</a></li>
+          </ul>
+        </li>
+        <li><a href="#section2">2. System Analysis</a>
+          <ul>
+            <li><a href="#section2-1">2.1 Introduction and Objectives</a></li>
+            <li><a href="#section2-2">2.2 Identification of Need and Preliminary Investigation</a></li>
+            <li><a href="#section2-3">2.3 Feasibility Study</a></li>
+            <li><a href="#section2-4">2.4 Software Requirement Specification (SRS)</a></li>
+            <li><a href="#section2-5">2.5 Software Engineering Paradigm</a></li>
+            <li><a href="#section2-6">2.6 Data Models and UML</a></li>
+          </ul>
+        </li>
+        <li><a href="#section3">3. System Design</a>
+          <ul>
+            <li><a href="#section3-1">3.1 Modularization of the Engine</a></li>
+            <li><a href="#section3-2">3.2 Data Integrity and Constraints</a></li>
+            <li><a href="#section3-3">3.3 Object-Oriented Design Principles</a></li>
+            <li><a href="#section3-4">3.4 User Interface Design</a></li>
+          </ul>
+        </li>
+        <li><a href="#section4">4. Coding</a>
+          <ul>
+            <li><a href="#section4-1">4.1 Runtime Main Loop</a></li>
+            <li><a href="#section4-2">4.2 Allocator Binding</a></li>
+            <li><a href="#section4-3">4.3 Component Pool Allocation</a></li>
+            <li><a href="#section4-4">4.4 Shader Uniform Caching</a></li>
+          </ul>
+        </li>
+        <li><a href="#section5">5. Code Quality Discussion</a>
+          <ul>
+            <li><a href="#section5-1">5.1 Code Standardization</a></li>
+            <li><a href="#section5-2">5.2 Efficiency Techniques</a></li>
+            <li><a href="#section5-3">5.3 Error Handling</a></li>
+            <li><a href="#section5-4">5.4 Parameter Passing Methods</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- PART 1: FRONT MATTER AND SYSTEM ANALYSIS -->
+    <h2 id="section1">1. Front Matter</h2>
+
+    <h3 id="section1-1">1.1 Certificate</h3>
+    <div class="block">
+      <p>
+        This is to certify that the project report entitled <strong>"2D/3D Custom Game Engine in C++"</strong>
+        has been carried out by <strong>Jay Varma</strong> in partial fulfillment of the requirements for
+        the award of the Degree of Bachelor of Technology at <strong>P P Savani University</strong>.
+      </p>
+      <p>
+        The work presented in this report is an original contribution carried out under proper academic supervision.
+        To the best of our knowledge, this work has not been submitted previously, either in part or full,
+        for any degree or diploma at this or any other institution.
+      </p>
+      <p><strong>Project Guide Signature:</strong> ____________________</p>
+      <p><strong>Head of Department Signature:</strong> ____________________</p>
+      <p><strong>Date:</strong> ____________________ &nbsp;&nbsp; <strong>Place:</strong> ____________________</p>
+    </div>
+    <p class="cite">[cite: 1, 8]</p>
+
+    <h3 id="section1-2">1.2 Acknowledgement</h3>
+    <div class="block">
+      <p>
+        I would like to express my sincere gratitude to my project guide, faculty members, and the Department of
+        Computer Engineering at P P Savani University for their continuous guidance, encouragement, and support
+        during the development of this project.
+      </p>
+      <p>
+        I also thank my peers and well-wishers for their valuable suggestions and feedback. Their support helped me
+        refine both the technical implementation and documentation quality of this work.
+      </p>
+      <p>
+        Finally, I acknowledge all open-source communities and library maintainers whose tools and documentation
+        supported the development of this custom engine.
+      </p>
+    </div>
+    <p class="cite">[cite: 1, 8]</p>
+
+    <h3 id="section1-3">1.3 Abstract</h3>
+    <p>
+      This project presents the design and implementation of a custom 2D/3D game engine built in C++17 with a strong
+      emphasis on runtime control, modular architecture, and memory-aware system design. Instead of relying on
+      monolithic commercial engines, the project develops an internal architecture where gameplay modules are compiled
+      as dynamically loaded containers and executed under an engine-managed runtime.
+    </p>
+    <p>
+      The engine addresses key challenges commonly hidden in prebuilt engines: deterministic update-loop control,
+      explicit memory ownership and allocator binding, custom rendering integration for both 2D and 3D workloads,
+      and runtime extensibility through DLL-based hot-reload workflows.
+    </p>
+    <p>
+      From the analyzed codebase, the core technical stack includes OpenGL (via GLAD), GLFW, Dear ImGui (docking
+      branch), GLM, Box2D, stb_image/stb_truetype, and additional internal subsystems for profiling, serialization,
+      diagnostics, and plugin-style gameplay containers. The architecture combines a runtime container manager,
+      a scene graph (Node-Component model), component serialization, and custom memory utilities such as a
+      free-list allocator and container memory arena.
+    </p>
+    <p>
+      The resulting system functions as both an execution runtime and an editor-enabled development environment,
+      allowing iterative gameplay development, container-level isolation, and practical experimentation with
+      rendering, physics, AI/behavior, animation, and tooling pipelines.
+    </p>
+    <p class="cite">[cite: 21]</p>
+
+    <h2 id="section2">2. System Analysis</h2>
+
+    <h3 id="section2-1">2.1 Introduction and Objectives</h3>
+    <h4>Introduction</h4>
+    <p>
+      The project implements a modular game engine intended to support both 2D and 3D interactive applications.
+      The runtime initializes graphics, window, and input systems, loads gameplay logic from a DLL contract,
+      and continuously executes container instances through a managed update cycle.
+    </p>
+    <p>The architecture includes:</p>
+    <ol>
+      <li>Runtime-driven container lifecycle management.</li>
+      <li>Scene-graph-based object modeling with component composition.</li>
+      <li>Editor-facing windows and diagnostics systems.</li>
+      <li>Custom memory and serialization infrastructure.</li>
+    </ol>
+
+    <h4>Objectives</h4>
+    <ol>
+      <li>Build a full C++ game-engine runtime with explicit system ownership and update flow.</li>
+      <li>Support both 2D and 3D rendering paths through OpenGL-based libraries.</li>
+      <li>Enable modular gameplay through hot-swappable container contracts.</li>
+      <li>Provide editor and diagnostics capabilities for development-time visibility.</li>
+      <li>Integrate custom and semi-custom memory handling mechanisms to reduce uncontrolled heap usage.</li>
+      <li>Support scene persistence and component serialization for reproducibility.</li>
+      <li>Demonstrate practical subsystem breadth (physics, animation, AI, scripting, particles, profiling).</li>
+    </ol>
+    <p class="cite">[cite: 34]</p>
+
+    <h3 id="section2-2">2.2 Identification of Need and Preliminary Investigation</h3>
+    <h4>Why a Custom Engine Instead of Unity/Unreal?</h4>
+    <ol>
+      <li>Fine-grained runtime ownership via explicit create/update/destruct contracts.</li>
+      <li>Container isolation with per-container metadata and allocator contexts.</li>
+      <li>DLL-level extensibility with export-bound loading and reload support.</li>
+      <li>Memory strategy experimentation using free-list, arena, and pool patterns.</li>
+      <li>Transparent architecture for academic learning and systems-level understanding.</li>
+    </ol>
+
+    <h4>Preliminary Investigation Outcome</h4>
+    <p>
+      The codebase shows deliberate subsystem decomposition across editor, runtime, shared runtime,
+      std/core utilities, and gameplay containers. This supports a controlled iterative workflow suitable
+      for an academic project where architecture is a primary evaluation dimension.
+    </p>
+    <p class="cite">[cite: 36, 37]</p>
+
+    <h3 id="section2-3">2.3 Feasibility Study</h3>
+    <h4>Technical Feasibility</h4>
+    <ol>
+      <li>CMake and vcpkg-based build/dependency pipeline is defined.</li>
+      <li>Rendering stack is active through OpenGL/GLAD with GLFW context creation.</li>
+      <li>Runtime container model is complete with exported DLL function contracts.</li>
+      <li>Scene graph and component model support update/render traversal and persistence.</li>
+      <li>Physics integration is present through Box2D-bound component data.</li>
+      <li>Editor and diagnostics windows are implemented using ImGui tooling.</li>
+      <li>Memory handling includes free-list allocator and component pooling.</li>
+    </ol>
+
+    <h4>Operational Feasibility</h4>
+    <ol>
+      <li>Modular folder segmentation reduces subsystem coupling.</li>
+      <li>Gameplay modules can be launched as named containers.</li>
+      <li>Logs, notifications, and diagnostics improve debugging and maintainability.</li>
+      <li>Runtime labs enable subsystem-wise verification in development.</li>
+    </ol>
+
+    <h4>Time Feasibility</h4>
+    <p>
+      For a solo academic project, the implementation pattern is feasible under iterative delivery:
+      core runtime and rendering first, container-memory architecture second, editor and diagnostics third,
+      and domain-specific gameplay modules as incremental extensions.
+    </p>
+    <p class="cite">[cite: 38]</p>
+
+    <h3 id="section2-4">2.4 Software Requirement Specification (SRS)</h3>
+    <h4>Functional Requirements</h4>
+    <ol>
+      <li>The engine shall initialize a graphical window and OpenGL context.</li>
+      <li>The runtime shall load gameplay DLL exports and query available containers.</li>
+      <li>The runtime shall instantiate and update one or more containers.</li>
+      <li>The engine shall pass input and window-state structures every frame.</li>
+      <li>The system shall support scene graph update and render traversal.</li>
+      <li>The system shall serialize and deserialize scene/component state.</li>
+      <li>The engine shall support both 2D and 3D rendering workflows.</li>
+      <li>The editor shall provide tool windows for diagnostics and subsystem operations.</li>
+      <li>The runtime shall support safe container destruction and shutdown cleanup.</li>
+    </ol>
+
+    <h4>Non-Functional Requirements</h4>
+    <ol>
+      <li>Performance: interactive frame-loop behavior for runtime and editor contexts.</li>
+      <li>Modularity: low coupling between runtime/editor/shared subsystems.</li>
+      <li>Maintainability: interface-driven architecture and subsystem boundaries.</li>
+      <li>Extensibility: container registration and component factory growth.</li>
+      <li>Reliability: assertion, logging, and diagnostics support.</li>
+      <li>Portability: code declares Windows/Linux intent; current implementation is Windows-heavy.</li>
+    </ol>
+
+    <h4>Software Requirements</h4>
+    <ol>
+      <li>C++17 compiler toolchain.</li>
+      <li>CMake 3.16 or higher.</li>
+      <li>vcpkg dependency setup.</li>
+      <li>OpenGL-capable drivers and GLAD initialization support.</li>
+      <li>GLFW runtime support.</li>
+      <li>Dear ImGui docking branch integration.</li>
+      <li>GLM, Box2D, and stb libraries.</li>
+      <li>Windows runtime APIs for several runtime/editor code paths.</li>
+    </ol>
+
+    <h4>Hardware Requirements (Practical)</h4>
+    <ol>
+      <li>x64 multi-core CPU.</li>
+      <li>Minimum 8 GB RAM (16 GB recommended for 3D/editor workflows).</li>
+      <li>GPU supporting OpenGL rendering pipeline.</li>
+      <li>Storage for source, assets, and generated binaries.</li>
+      <li>Keyboard/mouse input (gamepad optional and supported).</li>
+    </ol>
+    <p class="cite">[cite: 41]</p>
+
+    <h3 id="section2-5">2.5 Software Engineering Paradigm</h3>
+    <p>
+      The observed engineering workflow aligns with an iterative-incremental model with agile characteristics.
+      Subsystems are delivered in slices, runtime and editor evolve in parallel, and diagnostics plus hot-reload
+      workflows support short feedback loops. Phase-oriented controls present in the project further reinforce
+      staged implementation.
+    </p>
+    <p class="cite">[cite: 42]</p>
+
+    <h3 id="section2-6">2.6 Data Models and UML (Text-Based, Code-Derived)</h3>
+
+    <h4>2.6.1 Class Diagram: Scene Graph Core</h4>
+    <pre>+----------------------+       +----------------------+
+| Component            |<------| GenericSprite...     |
++----------------------+       +----------------------+
+| - node: Node*        |
+| + onCreate()         |       +----------------------+
+| + onUpdate(dt)       |<------| GenericPhysics...    |
+| + onRender()         |       +----------------------+
+| + serialize(data)    |
++----------------------+
+           ^
+           |
++-----------------------------------+
+| Node                              |
++-----------------------------------+
+| - parent: Node*                   |
+| - children: vector&lt;Node*&gt;         |
+| - components: vector&lt;Component*&gt;  |
+| - local/global transforms         |
+| + addChild/removeChild            |
+| + addComponent&lt;T&gt;()               |
+| + updateTransforms()              |
++-----------------------------------+
+
++----------------------+
+| Scene                |
++----------------------+
+| - rootNode: Node*    |
+| + update(dt)         |
+| + render()           |
+| + save/load/clear    |
++----------------------+</pre>
+
+    <h4>2.6.2 Class Diagram: Runtime Container Model</h4>
+    <pre>+-------------------------------+
+| ContainerStaticInfo           |
++-------------------------------+
+| defaultHeapMemorySize         |
+| useDefaultAllocator           |
+| bonusAllocators               |
+| requestImguiFbo/requestIds    |
++-------------------------------+
+
++-------------------------------+
+| Container (abstract)          |
++-------------------------------+
+| + static containerInfo()      |
+| + create(...)                 |
+| + update(input, state, req)   |
+| + destruct(...)               |
++-------------------------------+
+            ^
+            |
+   +-------------------------+
+   | Gameplay / Mario / ...  |
+   +-------------------------+
+
++-------------------------------+
+| RuntimeContainer              |
++-------------------------------+
+| pointer: Container*           |
+| arena: MemoryArena            |
+| allocator: FreeListAllocator  |
+| status/timing/metrics         |
++-------------------------------+
+
++-------------------------------+
+| LoadedDll                     |
++-------------------------------+
+| gameplayStart_                |
+| getContainersInfo_            |
+| constructContainer_           |
+| bindAllocator_/resetAllocator_|
++-------------------------------+
+
++-------------------------------+
+| ContainerManager              |
++-------------------------------+
+| runningContainers map         |
+| + create/update/reload/destroy|
++-------------------------------+</pre>
+
+    <h4>2.6.3 Memory/Data Ownership Model</h4>
+    <pre>ContainerInformation.calculateMemoryRequirements()
+  -> static container struct memory
+  -> aligned default heap memory
+  -> aligned bonus allocator blocks
+
+Ownership chain:
+RuntimeContainer owns MemoryArena + FreeListAllocator
+Scene owns root Node
+Node owns children + components
+ComponentPool services pooled component allocations</pre>
+
+    <h4>2.6.4 Control Flow Diagram (Runtime)</h4>
+    <pre>Engine Start
+  -> Initialize logs/shortcuts
+  -> Load gameplay DLL exports
+  -> Initialize GLFW + GLAD + ImGui
+  -> Initialize ContainerManager
+  -> Call gameplayStart()
+
+Main Loop
+  -> Begin ImGui frame
+  -> Editor update (if enabled)
+  -> ContainerManager.update() for each container
+  -> End ImGui frame
+  -> Window/input update
+
+Shutdown
+  -> Save state
+  -> Destroy containers
+  -> Exit</pre>
+
+    <h4>2.6.5 Control Flow Diagram (Scene)</h4>
+    <pre>Scene.update(dt)
+  -> rootNode.updateTransforms() recursively
+  -> DFS: each component.onUpdate(dt)
+
+Scene.render()
+  -> DFS: each component.onRender()</pre>
+
+    <p class="cite">[cite: 43]</p>
+
+    <hr />
+
+    <!-- PART 2: SYSTEM DESIGN AND CODING -->
+    <h2 id="section3">3. System Design</h2>
+
+    <h3 id="section3-1">3.1 Modularization of the Engine</h3>
+    <p>
+      The EnJinn architecture is organized into multiple independent but cooperating modules. The folder structure and
+      compile targets show a clear split between runtime, editor, shared systems, and gameplay modules.
+    </p>
+
+    <table>
+      <thead>
+        <tr><th>Module</th><th>Primary Responsibility</th><th>Design Role</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>core/enjinnRuntime</td><td>Main engine loop, DLL/container loading, update scheduling, runtime services</td><td>Execution backbone</td></tr>
+        <tr><td>core/enjinnEditor</td><td>Editor windows (hierarchy, inspector, scene view, diagnostics, tools)</td><td>Development UI layer</td></tr>
+        <tr><td>core/sharedRuntime</td><td>Common contracts (Container, Scene, Node, Component, AssetManager, window state)</td><td>Shared domain model</td></tr>
+        <tr><td>core/enjinnSTD</td><td>Low-level utility layer: allocators, static containers, file and path helpers</td><td>Infrastructure utility layer</td></tr>
+        <tr><td>gameplay</td><td>Container implementations loaded via DLL (Mario, ThreeDTest, labs, examples)</td><td>Application/plugin layer</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      This modularization allows the runtime to remain stable while gameplay modules evolve independently. It also
+      supports hot-reload and per-container resource control, which is a strong systems-level choice for iterative game
+      development.
+    </p>
+
+    <h3 id="section3-2">3.2 Data Integrity and Constraints</h3>
+    <ol>
+      <li>Container-level memory constraints are declared via ContainerStaticInfo (heap size, bonus allocators, FBO/UI needs).</li>
+      <li>Scene graph integrity is maintained through parent-child ownership and recursive update/render traversal.</li>
+      <li>Component allocation uses a fixed-size pool with overflow fallback, reducing fragmentation for normal component sizes.</li>
+      <li>Serialization boundaries are explicit through serialize and deserialize methods in Node and Component derivatives.</li>
+      <li>Runtime allocator binding around container updates enforces memory realm separation between engine and gameplay code.</li>
+    </ol>
+
+    <h3 id="section3-3">3.3 Object-Oriented Design Principles Used</h3>
+
+    <h4>Inheritance</h4>
+    <p>
+      The design uses inheritance for engine extension points. Container is an abstract base type; gameplay modules
+      implement create, update, and destruct. Similarly, Component is the base type and concrete systems such as
+      GenericSpriteComponent, GenericPhysicsComponent, CameraComponent, and ScriptComponent derive from it.
+    </p>
+
+    <h4>Polymorphism</h4>
+    <p>
+      Runtime polymorphism appears in two key loops: the container update dispatch (calling each container through base
+      pointer) and scene traversal (calling component virtual methods during onUpdate and onRender). This enables the
+      engine to execute heterogeneous gameplay and component logic through uniform contracts.
+    </p>
+
+    <h4>Encapsulation</h4>
+    <p>
+      Subsystems encapsulate state and responsibilities: Shader caches uniform locations internally; ContainerManager
+      owns container lifecycle; EnJinnWindow centralizes input/window state; ComponentPool hides allocation mechanics.
+    </p>
+
+    <h4>Abstraction</h4>
+    <p>
+      Engine-facing interfaces abstract platform and API details. Gameplay code receives RequestedContainerInfo,
+      Input, and WindowState rather than direct runtime internals. This keeps gameplay modules focused on logic,
+      with memory and runtime orchestration handled by the core.
+    </p>
+
+    <h3 id="section3-4">3.4 User Interface Design (Editor GUI)</h3>
+    <p>
+      The editor is implemented using Dear ImGui (docking branch). The editor class aggregates multiple specialized
+      windows: hierarchy, inspector, scene view, profiler, material editor, build window, and diagnostics. The design
+      follows a tool-window paradigm suitable for engine development: live diagnostics, scene inspection, and runtime
+      control in one frame-driven interface.
+    </p>
+    <p>
+      Diagnostic and lab windows indicate a usability focus on subsystem verification. Runtime containers can also
+      request ImGui framebuffers and IDs, allowing integrated tool and gameplay views.
+    </p>
+
+    <h2 id="section4">4. Coding</h2>
+
+    <h3 id="section4-1">4.1 Crucial Code Snippet 1: Runtime Main Loop</h3>
+    <div class="block">
+      File: EnJinn/core/enjinnRuntime/enjinnMain.cpp (runtime orchestration loop)
+    </div>
+    <pre>while (!shouldClose)
+{
+    if (window.shouldClose())
+    {
+        shouldClose = true;
+        break;
+    }
+
+    enjinn::enjinnImgui::imguiStartFrame(window.context);
+    glClear(GL_COLOR_BUFFER_BIT);
+
+#if !ENJINN_SHOULD_REMOVE_EDITOR
+    editor.update(window.input, shortcutManager, logs,
+        pushNotificationManager, loadedDll, containerManager, imguiIdsManager);
+#endif
+
+#if !(ENJINN_SHOULD_REMOVE_EDITOR)
+    if (editor.shouldReloadDll)
+    {
+        editor.shouldReloadDll = false;
+        containerManager.reloadDll(loadedDll, window, logs);
+    }
+
+    containerManager.update(loadedDll, window, logs, imguiIdsManager, &editor.consoleWindow);
+#else
+    containerManager.update(loadedDll, window, logs, imguiIdsManager, nullptr);
+#endif
+
+    enjinn::enjinnImgui::imguiEndFrame(window.context);
+    window.update();
+    shortcutManager.update(window.input);
+}</pre>
+    <p>
+      This loop shows a layered execution pipeline: frame begin, editor pass, container pass, frame end, and IO/state
+      updates. The design keeps tooling and gameplay synchronized within one deterministic cycle. Runtime reload logic
+      is handled in-loop, minimizing restart cost during development.
+    </p>
+
+    <h3 id="section4-2">4.2 Crucial Code Snippet 2: Allocator Binding Around Container Update</h3>
+    <div class="box">
+      File: EnJinn/core/enjinnRuntime/containerManager/containerManager.cpp (per-container update wrapper)
+    </div>
+    <pre>loadedDll.bindAllocatorDllRealm(&c.second.allocator);
+bool rez = c.second.pointer->update(windowInput, windowState, c.second.requestedContainerInfo);
+loadedDll.resetAllocatorDllRealm();</pre>
+    <p>
+      This is one of the most important architectural points in the codebase. Every container update executes under its
+      own allocator context. It reduces accidental cross-realm allocation patterns and helps diagnostics/snapshot systems.
+      The explicit reset call immediately after update prevents allocator leakage into runtime code paths.
+    </p>
+
+    <h3 id="section4-3">4.3 Crucial Code Snippet 3: Component Pool Allocation Strategy</h3>
+    <div class="box">
+      File: EnJinn/core/sharedRuntime/sceneGraph/node.h (ComponentPool)
+    </div>
+    <pre>void* allocate(size_t size)
+{
+    size = (size + 15) & ~15;
+
+    if (size > MAX_ALLOC || offset + size > POOL_SIZE)
+    {
+        return std::malloc(size);
+    }
+
+    void* ptr = pool + offset;
+    offset += size;
+    return ptr;
+}
+
+void deallocate(void* ptr)
+{
+    if (ptr >= pool && ptr < pool + POOL_SIZE)
+    {
+        return;
+    }
+    std::free(ptr);
+}</pre>
+    <p>
+      This snippet demonstrates a pragmatic hybrid allocator: fixed pool for common component sizes and heap fallback
+      for overflow cases. Alignment is explicit. Deallocation avoids per-object pool reclamation and instead supports
+      fast reset semantics, which suits frame/update-oriented component workloads.
+    </p>
+
+    <h3 id="section4-4">4.4 Crucial Code Snippet 4: Shader Uniform Location Caching</h3>
+    <div class="box">
+      File: EnJinn/core/enjinnRuntime/rendering/material.cpp (Shader class)
+    </div>
+    <pre>int Shader::getUniformLocation(const std::string& name)
+{
+    auto it = uniformLocations.find(name);
+    if (it != uniformLocations.end())
+    {
+        return it->second;
+    }
+
+    int loc = glGetUniformLocation(programID, name.c_str());
+    uniformLocations[name] = loc;
+
+    return loc;
+}
+
+bool Shader::compileShader(unsigned int shaderID, const std::string& source, const std::string& type)
+{
+    glCompileShader(shaderID);
+
+    GLint success;
+    glGetShaderiv(shaderID, GL_COMPILE_STATUS, &success);
+
+    if (!success)
+    {
+        std::cerr << "Shader compilation failed (" << type << "): " << getCompilationErrors(shaderID) << std::endl;
+        return false;
+    }
+
+    return true;
+}</pre>
+    <p>
+      This code improves rendering efficiency by caching uniform lookups instead of repeatedly querying OpenGL.
+      It also includes immediate shader compile-status checks and error reporting, improving diagnosability of pipeline
+      failures.
+    </p>
+
+    <h2 id="section5">5. Code Quality Discussion</h2>
+
+    <h3 id="section5-1">5.1 Code Standardization Practices</h3>
+    <ol>
+      <li>Consistent subsystem foldering and header-based API boundaries.</li>
+      <li>Engine-prefixed macros and compile-time feature flags for development vs production behavior.</li>
+      <li>Stable interface contracts for containers and components.</li>
+      <li>Separation between runtime-side orchestration and gameplay-side implementation.</li>
+    </ol>
+
+    <h3 id="section5-2">5.2 Efficiency Techniques</h3>
+    <ol>
+      <li>Component pool allocation and alignment for common small objects.</li>
+      <li>Per-container allocator binding to localize allocation costs and control memory domains.</li>
+      <li>Uniform location caching in shader system.</li>
+      <li>Frame timing aggregation per container for lightweight performance monitoring.</li>
+      <li>CMake interprocedural optimization enabled at project level.</li>
+    </ol>
+
+    <h3 id="section5-3">5.3 Error Handling Techniques</h3>
+    <ol>
+      <li>Assertion guards for critical initialization steps (GLFW/GLAD/DLL load).</li>
+      <li>Boolean return-based checks for creation/update/load operations.</li>
+      <li>Shader compilation/link diagnostics through explicit status checks and logs.</li>
+      <li>Fallback behaviors in allocator and file-load paths to avoid immediate catastrophic failure in non-critical paths.</li>
+    </ol>
+
+    <h3 id="section5-4">5.4 Parameter Passing Methods</h3>
+    <ol>
+      <li>Heavy or mutable structures passed by reference where orchestration is required (for example RequestedContainerInfo and manager objects).</li>
+      <li>Frame input/window-state are passed explicitly to update calls, maintaining deterministic frame context.</li>
+      <li>Const references used in several rendering/material APIs to avoid unnecessary copies.</li>
+      <li>Function pointers and callback signatures are used for DLL interface boundaries and file-opener bindings.</li>
+    </ol>
+
+    <p>
+      Overall, the codebase reflects an engine-oriented C++ style emphasizing clear subsystem contracts,
+      explicit runtime control, and pragmatic performance-conscious implementation.
+    </p>
+
+    <hr />
+    <p style="text-align: center; margin-top: 2em; color: var(--muted);"><strong>End of Report</strong></p>
+
+  </div>
+</body>
+</html>

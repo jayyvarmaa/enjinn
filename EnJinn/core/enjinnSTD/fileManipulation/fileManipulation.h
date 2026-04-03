@@ -11,7 +11,6 @@ namespace enjinn
 
 	bool appendToFile(const char *name, void *buffer, size_t s);
 
-	//todo implement
 	void deleteFile(const char *f);
 
 };

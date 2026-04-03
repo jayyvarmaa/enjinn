@@ -1,0 +1,38 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 980">
+  <defs><style>.bg{fill:#0b0d12}.title{fill:#edf2f7;font:700 40px 'Segoe UI',sans-serif}.h{fill:#edf2f7;font:700 24px 'Segoe UI',sans-serif}.s{fill:#b9c6d6;font:500 18px 'Segoe UI',sans-serif}.edge{stroke:#d0d7de;stroke-width:3;fill:none;marker-end:url(#m)}</style><marker id="m" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#d0d7de"/></marker></defs>
+  <rect class="bg" width="1600" height="980"/>
+  <text x="30" y="58" class="title">State Transition Diagram</text>
+
+  <ellipse cx="800" cy="90" rx="140" ry="56" fill="#4f4f4f" stroke="#b4b4b4" stroke-width="3"/>
+  <text x="800" y="98" text-anchor="middle" class="h">Startup</text>
+
+  <rect x="560" y="200" width="480" height="140" rx="16" fill="#0b5a4e" stroke="#3ee0c7" stroke-width="3"/>
+  <text x="800" y="268" text-anchor="middle" class="h">Initializing</text>
+  <text x="800" y="302" text-anchor="middle" class="s">Load libs, alloc memory</text>
+
+  <rect x="500" y="430" width="600" height="170" rx="16" fill="#433c94" stroke="#a79cff" stroke-width="3"/>
+  <text x="800" y="500" text-anchor="middle" class="h">Running</text>
+  <text x="800" y="536" text-anchor="middle" class="s">Load DLL, tick, render</text>
+
+  <rect x="220" y="450" width="220" height="140" rx="16" fill="#7a4300" stroke="#ffb347" stroke-width="3"/>
+  <text x="330" y="518" text-anchor="middle" class="h">Paused</text>
+
+  <rect x="1160" y="450" width="250" height="150" rx="16" fill="#8a3218" stroke="#f38f74" stroke-width="3"/>
+  <text x="1285" y="520" text-anchor="middle" class="h">Reloading</text>
+
+  <rect x="560" y="700" width="480" height="140" rx="16" fill="#0b5a4e" stroke="#3ee0c7" stroke-width="3"/>
+  <text x="800" y="768" text-anchor="middle" class="h">Cleanup</text>
+  <text x="800" y="802" text-anchor="middle" class="s">Free all memory</text>
+
+  <ellipse cx="800" cy="920" rx="140" ry="50" fill="#4f4f4f" stroke="#b4b4b4" stroke-width="3" stroke-dasharray="8 6"/>
+  <text x="800" y="928" text-anchor="middle" class="h">Stopped</text>
+
+  <path d="M800 146 L800 200" class="edge"/>
+  <path d="M800 340 L800 430" class="edge"/>
+  <path d="M500 500 L440 500" class="edge"/>
+  <path d="M440 540 L500 540" class="edge"/>
+  <path d="M1100 500 L1160 500" class="edge"/>
+  <path d="M1160 545 L1100 545" class="edge"/>
+  <path d="M800 600 L800 700" class="edge"/>
+  <path d="M800 840 L800 870" class="edge"/>
+</svg>
